@@ -1,0 +1,130 @@
+/* @font-face {
+    font-family: 'Cairo';
+    /* src: local('Cairo'), url(../../assets/fonts/Cairo-Regular) format('ttf'); */
+/* } */
+ 
+
+
+.historyCardContainer{
+    width:900px;
+    height:120px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #bcbcbc;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.historyUserInfoContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.historyUserImage{
+    width:70px;
+    height:70px;
+    border-radius: 35px;
+    margin-left:15px;
+    margin-top: 25px;
+}
+.historyUserInfo{
+    height: 67px;
+    width:247px;
+    margin-left: 15px;
+    margin-top: 30px;
+
+
+}
+
+.historyUserName{
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    margin-bottom:5px ;
+    display: flex;
+    align-items: center;
+    color: black;
+
+}
+
+.historyPostInfo{
+    width: 280px;
+    height: 77px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.historyPostDate{
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+   
+    display: flex;
+    align-items: center;
+    
+    color: #636262;
+    
+}
+.historyPostDetails{
+    font-family: Cairo;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+}
+
+.historyViewButton{
+    width: 150px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #636262;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    color:black
+}
+
+.historyViewButtonActive{
+    width: 150px;
+    height: 45px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    transition: all .5s;
+    background: #247189;
+    border: 1px solid #636262;
+    color:white;
+}
+.historyDeleteIcon{
+margin-left: 30px;
+margin-top: 30px;
+}
+a {
+    text-decoration: none; /* no underline */
+  }
+
+a.nostyle:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+
+}
+
+a.nostyle:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}

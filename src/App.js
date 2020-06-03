@@ -1,23 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import Logo from './assets/images/svg/logo';
 import './App.css';
+import HistoryCard from './componants/histortCard/historyCard.js'
+import userimg from './assets/images/user.jpg'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Logo />
+        <HistoryCard
+          name={"Mohamed Samy"}
+          date={"22 sep 2019 10:45pm"}
+          image={userimg}
+          title={"Watch"}
+          description={"rolecs watch"}
+        />
       </header>
     </div>
   );
