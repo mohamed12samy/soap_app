@@ -56,7 +56,7 @@ function HistoryCard(props) {
 
 
             </div >
-            {toggle && <PostCard
+            <div>{toggle===true && <PostCard
                 style={{marginBottom:"50px"}}
                 likes={23}
                 dislikes={2}
@@ -64,7 +64,7 @@ function HistoryCard(props) {
                 image={lamp}
                 fullDescription={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"}
 
-            />}
+            />}</div>
         </div>
     );
 }

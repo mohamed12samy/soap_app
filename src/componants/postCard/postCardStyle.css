@@ -11,8 +11,8 @@
 }
 .postCardRate{
     position: absolute;
-    right: 250px;
-    top:210px;
+    right: 20px;
+    top:20px;
     width: 80px;
     height: 37.17px;
     background: #00CF3A;
@@ -32,6 +32,7 @@
 .postImageContainer{
     width: 900px;
     height: 350px;
+    position: relative;
 } 
 .postFullDescripstion{
     width: 870px;

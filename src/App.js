@@ -17,6 +17,27 @@ function App() {
         title={"Watch"}
         description={"rolecs watch"}
       />
+       <HistoryCard
+        name={"Mohamed Samy"}
+        date={"22 sep 2019 10:45pm"}
+        image={userimg}
+        title={"Watch"}
+        description={"rolecs watch"}
+      />
+       <HistoryCard
+        name={"Mohamed Samy"}
+        date={"22 sep 2019 10:45pm"}
+        image={userimg}
+        title={"Watch"}
+        description={"rolecs watch"}
+      />
+       <HistoryCard
+        name={"Mohamed Samy"}
+        date={"22 sep 2019 10:45pm"}
+        image={userimg}
+        title={"Watch"}
+        description={"rolecs watch"}
+      />
      
       {/* <PostCard
         likes={23}
