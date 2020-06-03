@@ -18,8 +18,11 @@ HistoryCard.propTypes = {
 
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
+    const [deleted,setDelet] = useState(false);
     return (
-        <div style={{marginBottom:'20px'}}>
+       <>
+       { deleted === false &&
+        <div style={{ marginBottom: '20px' }}>
             <div className="historyCardContainer"
                 style={!toggle ? { transition: 'all 0.5s' } :
                     {
@@ -39,8 +42,14 @@ function HistoryCard(props) {
                 </div>
 
                 <div className="historyPostInfo">
-                    <div className="historyPostDetails"><span style={{ fontWeight: '600' }}>Title:</span> {props.title}</div>
-                    <div className="historyPostDetails"><span style={{ fontWeight: '600' }}>description:</span> {props.description}</div>
+                    <div className="historyPostDetails">
+                        <span style={{ fontWeight: '600' }}>Title:</span>
+                        {props.title}
+                    </div>
+                    <div className="historyPostDetails">
+                        <span style={{ fontWeight: '600' }}>description:</span>
+                        {props.description}
+                    </div>
                 </div>
 
                 <a href="#" onClick={() => show(!toggle)}>
@@ -49,15 +58,15 @@ function HistoryCard(props) {
                     </div>
                 </a>
                 <div className="historyDeleteIcon">
-                    <a href="##" onClick={() => { }}>
+                    <a href="##" onClick={() => setDelet(1)}>
                         <DeleteIcon />
                     </a>
                 </div>
 
 
             </div >
-            <div>{toggle===true && <PostCard
-                style={{marginBottom:"50px"}}
+            <div>{toggle === true && <PostCard
+                style={{ marginBottom: "50px" }}
                 likes={23}
                 dislikes={2}
                 rate={4.4}
@@ -65,7 +74,8 @@ function HistoryCard(props) {
                 fullDescription={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"}
 
             />}</div>
-        </div>
+        </div>}
+        </>
     );
 }
 
