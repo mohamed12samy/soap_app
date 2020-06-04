@@ -1,8 +1,8 @@
 import React from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
-import Sidebar from './Sidebar/Sidebar.js';
-import Appbar from './Appbar/Appbar.js';
+import Sidebar from './componants/Sidebar/Sidebar.js';
+import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg'
@@ -23,13 +23,12 @@ function App() {
 //   ]
 
   return (
+    
     <div className="App">
-     
-
+      <Appbar/>
+      <Sidebar/>
       {/* <header className="App-header"> */}
-      <Logo />
-    <Appbar/>
-        <Sidebar/>
+    
       <HistoryCard
         name={"Mohamed Samy"}
         date={"22 sep 2019 10:45pm"}

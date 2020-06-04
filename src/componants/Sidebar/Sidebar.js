@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Sidebar.css'
-import SOAP from '../icons/logo/SOAP.svg';
-import HomeIcon from '../icons/HomeIcon';
-import PostsIcon from '../icons/PostIcon';
-import AdsIcon from '../icons/AdsIcon';
-import RateIcon from '../icons/RateIcon';
-import TopRated from '../icons/TopRatedIcon';
-import LogOut from '../icons/LogOutIcon';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+import SOAP from '../../assets/images/svg/logo/SOAP.svg';
+import HomeIcon from '../../assets/images/svg/HomeIcon';
+import PostsIcon from '../../assets/images/svg/PostIcon';
+import AdsIcon from '../../assets/images/svg/AdsIcon';
+import RateIcon from '../../assets/images/svg/RateIcon';
+import TopRated from '../../assets/images/svg/TopRatedIcon';
+import LogOut from '../../assets/images/svg/LogOutIcon';
 
 
 const items = [

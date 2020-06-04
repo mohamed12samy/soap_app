@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Appbar.css'
-import image from '../assests/Capture.PNG';
+import image from '../../assets/images/Capture.PNG';
 import ExampleComponent from "react-rounded-image";
 
 export default function Appbar(){
@@ -18,7 +18,6 @@ export default function Appbar(){
                 <p className="user_name">Name</p>
             </div></a>
             <div className="searchbar">
-                <p>asas</p>
             </div>
         </div>
     );

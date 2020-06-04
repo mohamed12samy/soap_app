@@ -27,9 +27,6 @@
     list-style-type: none;
 }
 
-.sidebar_item{
-    }
-
 .sidebar_item a :hover{
     background-color: rgb(235, 235, 235);
 }
@@ -54,5 +51,5 @@
 }
 @font-face {
     font-family: 'Cairo';
-    src: local('Cairo'), url(../fonts/Cairo-SemiBold.ttf) format('truetype');
+    src: local('Cairo'), url(../../assets/fonts/Cairo-SemiBold.ttf) format('truetype');
   }
