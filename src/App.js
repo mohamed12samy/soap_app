@@ -1,77 +1,47 @@
 import React from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
-import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg'
 import PostCard from './componants/postCard/postcard.js'
+import CommentCard from './componants/commentCard/commentCard.js';
 
 function App() {
-//   handleClick = () =>
-//   ref.current.scrollIntoView({
-//     behavior: 'smooth',
-//     inline: 'end',
-//     block:'nearest'
-//   })
-
-//   const data =[
-//     {
-
-//     }
-//   ]
+  const commentsData = [
+    {
+      comment: "componants commentCard commentCard.js. ",
+      classRate: 5,
+      totalRate: 43
+    },
+    {
+      comment: "componants commentCard commentCard.js. ",
+      classRate: 4,
+      totalRate: 22
+    }, {
+      comment: "componants commentCard commentCard.js. ",
+      classRate: 3,
+      totalRate: 0
+    }, {
+      comment: "componants commentCard commentCard.js. ",
+      classRate: 2,
+      totalRate: 8
+    }, {
+      comment: "componants commentCard commentCard.js. ",
+      classRate: 1,
+      totalRate: 15
+    },
+  ]
 
   return (
     <div className="App">
-     
 
-      <HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      />
-      <HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      />
-      <HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      />
-      <HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      /><HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      /><HistoryCard
-        name={"Mohamed Samy"}
-        date={"22 sep 2019 10:45pm"}
-        image={userimg}
-        title={"Watch"}
-        description={"rolecs watch"}
-      />
 
-      {/* <PostCard
-        likes={23}
-        dislikes={2}
-        rate={4.4}
-        image={lamp}
-        fullDescription={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"}
-      /> */}
-      {/* </header> */}
+      <CommentCard
+
+      colord='#09c'
+        comment={commentsData[0].comment}
+        classRate={commentsData[0].classRate}
+        totalRate={commentsData[0].totalRate}
+      />
     </div>
   );
 }
