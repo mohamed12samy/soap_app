@@ -1,6 +1,10 @@
 import React from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
+import Sidebar from './componants/Sidebar/Sidebar.js';
+import Appbar from './componants/Appbar/Appbar.js';
+
+import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg'
 import PostCard from './componants/postCard/postcard.js'
 import CommentCard from './componants/commentCard/commentCard.js';
@@ -32,8 +36,8 @@ function App() {
   ]
 
   return (
+    
     <div className="App">
-
 
       <CommentCard
 
