@@ -9,8 +9,23 @@ import userimg from './assets/images/user.jpg'
 import PostCard from './componants/postCard/postcard.js'
 
 function App() {
+//   handleClick = () =>
+//   ref.current.scrollIntoView({
+//     behavior: 'smooth',
+//     inline: 'end',
+//     block:'nearest'
+//   })
+
+//   const data =[
+//     {
+
+//     }
+//   ]
+
   return (
     <div className="App">
+     
+
       {/* <header className="App-header"> */}
       <Logo />
     <Appbar/>
@@ -22,28 +37,40 @@ function App() {
         title={"Watch"}
         description={"rolecs watch"}
       />
-       <HistoryCard
+      <HistoryCard
         name={"Mohamed Samy"}
         date={"22 sep 2019 10:45pm"}
         image={userimg}
         title={"Watch"}
         description={"rolecs watch"}
       />
-       <HistoryCard
+      <HistoryCard
         name={"Mohamed Samy"}
         date={"22 sep 2019 10:45pm"}
         image={userimg}
         title={"Watch"}
         description={"rolecs watch"}
       />
-       <HistoryCard
+      <HistoryCard
+        name={"Mohamed Samy"}
+        date={"22 sep 2019 10:45pm"}
+        image={userimg}
+        title={"Watch"}
+        description={"rolecs watch"}
+      /><HistoryCard
+        name={"Mohamed Samy"}
+        date={"22 sep 2019 10:45pm"}
+        image={userimg}
+        title={"Watch"}
+        description={"rolecs watch"}
+      /><HistoryCard
         name={"Mohamed Samy"}
         date={"22 sep 2019 10:45pm"}
         image={userimg}
         title={"Watch"}
         description={"rolecs watch"}
       />
-     
+
       {/* <PostCard
         likes={23}
         dislikes={2}
