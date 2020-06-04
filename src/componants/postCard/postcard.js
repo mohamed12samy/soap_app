@@ -27,15 +27,21 @@ PostCard.propTypes = {
 
 
 function PostCard(props) {
+
     const [like, setlike] = useState(0);
     const [dislike, setdislike] = useState(0)
-    console.log(props.style); 
+    console.log(props.style);
     return (
-        < div className = "postCardContainer" style = { props.cardStyle } >
+        < div className="postCardContainer" style={props.cardStyle} >
 
             <div className="postImageContainer">
-                <div className="postCardRate">{props.rate}</div>
-                <img src={props.image ? props.image : ''} style={{ width: '100%', height: '100%' }} />
+                <div className="postCardRate">
+                  
+        
+                        {props.rate}
+                  
+                </div>
+                <div style={{ width: '100%', height: '100%' }}><img src={props.image ? props.image : ''} style={{ width: '100%', height: '100%' }} /></div>
             </div>
             <div className="postFullDescripstion">
                 {props.fullDescription}

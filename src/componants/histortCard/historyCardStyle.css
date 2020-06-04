@@ -1,22 +1,19 @@
 /* @font-face {
     font-family: 'Cairo';
     /* src: local('Cairo'), url(../../assets/fonts/Cairo-Regular) format('ttf'); */
-/* } */
- 
-
-
-.historyCardContainer{
+    /* } */
+    
+    
+    
+    .historyCardContainer{
     width:900px;
-    height:120px;
+    height:120px;  
     background-color: white;
     border-radius: 15px;
     border: 0.5px solid #bcbcbc;
     display: flex;
-    flex-direction: row;
-    
-
+    flex-direction: row;    
 }
-
 
 .historyUserInfoContainer{
     display: flex;
@@ -63,7 +60,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
-   line-height: normal;
+   line-height: 5px;
     display: flex;
     align-items: center;
     
@@ -74,7 +71,7 @@
     font-family: Cairo;
     font-style: normal;
     font-size: 24px;
-    line-height: 25px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     color: #000000;
@@ -83,7 +80,7 @@
 
 .historyViewButton{
     width: 150px;
-    height: 45px;
+    height: 50px;
     background: #FFFFFF;
     border: 0.5px solid #636262;
     box-sizing: border-box;
@@ -91,11 +88,11 @@
     margin-top: 30px;
     align-items: center;
     justify-content: center;
-    padding-top: 5px;
+    transition: all 1s;
     color:black;
 }
 .viewMore{
-    font-family: Cairo;
+    font-family: Cairo-simebold;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -104,21 +101,21 @@
 }
 .historyViewButtonActive{
     width: 150px;
-    height: 45px;
+    height: 50px;
     box-sizing: border-box;
     border-radius: 5px;
     margin-top: 30px;
     align-items: center;
     justify-content: center;
-    padding-top: 5px;
-    transition: all .5s;
+    
+    transition: all 1s;
     background: #247189;
     border: 1px solid #636262;
     color:white;
 }
 .historyDeleteIcon{
     margin-left: 30px;
-    margin-top: 35px;
+    margin-top: 40px;
     /* align-items: center; */
     /* width: 75px; */
     height: 100%;
