@@ -6,46 +6,203 @@ import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg'
+
 import PostCard from './componants/postCard/postcard.js'
-import CommentCard from './componants/commentCard/commentCard.js';
+import ProductItem from './componants/homeCard/ProductItem.js';
 
 function App() {
-  const commentsData = [
+  const userData = [
     {
-      comment: "componants commentCard commentCard.js. ",
-      classRate: 5,
-      totalRate: 43
-    },
-    {
-      comment: "componants commentCard commentCard.js. ",
-      classRate: 4,
-      totalRate: 22
-    }, {
-      comment: "componants commentCard commentCard.js. ",
-      classRate: 3,
-      totalRate: 0
-    }, {
-      comment: "componants commentCard commentCard.js. ",
-      classRate: 2,
-      totalRate: 8
-    }, {
-      comment: "componants commentCard commentCard.js. ",
-      classRate: 1,
-      totalRate: 15
-    },
+      userInfo: {
+        userName: "mohamed samy",
+        userImage: userimg,
+        email:"",
+        posts: [{
+          comments: [
+            {
+              commentMessege: "this is amazing , wow",
+              numberOfRater: 12,
+              classRate: 5
+            },
+            {
+              commentMessege: "this is poor , yuki",
+              numberOfRater: 32,
+              classRate: 2
+            },
+            {
+              commentMessege: "this is bullshit , don't buy it",
+              numberOfRater: 5,
+              classRate: 1
+            },
+            {
+              commentMessege: "this is very good product",
+              numberOfRater: 12,
+              classRate: 4
+            },
+            {
+              commentMessege: "it's normal item , there is more amazing product is other stocks.",
+              numberOfRater: 12,
+              classRate: 3
+            }
+          ],
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
+        },
+        {
+          comments: [
+            {
+              commentMessege: "this is amazing , wow",
+              numberOfRater: 12,
+              classRate: 5
+            },
+            {
+              commentMessege: "this is poor , yuki",
+              numberOfRater: 32,
+              classRate: 2
+            },
+            {
+              commentMessege: "this is bullshit , don't buy it",
+              numberOfRater: 5,
+              classRate: 1
+            },
+            {
+              commentMessege: "this is very good product",
+              numberOfRater: 12,
+              classRate: 4
+            },
+            {
+              commentMessege: "it's normal item , there is more amazing product is other stocks.",
+              numberOfRater: 12,
+              classRate: 3
+            }
+          ],
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
+        },
+        {
+          comments: [
+            {
+              commentMessege: "this is amazing , wow",
+              numberOfRater: 12,
+              classRate: 5
+            },
+            {
+              commentMessege: "this is poor , yuki",
+              numberOfRater: 32,
+              classRate: 2
+            },
+            {
+              commentMessege: "this is bullshit , don't buy it",
+              numberOfRater: 5,
+              classRate: 1
+            },
+            {
+              commentMessege: "this is very good product",
+              numberOfRater: 12,
+              classRate: 4
+            },
+            {
+              commentMessege: "it's normal item , there is more amazing product is other stocks.",
+              numberOfRater: 12,
+              classRate: 3
+            }
+          ],
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
+        },
+        {
+          comments: [
+            {
+              commentMessege: "this is amazing , wow",
+              numberOfRater: 12,
+              classRate: 5
+            },
+            {
+              commentMessege: "this is poor , yuki",
+              numberOfRater: 32,
+              classRate: 2
+            },
+            {
+              commentMessege: "this is bullshit , don't buy it",
+              numberOfRater: 5,
+              classRate: 1
+            },
+            {
+              commentMessege: "this is very good product",
+              numberOfRater: 12,
+              classRate: 4
+            },
+            {
+              commentMessege: "it's normal item , there is more amazing product is other stocks.",
+              numberOfRater: 12,
+              classRate: 3
+            }
+          ],
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
+        },
+
+
+        
+      ]
+
+      }
+    }
+
   ]
 
+
+
   return (
-    
+
     <div className="App">
 
-      <CommentCard
-
-      colord='#09c'
-        comment={commentsData[0].comment}
-        classRate={commentsData[0].classRate}
-        totalRate={commentsData[0].totalRate}
-      />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
     </div>
   );
 }
