@@ -1,0 +1,43 @@
+.appbar{
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 1.5px rgb(209, 209, 209);
+    width: 82.5%;
+    height: 55px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.user_info{
+    width: max-content;
+    height: 55px;
+    text-align: center;
+    margin-left: 14px;
+    padding: 8px;
+    display: flex;
+    text-align: center;
+}
+.user_name{
+    background-color: khaki;
+    position: absolute;
+    left: 6.5%;
+    top: 15.38%;
+    bottom: 21.54%;
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+.searchbar{
+    background-color: brown;
+    display: flex;
+    position: absolute;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: local('Cairo'), url(../fonts/Cairo-SemiBold.ttf) format('truetype');
+  }
