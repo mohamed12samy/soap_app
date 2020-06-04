@@ -10,9 +10,10 @@
     height:120px;
     background-color: white;
     border-radius: 15px;
-    border: 1px solid #bcbcbc;
+    border: 0.5px solid #bcbcbc;
     display: flex;
     flex-direction: row;
+    
 
 }
 
@@ -62,7 +63,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
-   
+   line-height: normal;
     display: flex;
     align-items: center;
     
@@ -84,16 +85,23 @@
     width: 150px;
     height: 45px;
     background: #FFFFFF;
-    border: 1px solid #636262;
+    border: 0.5px solid #636262;
     box-sizing: border-box;
     border-radius: 5px;
     margin-top: 30px;
     align-items: center;
     justify-content: center;
     padding-top: 5px;
-    color:black
+    color:black;
 }
-
+.viewMore{
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
 .historyViewButtonActive{
     width: 150px;
     height: 45px;
@@ -109,8 +117,11 @@
     color:white;
 }
 .historyDeleteIcon{
-margin-left: 30px;
-margin-top: 30px;
+    margin-left: 30px;
+    margin-top: 35px;
+    /* align-items: center; */
+    /* width: 75px; */
+    height: 100%;
 }
 a {
     text-decoration: none; /* no underline */
