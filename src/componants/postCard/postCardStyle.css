@@ -1,0 +1,81 @@
+.postCardContainer{
+    width: 900px;
+    height: fit-content;  
+    height: 538px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 15px 15px;
+    margin-top: 5px;
+    
+
+}
+.postCardRate{
+    position: absolute;
+    right: 20px;
+    top:20px;
+    width: 80px;
+    height: 37.17px;
+    background: #00CF3A;
+    border-radius: 5px;
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    padding-top: 2px;
+    padding-right: 2px;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.postImageContainer{
+    width: 900px;
+    height: 350px;
+    position: relative;
+} 
+.postFullDescripstion{
+    width: 870px;
+    height: 92px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    align-content: flex-end;
+    
+    text-align: left;
+
+}
+.postLikesContainer{
+    width: 120px;
+    justify-content: space-between;
+    display: flex;
+  
+    margin-left: 30px;
+
+}
+.postLikesNumber{
+    flex-direction: row;
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+
+.postlike{
+    display: flex;
+    flex-direction: row;
+}
+.postDislike{
+    display: flex;
+    flex-direction: row;
+}
