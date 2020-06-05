@@ -1,10 +1,19 @@
 .App {
-  
   background-color: #F9F9F9;
   min-height: 120vh;
+}
+.sidebar{
+  /*float: left;
+  position: absolute;*/
+}
+.appbar{
+  /*float: right;*/
+}
+.page_content{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding-top: 100px;
- 
+  position: absolute;
+  left: 25%;
+  top: 12%;
+
 }

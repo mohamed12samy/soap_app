@@ -169,11 +169,7 @@ function App() {
           date: "22 sep 2019 10:45pm",
           image: "",
         },
-
-
-        
       ]
-
       }
     }
 
@@ -185,6 +181,10 @@ function App() {
 
     <div className="App">
 
+    <div className="appbar"><Appbar/></div>
+    <div className="sidebar">    <Sidebar/></div>
+  
+ <div className="page_content">
       <ProductItem
        rate={3.3} 
        likes={32}
@@ -203,6 +203,7 @@ function App() {
        dislikes={12}
       title={"Watch"}
       description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+    </div> 
     </div>
   );
 }
