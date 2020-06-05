@@ -8,6 +8,11 @@
     src: local('Cairo-simebold'), url(../../assets/fonts/Cairo-SemiBold.ttf) format('woff');
     
   }
+  @font-face {
+    font-family: 'Cairo-bold';
+    src: local('Cairo-bold'), url(../../assets/fonts/Cairo-Bold.ttf) format('woff');
+    
+  }
  
 
 .postCardContainer{
@@ -80,7 +85,7 @@
 }
 
 .postLikesContainer{
-    width: 120px;
+    width: 130px;
     justify-content: space-between;
     display: flex;
   
