@@ -44,6 +44,8 @@
     padding-bottom: 0px;
     padding-top: 8px;
     display: flex;
+    flex-direction: row;
+
 }
 .log_out{
     margin-left: 44px;
@@ -53,4 +55,9 @@
 @font-face {
     font-family: 'Cairo';
     src: local('Cairo'), url(../../assets/fonts/Cairo-SemiBold.ttf) format('truetype');
+  }
+
+
+  a{
+      cursor: pointer;
   }

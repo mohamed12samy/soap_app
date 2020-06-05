@@ -9,7 +9,6 @@ import RateIcon from '../../assets/images/svg/RateIcon';
 import TopRated from '../../assets/images/svg/TopRatedIcon';
 import LogOut from '../../assets/images/svg/LogOutIcon';
 
-
 const items = [
     {
         name: 'Home',

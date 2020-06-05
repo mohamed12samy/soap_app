@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
 import Sidebar from './componants/Sidebar/Sidebar.js';
 import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
-import userimg from './assets/images/user.jpg'
+import userimg from './assets/images/user.jpg';
+import SideMenu2 from './componants/sideMenu2/sideMenu2';
 
-import PostCard from './componants/postCard/postcard.js'
-import ProductItem from './componants/homeCard/ProductItem.js';
 
 function App() {
   const userData = [
@@ -183,20 +182,12 @@ function App() {
 
   return (
 
-    <div className="App">
+    <>
+      <div className="App">
+        <SideMenu2 />
+      </div>
 
-      <ProductItem
-        rate={3.3}
-        likes={32}
-        dislikes={12}
-        title={"Watch"}
-        description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} /> <ProductItem
-        rate={3.3}
-        likes={32}
-        dislikes={12}
-        title={"Watch"}
-        description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-    </div>
+    </>
   );
 }
 
