@@ -16,7 +16,7 @@ function App() {
       userInfo: {
         userName: "mohamed samy",
         userImage: userimg,
-        email:"",
+        email: "",
         posts: [{
           comments: [
             {
@@ -171,8 +171,8 @@ function App() {
         },
 
 
-        
-      ]
+
+        ]
 
       }
     }
@@ -186,23 +186,16 @@ function App() {
     <div className="App">
 
       <ProductItem
-       rate={3.3} 
-       likes={32}
-       dislikes={12}
-      title={"Watch"}
-      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-      <ProductItem
-       rate={3.3} 
-       likes={32}
-       dislikes={12}
-      title={"Watch"}
-      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-      <ProductItem
-       rate={3.3} 
-       likes={32}
-       dislikes={12}
-      title={"Watch"}
-      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+        rate={3.3}
+        likes={32}
+        dislikes={12}
+        title={"Watch"}
+        description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} /> <ProductItem
+        rate={3.3}
+        likes={32}
+        dislikes={12}
+        title={"Watch"}
+        description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
     </div>
   );
 }
