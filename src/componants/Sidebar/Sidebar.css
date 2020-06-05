@@ -43,6 +43,9 @@
     padding-left: 20px;
     padding-bottom: 0px;
     padding-top: 8px;
+    display: flex;
+    flex-direction: row;
+
 }
 .log_out{
     margin-left: 44px;

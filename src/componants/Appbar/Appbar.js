@@ -18,7 +18,12 @@ export default function Appbar(){
                 <p className="user_name">Name</p>
             </div></a>
             <div className="searchbar">
-            </div>
+                <input
+                className="searchbar_input"
+                    type="text"
+                    placeholder="Search"
+                />           
+             </div>
         </div>
     );
 }
