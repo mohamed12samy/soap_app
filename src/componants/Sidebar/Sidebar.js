@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Sidebar.css'
-import SOAP from '../../assets/images/svg/logo/SOAP.svg';
+import SOAP from '../../assets/images/svg/logo/SOAP';
 import HomeIcon from '../../assets/images/svg/HomeIcon';
 import PostsIcon from '../../assets/images/svg/PostIcon';
 import AdsIcon from '../../assets/images/svg/AdsIcon';
@@ -47,11 +47,11 @@ export default class Sidebar extends React.Component{
         selectedIndex: index
         
     });
-    };
+};
     render(){
         return(
             <div className="sidebar" >
-                <a href="#" className="logo"> <img  src={SOAP}/> </a>
+                <a href="#" className="logo"><SOAP width="146px" height="43px"/> </a>
                 <ul className="sidebar_items">
                     {items.map((item,index) => (
                         <li key={item.key} className="sidebar_item">

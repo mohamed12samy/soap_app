@@ -8,6 +8,12 @@ import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg';
 import SideMenu2 from './componants/sideMenu2/sideMenu2';
 
+import PostCard from './componants/postCard/postcard.js'
+import ProductItem from './componants/homeCard/ProductItem.js';
+//import SignIn from './componants/signIn/signIn.js';
+import SignIn from './componants/auth/signUp.js';
+
+
 
 function App() {
   const userData = [
@@ -182,12 +188,32 @@ function App() {
 
   return (
 
-    <>
       <div className="App">
-        <SideMenu2 />
-      </div>
 
-    </>
+    {/*<div className="appbar"><Appbar/></div>
+    <div className="sidebar">    <Sidebar/></div>*/} 
+  <SignIn/>
+ {/* <div className="page_content">
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+    </div>  */}
+    </div>
   );
 }
 
