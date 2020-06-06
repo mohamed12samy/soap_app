@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
 import Sidebar from './componants/Sidebar/Sidebar.js';
 import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
-import userimg from './assets/images/user.jpg'
+import userimg from './assets/images/user.jpg';
+import SideMenu2 from './componants/sideMenu2/sideMenu2';
 
 import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
 import SignIn from './componants/signIn/signIn.js';
-
 
 function App() {
   const userData = [
@@ -18,7 +18,7 @@ function App() {
       userInfo: {
         userName: "mohamed samy",
         userImage: userimg,
-        email:"",
+        email: "",
         posts: [{
           comments: [
             {
@@ -171,7 +171,11 @@ function App() {
           date: "22 sep 2019 10:45pm",
           image: "",
         },
-      ]
+
+
+
+        ]
+
       }
     }
 
@@ -181,7 +185,8 @@ function App() {
 
   return (
 
-    <div className="App">
+      <div className="App">
+       
 
     {/*<div className="appbar"><Appbar/></div>
     <div className="sidebar">    <Sidebar/></div>*/} 
@@ -207,6 +212,7 @@ function App() {
       description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
     </div>  */}
     </div>
+
   );
 }
 

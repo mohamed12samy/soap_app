@@ -56,3 +56,8 @@
     font-family: 'Cairo';
     src: local('Cairo'), url(../../assets/fonts/Cairo-SemiBold.ttf) format('truetype');
   }
+
+
+  a{
+      cursor: pointer;
+  }

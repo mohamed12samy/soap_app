@@ -1,0 +1,34 @@
+.slideMenuSelection{
+    /* background-color: crimson; */
+    width:90%;
+    height:8%;
+    margin-top: 2%;
+    margin-left: 6.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .slideMeneSelectionIcon{
+    width:15.128%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+  .slideMeneSelectionText{
+    font-family: Cairo-simebold;
+
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 5vh;
+    /* line-height: 60px; */
+    display: flex;
+    align-items: center;
+    margin-left: 4.22%;
+    color: #BCBCBC;
+  }
+  .active{
+      color: #247189;
+  }
+  .slideMenuSelection:hover{
+    background-color: rgb(235, 235, 235);
+  }
