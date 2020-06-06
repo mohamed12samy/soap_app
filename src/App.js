@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
-import Sidebar from './componants/Sidebar/Sidebar.js';
+import SideMenu from './componants/sideMenu2/sideMenu2';
 import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg';
-import SideMenu2 from './componants/sideMenu2/sideMenu2';
+import ProductItem from './componants/homeCard/ProductItem';
 
 
 function App() {
@@ -184,7 +184,22 @@ function App() {
 
     <>
       <div className="App">
-        <SideMenu2 />
+        <div style={{
+          width: '21.5vw',
+          height: '100%'
+        }}>
+          <SideMenu /></div>
+        <div style={{
+          width: '78.5vw',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <Appbar />
+          <div class="RecommdationSection">
+            <ProductItem />
+          </div>
+        </div>
       </div>
 
     </>

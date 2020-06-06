@@ -5,8 +5,8 @@ import image from '../../assets/images/Capture.PNG';
 import Search from '../../assets/images/svg/searchIcon';
 import ExampleComponent from "react-rounded-image";
 
-export default function Appbar(){
-    return(
+export default function Appbar() {
+    return (
 
         <div className="appbar">
             <a href="#"><div className="user_info">
@@ -19,14 +19,14 @@ export default function Appbar(){
                 <p className="user_name">Name</p>
             </div></a>
             <div className="searchbar">
-                <div className="search_icon"><Search/></div>
+                <div className="search_icon"><Search /></div>
                 <input
-                className="searchbar_input"
+                    className="searchbar_input"
                     type="text"
                     placeholder="Search..."
-                    
-                />           
-             </div>
+
+                />
+            </div>
         </div>
     );
 }
