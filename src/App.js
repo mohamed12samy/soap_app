@@ -12,6 +12,7 @@ import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
 //import SignIn from './componants/signIn/signIn.js';
 import SignIn from './componants/auth/signUp.js';
+import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
 
 
 
@@ -192,7 +193,7 @@ function App() {
 
     {/*<div className="appbar"><Appbar/></div>
     <div className="sidebar">    <Sidebar/></div>*/} 
-  <SignIn/>
+    <AdsPopUp/>
  {/* <div className="page_content">
       <ProductItem
        rate={3.3} 
