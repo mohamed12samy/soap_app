@@ -4,26 +4,86 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
+  /* overflow: hidden; */
   
 }
 
 .RecommdationSection{
   width:93%;
-  height:53.35vh;
+  height:69.35vh;
   margin-left: 42px;
   margin-top: 4.35vh;
   /* background-color: crimson; */
   align-items: center;
   justify-self: center;
+ 
+  /* background-color: violet; */
 }
 
+.recTitle{
+  font-family: Cairo-simebold;
+  font-style: normal;
+  /* font-weight: 600; */
+  font-size: 42px;
+  margin:0px;
+  /* line-height: 79px; */
+  display: flex;
+  align-items: center;
+  color: #293939;
+  }
 
-
-.CategoriesSsction{
+.CategoriesSection{
     height: fit-content;
     width:95%;
     /* background-color: darkmagenta; */
     align-items: center;
     margin-left: 32px;
 
+}
+
+.recommendationListContainer::-webkit-scrollbar {
+  height: 7px;              /* height of horizontal scrollbar ← You're missing this */
+  width: 0px;               /* width of vertical scrollbar */
+  border-radius: 10px;
+}
+/* Track */
+
+ 
+/* Handle */
+.recommendationListContainer::-webkit-scrollbar-thumb {
+  background: #bcbcbc; 
+  border-radius: 10px;
+}
+
+
+.recommendationListContainer{
+  width:95%;
+  list-style-type: none;
+  display: flex;
+  padding-bottom: 1vh;
+  scroll-behavior:smooth;
+  padding-left:10px;
+  overflow: hidden;
+}
+
+.recommendationListContainer:hover{
+  overflow:scroll;
+}
+
+
+.categoryListContainer
+{
+  width:90%;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  /* background-color: brown; */
+  align-items: center;
+}
+.categoryListContainer li{
+  align-items: center;
+  list-style: none;
+  flex:30.333333%;
 }

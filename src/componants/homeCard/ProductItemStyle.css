@@ -1,6 +1,6 @@
 .ProductItemContainer{
     width:19.2298682284041vw;
-    height: 53.2vh;
+    height: 54.2vh;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1.8301610541727673vw;
@@ -64,4 +64,27 @@
     font-size: 2.88vh;
     display: flex;
     text-align: left;
+}
+
+
+
+
+.catShowMore{
+    width:7vw;
+    height:6vh;
+    background-color: #247189;
+    color:white;
+    border-radius: 1vh;
+    margin-left: 11vw;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    /* margin-bottom: 4vh; */
+
+    font-family: Cairo-simebold;
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 18px;
+    line-height: 30px;
 }

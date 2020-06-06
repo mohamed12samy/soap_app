@@ -134,7 +134,322 @@ var recommendationData = [
         commentMessege: "it's normal item , there is more amazing product is other stocks.",
         numberOfRater: 12,
         classRate: 3
+      },
+
+    ],
+
+  },
+  {
+    title: "laptop",
+    description: "laptop is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: labtop,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
       }
+    ],
+
+  },
+  {
+    title: "drown",
+    description: "Black Drown is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: drown,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      }
+    ],
+
+  },
+  {
+    title: "Watch",
+    description: "Black Drown is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: watch,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      }
+    ],
+
+  },
+  {
+    title: "Mug",
+    description: "Camera mug is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: cammug,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      },
+
+    ],
+
+  },
+  {
+    title: "laptop",
+    description: "laptop is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: labtop,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      }
+    ],
+
+  },
+  {
+    title: "drown",
+    description: "Black Drown is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: drown,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      }
+    ],
+
+  },
+  {
+    title: "Watch",
+    description: "Black Drown is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: watch,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      }
+    ],
+
+  },
+  {
+    title: "Mug",
+    description: "Camera mug is simply dummy text of the printing ",
+    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    rate: 3.5,
+    likes: 31,
+    dislikes: 12,
+    platformLogo: "facebook",
+    date: "22 sep 2019 10:45pm",
+    image: cammug,
+    comments: [
+      {
+        commentMessege: "this is amazing , wow",
+        numberOfRater: 12,
+        classRate: 5
+      },
+      {
+        commentMessege: "this is poor , yuki",
+        numberOfRater: 32,
+        classRate: 2
+      },
+      {
+        commentMessege: "this is bullshit , don't buy it",
+        numberOfRater: 5,
+        classRate: 1
+      },
+      {
+        commentMessege: "this is very good product",
+        numberOfRater: 12,
+        classRate: 4
+      },
+      {
+        commentMessege: "it's normal item , there is more amazing product is other stocks.",
+        numberOfRater: 12,
+        classRate: 3
+      },
+
     ],
 
   },
@@ -370,8 +685,8 @@ function App() {
         }}>
           <Appbar />
           <div class="RecommdationSection">
-            {/* <CategoryList /> */}
-            <RecItems/>
+            <h2 className="recTitle">Recommendation</h2>
+            <RecItems />
 
             {/* <CommentCard
               classRate={userData[0].userInfo.posts[0].comments[0].classRate}
@@ -392,9 +707,10 @@ function App() {
             /> */}
             {/* <SignIn /> */}
           </div>
-          <div className="CategoriesSsction">
+          <div className="CategoriesSection">
             <CategoryList />
           </div>
+          <CatItems data={recommendationData} />
 
         </div>
 
@@ -410,6 +726,7 @@ function App() {
 function RecItems() {
   const cards = recommendationData.map((item, index) =>
     <li> <ProductItem
+      category={false}
       description={item.description}
       title={item.title}
       likes={item.likes}
@@ -418,19 +735,29 @@ function RecItems() {
     />
     </li>
   )
-  return <ul style={{
-    listStyleType: 'none',
-    display: 'flex',
-    margin: '0px',
-    padding: '0px',
-    scrollBehavior:'smooth',
-    overflow:'scroll'
-  }}>{cards}</ul>;
+  return <ul className="recommendationListContainer">{cards}</ul>;
 
 }
 
 
+function CatItems(props) {
 
+  const cards = props.data.map((item, index) =>
+    <li> <div style={{ marginTop: '25px' }}>
+      <ProductItem
+        category={true}
+        description={item.description}
+        title={item.title}
+        likes={item.likes}
+        dislikes={item.dislikes}
+        image={item.image}
+      />
+    </div>
+    </li>
+  )
+  return <ul className="categoryListContainer">{cards}</ul>;
+
+}
 
 
 function CategoryList() {
@@ -465,6 +792,7 @@ function CategoryList() {
         <CatButton text={item.name} selected={item.id === activeLink ? item.id : null} />
 
       </a>
+
     </li>);
 
   return <ul style={{
