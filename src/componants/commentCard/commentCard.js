@@ -21,7 +21,7 @@ function CommentCard(props) {
 
             }}>
                 <div className="CommentRateNuberContainer">
-                    <div style={{ position: 'relative',marginTop:'15px' }}>
+                    <div style={{ position: 'relative',marginTop:'2.4vh' }}>
                         <Star />
                         <p className={'commentRate'}>{props.classRate}</p>
                     </div>

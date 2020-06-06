@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Logo from '../../assets/images/svg/logo';
+import Logo from '../../assets/images/svg/logo/SOAP';
 import './sideMenuStyle.css';
 
 

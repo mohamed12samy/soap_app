@@ -6,7 +6,12 @@ import Appbar from './componants/Appbar/Appbar.js';
 
 import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg';
-import ProductItem from './componants/homeCard/ProductItem';
+import CommentCard from './componants/commentCard/commentCard.js'
+import PostCard from './componants/postCard/postcard.js'
+import ProductItem from './componants/homeCard/ProductItem.js';
+//import SignIn from './componants/signIn/signIn.js';
+import SignIn from './componants/auth/signUp.js';
+
 
 
 function App() {
@@ -17,6 +22,15 @@ function App() {
         userImage: userimg,
         email: "",
         posts: [{
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing ",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
           comments: [
             {
               commentMessege: "this is amazing , wow",
@@ -44,17 +58,18 @@ function App() {
               classRate: 3
             }
           ],
-          title: "Rolex Watch",
-          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          rate: 3.5,
-          likes: 31,
-          dislikes: 12,
-          platformLogo: "facebook",
-          date: "22 sep 2019 10:45pm",
-          image: "",
+
         },
         {
+          title: "Rolex Watch",
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          rate: 3.5,
+          likes: 31,
+          dislikes: 12,
+          platformLogo: "facebook",
+          date: "22 sep 2019 10:45pm",
+          image: "",
           comments: [
             {
               commentMessege: "this is amazing , wow",
@@ -82,15 +97,7 @@ function App() {
               classRate: 3
             }
           ],
-          title: "Rolex Watch",
-          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-          fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-          rate: 3.5,
-          likes: 31,
-          dislikes: 12,
-          platformLogo: "facebook",
-          date: "22 sep 2019 10:45pm",
-          image: "",
+
         },
         {
           comments: [
@@ -178,10 +185,9 @@ function App() {
 
   ]
 
-
+  console.log(userData)
 
   return (
-
     <>
       <div className="App">
         <div style={{
@@ -197,12 +203,37 @@ function App() {
         }}>
           <Appbar />
           <div class="RecommdationSection">
-            <ProductItem />
+            <ProductItem 
+            description={userData[0].userInfo.posts[0].description}
+            title={userData[0].userInfo.posts[0].title}
+            likes={userData[0].userInfo.posts[0].likes}
+            dislikes={userData[0].userInfo.posts[0].dislikes}
+            />
+
+            {/* <CommentCard
+              classRate={userData[0].userInfo.posts[0].comments[0].classRate}
+              colord={"#51A335"}
+              comment={userData[0].userInfo.posts[0].comments[0].commentMessege}
+              totalRate={userData[0].userInfo.posts[0].comments[0].numberOfRater}
+
+            /> */}
+            <HistoryCard
+              date={userData[0].userInfo.posts[0].date}
+              rate={userData[0].userInfo.posts[0].rate}
+              name={userData[0].userInfo.userName}
+              title={userData[0].userInfo.posts[0].title}
+              image={userData[0].userInfo.userImage}
+              likes={userData[0].userInfo.posts[0].likes}
+              dislikes={userData[0].userInfo.posts[0].dislikes}
+
+            />
+            {/* <SignIn /> */}
           </div>
         </div>
       </div>
 
     </>
+
   );
 }
 
