@@ -9,6 +9,8 @@ import userimg from './assets/images/user.jpg'
 
 import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
+import SignIn from './componants/signIn/signIn.js';
+
 
 function App() {
   const userData = [
@@ -181,10 +183,10 @@ function App() {
 
     <div className="App">
 
-    <div className="appbar"><Appbar/></div>
-    <div className="sidebar">    <Sidebar/></div>
-  
- <div className="page_content">
+    {/*<div className="appbar"><Appbar/></div>
+    <div className="sidebar">    <Sidebar/></div>*/} 
+  <SignIn/>
+ {/* <div className="page_content">
       <ProductItem
        rate={3.3} 
        likes={32}
@@ -203,7 +205,7 @@ function App() {
        dislikes={12}
       title={"Watch"}
       description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-    </div> 
+    </div>  */}
     </div>
   );
 }
