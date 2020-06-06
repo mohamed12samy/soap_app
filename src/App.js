@@ -9,7 +9,8 @@ import userimg from './assets/images/user.jpg'
 
 import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
-import SignIn from './componants/signIn/signIn.js';
+//import SignIn from './componants/signIn/signIn.js';
+import SignIn from './componants/signUp/signUp.js';
 
 
 function App() {
