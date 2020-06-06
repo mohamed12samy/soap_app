@@ -1,0 +1,11 @@
+.slideMenu2Logo{
+    margin-left: 1.38vw;
+    margin-top: .78vw;
+    position: relative;
+  }
+
+  @font-face {
+    font-family: 'Cairo';
+    src: local('Cairo'), url(../../assets/fonts/Cairo-Regular.ttf) format('woff');
+    
+  }
