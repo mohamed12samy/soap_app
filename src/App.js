@@ -193,7 +193,8 @@ function App() {
 
     {/*<div className="appbar"><Appbar/></div>
     <div className="sidebar">    <Sidebar/></div>*/} 
-    <AdsPopUp/>
+    <HistoryCard/>
+
  {/* <div className="page_content">
       <ProductItem
        rate={3.3} 

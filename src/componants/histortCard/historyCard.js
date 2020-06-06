@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import './historyCardStyle.css';
 import PropTypes from 'prop-types';
 import DeleteIcon from "../../assets/images/svg/delete";
+import AddButton from "../../assets/images/svg/addButton";
 import PostCard from '../postCard/postcard';
-import lamp from '../../assets/images/lamp.jpg'
+import lamp from '../../assets/images/lamp.jpg';
+import AdPopUp from '../adsPop_up/adsPopUp';
+
+
 HistoryCard.propTypes = {
 
     name: PropTypes.string,
@@ -19,6 +23,7 @@ HistoryCard.propTypes = {
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
     const [deleted, setDelet] = useState(false);
+    const [showPopup, showAdPopup] = useState(false);
 
     return (
         <>
@@ -76,6 +81,13 @@ function HistoryCard(props) {
 
                     />}</div>
                 </div>}
+
+                
+                <div className="add_button"
+                    onClick={!showPopup? () => showAdPopup(!showPopup): ''}
+                ><AddButton  /></div>
+
+                 <div className="popup" style={{ display: showPopup === false ? "none": '' }}> <AdPopUp closePopup={() => showAdPopup(!showPopup)} /></div>
         </>
     );
 

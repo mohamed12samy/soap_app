@@ -176,9 +176,11 @@ input, .input_description{
     margin-top: 4.5vh;
     height: 12vh;
     border-top: 0.4vh solid rgba(151, 151, 151, 0.25);
-    
+    display: block;
+
 }
 .footer_content{
+    display: block;
     margin: 2.5vh;
     text-align: right;
 }
