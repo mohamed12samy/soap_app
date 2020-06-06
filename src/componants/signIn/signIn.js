@@ -107,6 +107,7 @@ export default class SignIn extends React.Component{
                         <input type="submit" className="login_button" value=" Log in" />
                     </div>
                 </form>
+                <span className="go_to_signup">have no account yet? <a href="#">Sign up</a></span>
         </div>
       );
     }

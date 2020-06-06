@@ -85,3 +85,11 @@
     display: flex;
     margin-left: 6vw;
 }
+.go_to_signup{
+    font-size: 2vh;
+    margin-left: 9vw;
+    color: #969696;
+   
+}.go_to_signup a{
+    color:#247189;
+}
