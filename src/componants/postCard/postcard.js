@@ -5,15 +5,6 @@ import PropTypes from 'prop-types';
 import Like from "../../assets/images/svg/like.js";
 import DisLike from "../../assets/images/svg/dislike.js";
 
-
-
-
-
-
-
-
-
-
 PostCard.propTypes = {
     fullDescription: PropTypes.string,
     image: PropTypes.string,
@@ -36,10 +27,10 @@ function PostCard(props) {
 
             <div className="postImageContainer">
                 <div className="postCardRate">
-                  
-        
+
+                    <span style={{ textAlign: 'center' }}>
                         {props.rate}
-                  
+                    </span>
                 </div>
                 <div style={{ width: '100%', height: '100%' }}><img src={props.image ? props.image : ''} style={{ width: '100%', height: '100%' }} /></div>
             </div>
@@ -54,10 +45,9 @@ function PostCard(props) {
 
 
                 </div>
-                <div className="postDislike" onClick={() => { setdislike(!dislike, setlike(0)) }}>
-
-                    <div style={{ marginTop: '10px' }}> <DisLike fill={dislike ? "red" : 'gray'} /></div>
-                    <p className="postLikesNumber">{dislike && !like ? props.dislikes + 1 : props.dislikes}</p>
+                <div className="postlike" onClick={() => { setdislike(!dislike, setlike(0)) }}>
+                <div style={{ marginTop: '1.6vh' }}> <DisLike fill={dislike ? "red" : 'gray'} /></div>
+                <p className="postLikesNumber">{dislike && !like ? props.dislikes + 1 : props.dislikes}</p>
 
                 </div>
             </div>

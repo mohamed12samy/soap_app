@@ -1,63 +1,64 @@
 .commentCradContainer{
     border-left-color: #51A335;
-    border-left-width: 10px;
+    border-left-width: 0.7320644216691069vw;
     border: 1px solid #51A335; 
-    width: 410px;
-    height: 120px;
+    width: 30.01464128843338vw;
+    height: 19.2vh;
     background: #FFFFFF;
     /* */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 15px 15px 0px;
-    border-left-width: 10px;
+    border-radius: 0px 1.0980966325036603vw 1.0980966325036603vw 0px;
+    border-left-width: 0.7320644216691069vw;
     display: flex;
     height: fit-content;
+    transition: all 0.5s;
     flex-direction: row;
 }
 .commentRate{
-    top: -13px;
-    right: 23.6px;
+    top: -2.08vh;
+    left: 1.29276720351390922vw;
     position: absolute;
     font-family: Cairo;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 34px;
+    font-size: 1.3177159590043923vw;
+    line-height: 5.44vh;
     display: flex;
     align-items: center;
 }
 .CommentRateNuberContainer{
-    width: 60px;
+    width: 4.392386530014641vw;
     height: auto;
     border-right-color: #bcbcbc;
     border-right-style: solid;
-    border-right-width: 1.5px;
+    border-right-width: 0.10980966325036604vw;
 }
 .commentTotalRateNumber{
     font-family: Cairo;
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
-    line-height: 10px;
+    font-size: 1.9033674963396778vw;
+    line-height: 1.6vh;
     display: flex;
     align-items: center;
     color: #000000;
     text-align: center;
-    margin-left: 15px;
-    margin-top: 15px;
+    margin-left: 1.0980966325036603vw;
+    margin-top: 2.4vh;
     
 }
 .commentMessege{
-    width:320px;
+    width:23.42606149341142vw;
     
     font-family: Cairo;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.7569546120058566vw;
     display: flex;
     text-align: left;
-    line-height: 30px;
-    margin-left: 15px;
-    margin-top: 15px;
+    line-height: 4.8vh;
+    margin-left: 1.0980966325036603vw;
+    margin-top: 2.4vh;
    
     /* overflow: scroll; */
     color: #000000;   

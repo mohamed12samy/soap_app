@@ -1,0 +1,25 @@
+.catButton{
+    width: 16.594436310395317vw;
+    height: 9vh;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1.0980966325036603vw;  
+    align-items: center;
+    text-align: center;
+    /* justify-content:center;  */
+    margin-top: 50px;
+    margin-right: 1.0980966325036603vw;
+    color: #636262;
+  
+  }
+  .catButtonText{
+    font-family: Cairo-simebold;
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 3.074670571010249vw;
+    line-height: 9vh;
+    text-align: center;
+    font-size: 5.6vh;
+  
+   
+  }

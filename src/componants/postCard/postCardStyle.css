@@ -16,16 +16,17 @@
  
 
 .postCardContainer{
-    width: 900px;
+    width: 65.88579795021963vw;
     height: fit-content;  
-    height: 510px;
+    height: 87.6vh;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 15px 15px;
-    margin-top: 5px;
+    border-radius: 0px 0px 2.4vh 2.4vh;
+    margin-top: 0.8vh;
     animation-name: Postcard;
     overflow: hidden;
     animation-duration: 2s;
+    padding-bottom: 1vh;
 
 }
 
@@ -36,48 +37,52 @@
    }
    to{
     overflow-y: hidden;
-	max-height: 510px; /* approximate max height */
+    max-height: 87.6vh;
 	transition-property: all;
 	transition-duration: 2s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
    }
   }
 
-
+a{
+    cursor: pointer;
+}
 
 .postCardRate{
     position: absolute;
-    right: 20px;
-    top:20px;
-    width: 80px;
-    height: 37.17px;
+    right: 1.4641288433382138vw;
+    top:3.2vh;
+    width: 5.856515373352855vw;
+    height: 5.9472vh;
     background: #00CF3A;
-    border-radius: 5px;
+    border-radius: 0.8vh;
     font-family: Cairo;
-    line-height: 35px;
-    font-size: 28px;
+    line-height: 5.6vh;
+    font-size: 2.049780380673499vw;
     color: #FFFFFF;
+    align-items: center;
+    text-align: center;
 }
 
 .postImageContainer{
-    width: 900px;
-    height: 350px;
+    width: 65.88579795021963vw;
+    height: 65vh;
     position: relative; 
      transition: all 0.5s;
 
 } 
 .postFullDescripstion{
     transition: all 0.5s;
-    width: 870px;
-    height: 92px;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 63.6896046852123vw;
+    height: 14.72vh;
+    margin-top: 2.4vh;
+    margin-left: 1.0980966325036603vw;
+    margin-right: 1.0980966325036603vw;
     font-family: Cairo;
-    line-height: 25px;
+    line-height: 2vw;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 1.3177159590043923vw;
     align-content: flex-end;
     text-align: left;
    
@@ -85,11 +90,12 @@
 }
 
 .postLikesContainer{
-    width: 130px;
+    width: 12.51683748169839vw;
     justify-content: space-between;
     display: flex;
-  
-    margin-left: 30px;
+    height: fit-content;
+    margin-left: 2.1961932650073206vw;
+    padding-bottom: .8vh;
 
 }
 .postLikesNumber{
@@ -97,20 +103,23 @@
     font-family: Cairo-simebold;
     font-style: normal;
     /* font-weight: 600; */
-    font-size: 18px;
+    font-size: 1.3177159590043923vw;
     align-items: center;
     margin: 0;
     padding: 0;
 
-    margin-left: 5px;
+    margin-left: 0.36603221083455345vw;
 }
 
 
 .postlike{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+    width:100%;
+    height: 100%;
 }
-.postDislike{
+/* .postDislike{
     display: flex;
     flex-direction: row;
-}
+} */

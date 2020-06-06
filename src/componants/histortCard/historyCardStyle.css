@@ -6,10 +6,10 @@
     
     
     .historyCardContainer{
-    width:900px;
-    height:120px;  
+    width:65.88579795021963vw;
+    height:19.2vh;  
     background-color: white;
-    border-radius: 15px;
+    border-radius: 1.0980966325036603vw;
     border: 0.5px solid #bcbcbc;
     display: flex;
     flex-direction: row;    
@@ -21,17 +21,17 @@
 }
 
 .historyUserImage{
-    width:70px;
-    height:70px;
-    border-radius: 35px;
-    margin-left:15px;
-    margin-top: 25px;
+    width:11.2vh;
+    height:11.2vh;
+    border-radius: 5.6vh;
+    margin-left:1.0980966325036603vw;
+    margin-top: 4vh;
 }
 .historyUserInfo{
-    height: 67px;
-    width:247px;
-    margin-left: 15px;
-    margin-top: 30px;
+    height: 10.72vh;
+    width:18.08199121522694vw;
+    margin-left: 1.0980966325036603vw;
+    margin-top: 4.8vh;
 
 
 }
@@ -40,8 +40,8 @@
     font-family: Cairo;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
-    margin-bottom:5px ;
+    font-size: 3.52vh;
+    margin-bottom:.8vh ;
     display: flex;
     align-items: center;
     color: black;
@@ -49,18 +49,18 @@
 }
 
 .historyPostInfo{
-    width: 280px;
-    height: 77px;
-    margin-left: 30px;
-    margin-top: 30px;
+    width: 20.5vw;
+    height: 12.32vh;
+    margin-left: 2.2vw;
+    margin-top: 4.8vh;
 }
 
 .historyPostDate{
     font-family: Cairo;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
-   line-height: 5px;
+    font-size: 3.52vh;
+   line-height: 0.8vh;
     display: flex;
     align-items: center;
     
@@ -70,8 +70,8 @@
 .historyPostDetails{
     font-family: Cairo;
     font-style: normal;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 3.64vh;
+    line-height: 4.8vh;
     display: flex;
     align-items: center;
     color: #000000;
@@ -79,13 +79,13 @@
 }
 
 .historyViewButton{
-    width: 150px;
-    height: 50px;
+    width: 10.99vw;
+    height: 8vh;
     background: #FFFFFF;
     border: 0.5px solid #636262;
     box-sizing: border-box;
-    border-radius: 5px;
-    margin-top: 30px;
+    border-radius: 0.8vh;
+    margin-top: 4.8vh;
     align-items: center;
     justify-content: center;
     transition: all 1s;
@@ -95,16 +95,17 @@
     font-family: Cairo-simebold;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    text-align: center;
+    font-size: 3.84vh;
     margin: 0;
     padding: 0;
 }
 .historyViewButtonActive{
-    width: 150px;
-    height: 50px;
+    width: 10.99vw;
+    height: 8vh;
     box-sizing: border-box;
-    border-radius: 5px;
-    margin-top: 30px;
+    border-radius: 0.8vh;
+    margin-top: 4.8vh;
     align-items: center;
     justify-content: center;
     
@@ -114,8 +115,8 @@
     color:white;
 }
 .historyDeleteIcon{
-    margin-left: 30px;
-    margin-top: 40px;
+    margin-left: 2.2vw;
+    margin-top: 6.4vh;
     /* align-items: center; */
     /* width: 75px; */
     height: 100%;
