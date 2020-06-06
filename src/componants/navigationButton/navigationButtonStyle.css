@@ -15,11 +15,11 @@
     justify-content: center;
   }
   .slideMeneSelectionText{
-    font-family: Cairo-simebold;
+    font-family: Cairo;
 
     font-style: normal;
-    /* font-weight: 600; */
-    font-size: 5vh;
+    /* font-weight: 400; */
+    font-size: 28px;
     /* line-height: 60px; */
     display: flex;
     align-items: center;
