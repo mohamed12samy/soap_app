@@ -23,7 +23,7 @@ function ProductItem(props) {
         <>
             <a onClick={() => { }}>
                 <div className={"ProductItemContainer"}  >
-                    <div className="productImageContainer" style={{ backgroundImage: `url(${drown})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}>
+                    <div className="productImageContainer" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}>
                         {/* <img src={drown} style={{ width: '100%', height: '100%', borderRadius: '25px 25px 0px 0px' }} /> */}
                         {/* <div className="productItemRate">{props.rate}</div> */}
 
@@ -43,7 +43,7 @@ function ProductItem(props) {
 
                         </div>
                         <div className="postlike" onClick={() => { }}>
-                            <div style={{ marginTop:'1.6vh'}}>
+                            <div style={{ marginTop:'1.3vh'}}>
                                 <DisLike fill={"red"} />
                             </div>
                             <p className="postLikesNumber">{props.dislikes}</p>

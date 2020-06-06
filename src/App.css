@@ -4,12 +4,26 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
+  
 }
 
 .RecommdationSection{
   width:93%;
   height:53.35vh;
-  margin-left: 3.5%;
+  margin-left: 42px;
   margin-top: 4.35vh;
-  background-color: crimson;
+  /* background-color: crimson; */
+  align-items: center;
+  justify-self: center;
+}
+
+
+
+.CategoriesSsction{
+    height: fit-content;
+    width:95%;
+    /* background-color: darkmagenta; */
+    align-items: center;
+    margin-left: 32px;
+
 }
