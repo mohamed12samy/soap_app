@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './signUp.css'
+import './auth.css'
 import SOAP from '../../assets/images/svg/logo/SOAP';
 import Eye from '../../assets/images/svg/eye';
 
@@ -12,16 +12,11 @@ export default class SignIn extends React.Component{
         super(props);
         this.state = {
             toggle: false,
-            email: null,
-            name:null,
+            username: null,
             password: null,
-            confirm_password:null,
             errors: {
-                email:'required',
-                name:'required',
+                username: 'required',
                 password: 'required',
-                confirm_password:'required',
-                length:0,
             },
             showError: false
         };
@@ -44,35 +39,22 @@ export default class SignIn extends React.Component{
         event.preventDefault();
         const { name, value } = event.target;
         let errors = this.state.errors;
-
-        var password_check =  RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/); 
-        var email_check = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-
+        var passw=  RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/);
         switch (name) {
-          case 'name': 
-            errors.name = 
+          case 'username': 
+            errors.username = 
               value.length < 5
-                ? 'Name too short'
+                ? 'username too short'
                 : '';
             break;
-        case 'email':
-                errors.email = 
-                email_check.test(value)
-                ? '': 'Email is not valid!';
-                break;
+          
           case 'password':
             errors.password = 
               value.length < 8
                 ? 'Password must be at least 8 characters'
-                : password_check.test(value) 
+                : passw.test(value) 
                 ? '':'password must contain atleast uppercase character and a number';
             break;
-            case 'confirm_password':
-                errors.confirm_password = 
-                  value === this.state.password
-                    ? ''
-                    : "password don't match";
-                break;
             default:
             break;
         }
@@ -95,24 +77,17 @@ export default class SignIn extends React.Component{
 
     render(){
         return(
-            <div className="sign_up_container">
+            <div className="sign_in_container">
               <div className="logo"><SOAP width="6vW" height="10vh"/></div>
             
                 <form onSubmit={this.validateForm} >
                     <div className="content_container">
-                        <span className="signup">Sign up</span>
-                        <input className="form_input" type="email" placeholder="email"
-                            name="email"
+                        <span className="signin">Sign in</span>
+                        <input className="form_input" type="text" placeholder="username/email"
+                            name="username"
                             onChange={this.handleChange}
                         />
-                        <span className="error_message">{this.state.showError?this.state.errors.email:''}</span>
-                        
-                        <input className="form_input" type="text" placeholder="username"
-                            name="name"
-                            onChange={this.handleChange}
-                        />
-                        <span className="error_message">{this.state.showError?this.state.errors.name:''}</span>
-                            
+                        <span className="error_message">{this.state.showError?this.state.errors.username:''}</span>    
                         <div >
                             <input className="form_input"                           
                                 name="password"
@@ -120,29 +95,19 @@ export default class SignIn extends React.Component{
                                 type={this.state.toggle ? "text" : "password"} 
                                 placeholder="password"
                             />    
-                            <div className="toggle_eye" 
-                                onClick={event => this.handleEyeToggle(event)}
-                                style={{bottom:  this.state.showError ? "19.5vh" :'' }}
+                            <div className="toggle_eye" onClick={event => this.handleEyeToggle(event)}
+                                style={{bottom:  this.state.showError? "10.5vh" :'' }}
                             >
                                  {/* <div style={{display:"block"}}>  */}
                                 <Eye toggle={this.state.toggle? true: false} />{/*</div>*/}
                             </div>
                         </div>
                         <span className="error_message">{this.state.showError?this.state.errors.password:''}</span>   
-                        
-                        <input className="form_input"
-                                type="password"                           
-                                name="confirm_password"
-                                onChange={this.handleChange}
-                                placeholder="confirm password"
-                            />    
-                        <span className="error_message">{this.state.showError && this.state.errors.password ===''
-                            ?this.state.errors.confirm_password:''}</span>   
-                        
-                        <input type="submit" className="login_button" value=" Sign up" />
+
+                        <input type="submit" className="login_button" value=" Log in" />
                     </div>
                 </form>
-                <span className="go_to_signin">already have account? <a href="#">Log in</a></span>
+                <span className="go_to_signup">have no account yet? <a href="#">Sign up</a></span>
         </div>
       );
     }
