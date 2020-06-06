@@ -137,3 +137,25 @@ a.nostyle:visited {
     color: inherit;
     cursor: auto;
 }
+
+.add_button{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 6vh;
+    right: 6vw;
+    cursor: pointer;
+}
+.popup{
+    position: absolute;
+    right: 25%;
+    left: 30%;
+    top: 0%;
+    animation-name: popupAnimation;
+    animation-duration: 2s;  
+}
+
+@keyframes popupAnimation {
+    from {top: -150vh; opacity: 1}
+    to {top: 0; opacity: 1}
+  }

@@ -11,6 +11,7 @@ import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
 //import SignIn from './componants/signIn/signIn.js';
 import SignIn from './componants/auth/signUp.js';
+import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
 import CatButton from './componants/catButton/catButton';
 
 
@@ -495,7 +496,6 @@ var recommendationData = [
 ];
 
 
-
 function App() {
   var userData = [
     {
@@ -688,6 +688,23 @@ function App() {
             <h2 className="recTitle">Recommendation</h2>
             <RecItems />
 
+    {/*<div className="appbar"><Appbar/></div>
+    <div className="sidebar">    <Sidebar/></div>*/} 
+    //<HistoryCard/>
+
+ {/* <div className="page_content">
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
+      <ProductItem
+       rate={3.3} 
+       likes={32}
+       dislikes={12}
+      title={"Watch"}
+      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
             {/* <CommentCard
               classRate={userData[0].userInfo.posts[0].comments[0].classRate}
               colord={"#51A335"}
