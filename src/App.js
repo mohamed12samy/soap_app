@@ -20,7 +20,7 @@ import lamp from './assets/images/lamp.jpg';
 import watch from './assets/images/watch1.jpg';
 import labtop from './assets/images/labtop.jpg';
 import drown from './assets/images/drown.jpg';
-
+import Profile from './componants/profile/profile'
 var recommendationData = [
   {
     title: "drown",
@@ -671,7 +671,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+     <div className="App">
         <div style={{
           width: '21.5vw',
           height: '100%'
@@ -684,56 +684,9 @@ function App() {
           flexDirection: 'column'
         }}>
           <Appbar />
-          <div class="RecommdationSection">
-            <h2 className="recTitle">Recommendation</h2>
-            <RecItems />
+          <Profile/></div>
 
-    {/*<div className="appbar"><Appbar/></div>
-    <div className="sidebar">    <Sidebar/></div>*/} 
-    //<HistoryCard/>
-
- {/* <div className="page_content">
-      <ProductItem
-       rate={3.3} 
-       likes={32}
-       dislikes={12}
-      title={"Watch"}
-      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-      <ProductItem
-       rate={3.3} 
-       likes={32}
-       dislikes={12}
-      title={"Watch"}
-      description={"Lorem Ipsum is simply dummy text of the printing and typesetting industry"} />
-            {/* <CommentCard
-              classRate={userData[0].userInfo.posts[0].comments[0].classRate}
-              colord={"#51A335"}
-              comment={userData[0].userInfo.posts[0].comments[0].commentMessege}
-              totalRate={userData[0].userInfo.posts[0].comments[0].numberOfRater}
-              
-            /> */}
-            {/* <HistoryCard
-              date={userData[0].userInfo.posts[0].date}
-              rate={userData[0].userInfo.posts[0].rate}
-              name={userData[0].userInfo.userName}
-              title={userData[0].userInfo.posts[0].title}
-              image={userData[0].userInfo.userImage}
-              likes={userData[0].userInfo.posts[0].likes}
-              dislikes={userData[0].userInfo.posts[0].dislikes}
-              
-            /> */}
-            {/* <SignIn /> */}
-          </div>
-          <div className="CategoriesSection">
-            <CategoryList />
-          </div>
-          <CatItems data={recommendationData} />
-
-        </div>
-
-
-      </div>
-
+</div>
     </>
 
   );

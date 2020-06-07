@@ -7,10 +7,6 @@ import Arrow from '../../assets/images/svg/arrow'
 
 
 
-
-
-
-
 const items = [
     {
         name: 'movies'
