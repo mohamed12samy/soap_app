@@ -1,0 +1,135 @@
+.RecommdationSection{
+    width:93%;
+    height:69.35vh;
+    margin-left: 3.074670571010249vw;
+    margin-top: 4.35vh;
+    /* background-color: crimson; */
+    align-items: center;
+    justify-self: center;
+   
+    /* background-color: violet; */
+  }
+  
+  .recTitle{
+    font-family: Cairo-simebold;
+    font-style: normal;
+    /* font-weight: 600; */
+    font-size: 6.72vh;
+    margin:0px;
+    /* line-height: 79px; */
+    display: flex;
+    align-items: center;
+    color: #293939;
+    }
+  
+  .CategoriesSection{
+      height: fit-content;
+      width:95%;
+      /* background-color: darkmagenta; */
+      align-items: center;
+      margin-left: 2.342606149341142vw;
+  
+  }
+  
+  
+  
+  .recommendationListContainer::-webkit-scrollbar {
+    height: 7px;              /* height of horizontal scrollbar ← You're missing this */
+    width: 0px;               /* width of vertical scrollbar */
+    border-radius: 10px;
+  }
+  /* Track */
+  
+   
+  /* Handle */
+  .recommendationListContainer::-webkit-scrollbar-thumb {
+    background: #247189; 
+    border-radius: 10px;
+  }
+  
+  
+  .recommendationListContainer{
+    width:95%;
+    list-style-type: none;
+    display: flex;
+    padding-bottom: 1vh;
+    scroll-behavior:smooth;
+    /* padding-left:10px; */
+    overflow: hidden;
+    
+  }
+  
+  .recommendationListContainer:hover{
+    overflow:scroll;
+  }
+  
+  
+  .categoryListContainer
+  {
+    width:90%;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0px; 
+    padding: 0px;
+    align-items: center;
+   
+  }
+  .categoryListContainer li{
+    /* align-items: center; */
+    list-style: none;
+    flex-basis: 30%;
+  }
+  
+  
+  body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  
+  body::-webkit-scrollbar {
+                /* height of horizontal scrollbar ← You're missing this */
+    width: 7px;               /* width of vertical scrollbar */
+    border-radius: 10px;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background: #247189; 
+    border-radius: 10px;
+  }
+.ButtonsList{
+    
+        list-style-type: none;
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        overflow-x:scroll;
+        overflow-y:hidden;
+        padding-bottom:10px;
+        width:94%
+}
+
+.ButtonsList::-webkit-scrollbar {
+height: 0.000000001px;        /* width of vertical scrollbar */
+
+}
+
+.ButtonsList::-webkit-scrollbar-track {
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+  
+ .ButtonsList::-webkit-scrollbar:hover {
+    background: #247189; 
+    border-radius: 10px;
+    
+    
+}

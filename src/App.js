@@ -14,7 +14,7 @@ import SignIn from './componants/auth/signUp.js';
 import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
 import CatButton from './componants/catButton/catButton';
 
-
+import HomePage from './screens/home/homePage'
 import cammug from './assets/images/cammug.jpg';
 import lamp from './assets/images/lamp.jpg';
 import watch from './assets/images/watch1.jpg';
@@ -671,107 +671,12 @@ function App() {
 
   return (
     <>
-     <div className="App">
-        <div style={{
-          width: '21.5vw',
-          height: '100%'
-        }}>
-          <SideMenu /></div>
-        <div style={{
-          width: '78.5vw',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column'
-        }}>
-          <Appbar />
-          <AdsPopUp/></div>
-
-</div>
+     <HomePage />
     </>
 
   );
 }
 
-
-function RecItems() {
-  const cards = recommendationData.map((item, index) =>
-    <li> <ProductItem
-      category={false}
-      description={item.description}
-      title={item.title}
-      likes={item.likes}
-      dislikes={item.dislikes}
-      image={item.image}
-    />
-    </li>
-  )
-  return <ul className="recommendationListContainer">{cards}</ul>;
-
-}
-
-
-function CatItems(props) {
-
-  const cards = props.data.map((item, index) =>
-    <li> <div style={{ marginTop: '25px' }}>
-      <ProductItem
-        category={true}
-        description={item.description}
-        title={item.title}
-        likes={item.likes}
-        dislikes={item.dislikes}
-        image={item.image}
-      />
-    </div>
-    </li>
-  )
-  return <ul className="categoryListContainer">{cards}</ul>;
-
-}
-
-
-function CategoryList() {
-  // const categories = [{text:"Products",selected:1}, {text:"Products",selected:2}, {text:"Products",selected:3}, {text:"Products",selected:4}];
-  const [activeLink, setacive] = useState(1)
-  const categories = [
-    {
-      id: 1,
-      name: "Movies",
-
-    },
-    {
-      id: 2,
-      name: "Products",
-
-    },
-    {
-      id: 3,
-      name: "Games",
-
-    },
-    {
-      id: 4,
-      name: "Others",
-
-    }
-  ];
-
-  const listItems = categories.map((item, index) =>
-    <li >
-      <a onClick={() => { setacive(item.id) }}>
-        <CatButton text={item.name} selected={item.id === activeLink ? item.id : null} />
-
-      </a>
-
-    </li>);
-
-  return <ul style={{
-    listStyleType: 'none',
-    display: 'flex',
-    margin: '0px',
-    padding: '0px'
-  }}>{listItems}</ul>;
-}
 
 
 export default App;
