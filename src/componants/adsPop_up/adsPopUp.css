@@ -87,6 +87,22 @@ input, .input_description{
     font-size: 3.5vh;
     font-weight: 400;
 }
+.image_view, .image_view img{
+    height: 22vh;
+    width: 18.5vw;
+    border-radius: 1.2vh;
+    padding: 0%;
+    position: absolute;
+    left: 0%;
+    margin-left: .77vw;
+    bottom: 18%;
+}
+.discard_icon{
+    position: absolute;
+    bottom: 93%;
+    left: 85%;
+    cursor: pointer;
+}
 .right_menu{
     margin-top: 2.5vh;
     margin-right: 1.5vw;
@@ -203,6 +219,14 @@ button{
 }
 .cancel_button{
     background-color: #DF2121;
+}
+.filetype{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;   
 }
 @font-face {
     font-family: 'Aclonica';

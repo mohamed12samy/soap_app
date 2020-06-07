@@ -4,6 +4,8 @@ import SOAP from '../../assets/images/svg/logo/SOAP';
 import './adsPopUp.css'
 import Upload from '../../assets/images/svg/upload'
 import Arrow from '../../assets/images/svg/arrow'
+import Discard from '../../assets/images/svg/discard'
+import image from '../../assets/images/Capture.jpg';
 
 
 
@@ -31,11 +33,13 @@ export default class AdsPopUp extends React.Component{
         super(props);
         this.state = {
            displayMenu: false,
-           selectedIndex: -1
-
+           selectedIndex: -1,
+           selectedImage: null,
       }
       this.handleMenuAppearance = this.handleMenuAppearance.bind(this);
       this.selecteMenu = this.selecteMenu.bind(this);
+      this.fileChangedHandler = this.fileChangedHandler.bind(this);
+      this.discardImage = this.discardImage.bind(this);
     }
     
     handleMenuAppearance=(event)=>{
@@ -48,6 +52,15 @@ export default class AdsPopUp extends React.Component{
             displayMenu: false
         });
     }
+
+    fileChangedHandler=(event)=>{
+        const file = URL.createObjectURL(event.target.files[0]);
+        this.setState({selectedImage: file});
+    }
+    discardImage=(event)=>{
+        this.setState({selectedImage: null});
+    }
+
     render(){
       
         return(
@@ -64,8 +77,14 @@ export default class AdsPopUp extends React.Component{
                         <textarea className="input_description" type="text" placeholder="description..."
                                     name="description" />
                         <div className="image_area">
-                            <div className="upload_icon"><Upload/></div>
+                            
+                            <label className="upload_icon" for="image_pick">
+                                <Upload/> <input type="file" accept="image/*" className="filetype" id="image_pick" onChange={this.fileChangedHandler}/></label>
                             <span>drag and drop image</span>
+                            <div className="image_view" style={{display: this.state.selectedImage === null? "none":'' }}>
+                                <img src ={this.state.selectedImage}/>
+                                <div className="discard_icon" onClick={this.discardImage}><Discard/></div>
+                            </div>
                         </div>
                     </div>
                     <div className="right_menu">
@@ -98,7 +117,7 @@ export default class AdsPopUp extends React.Component{
                             <button className="cancel_button"  onClick={this.props.closePopup}>cancel</button>
                         </div>
                 </div>
-
+               
             </div>
         );
     }

@@ -684,7 +684,7 @@ function App() {
           flexDirection: 'column'
         }}>
           <Appbar />
-          <Profile/></div>
+          <AdsPopUp/></div>
 
 </div>
     </>
