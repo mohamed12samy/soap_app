@@ -3,29 +3,10 @@ import ReactDOM from 'react-dom';
 import SOAP from '../../assets/images/svg/logo/SOAP';
 import './adsPopUp.css'
 import Upload from '../../assets/images/svg/upload'
-import Arrow from '../../assets/images/svg/arrow'
 import Discard from '../../assets/images/svg/discard'
-import image from '../../assets/images/Capture.jpg';
+import Menu from '../menu_category/menu'
 
 
-
-const items = [
-    {
-        name: 'movies'
-    },
-    {
-        name: 'products'
-    },
-    {
-        name: 'games'
-    },
-    {
-        name: 'Accessories'
-    },
-    {
-        name: 'Others'
-    }
-];
 
 export default class AdsPopUp extends React.Component{
 
@@ -36,22 +17,11 @@ export default class AdsPopUp extends React.Component{
            selectedIndex: -1,
            selectedImage: null,
       }
-      this.handleMenuAppearance = this.handleMenuAppearance.bind(this);
-      this.selecteMenu = this.selecteMenu.bind(this);
       this.fileChangedHandler = this.fileChangedHandler.bind(this);
       this.discardImage = this.discardImage.bind(this);
     }
     
-    handleMenuAppearance=(event)=>{
-        this.setState({
-            displayMenu:!this.state.displayMenu 
-        });
-    }
-    selecteMenu=(event,index)=>{
-        this.setState({selectedIndex: index,
-            displayMenu: false
-        });
-    }
+   
 
     fileChangedHandler=(event)=>{
         const file = URL.createObjectURL(event.target.files[0]);
@@ -60,7 +30,14 @@ export default class AdsPopUp extends React.Component{
     discardImage=(event)=>{
         this.setState({selectedImage: null});
     }
-
+    handleDrop = (files) => {
+        let fileList = this.state.files
+        for (var i = 0; i < files.length; i++) {
+          if (!files[i].name) return
+          fileList.push(files[i].name)
+        }
+        this.setState({files: fileList})
+      }
     render(){
       
         return(
@@ -88,27 +65,7 @@ export default class AdsPopUp extends React.Component{
                         </div>
                     </div>
                     <div className="right_menu">
-                        <div className= {this.state.displayMenu?'menu_header_open':"menu_header"}  
-                            onClick={this.handleMenuAppearance}
-                        >
-                            <span className="menu_select">{this.state.selectedIndex === -1 ? "category": 
-                                items[this.state.selectedIndex].name }</span>
-                            <div className="arrow"
-                                style={{
-                                    transform: this.state.displayMenu? "rotate(180deg)":"rotate(0deg)"
-                                }}
-                            ><Arrow/></div>
-                        </div>
-                        <div className="menu_items" style={{display: this.state.displayMenu? "block":"none"  }}>
-                            <ul className="menu_list">
-                            {items.map((item,index) => (
-                                <li key={index} 
-                                    onClick={event=>this.selecteMenu(event,index)}>
-                                    <span>{item.name}</span>
-                                </li>
-                            ))}
-                            </ul>
-                        </div>
+                        <Menu/>
                     </div>
                 </div>
                 <div className="popup_footer">

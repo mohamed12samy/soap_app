@@ -1,6 +1,5 @@
 import React from 'react';
 import './profile.css';
-import ExampleComponent from "react-rounded-image";
 import image from '../../assets/images/Capture.jpg';
 import Edit from '../../assets/images/svg/edit'
 

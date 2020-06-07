@@ -110,7 +110,7 @@ input, .input_description{
     float: right;
     cursor: pointer;
 
-}
+}/* 
 .menu_header{
     height: 7vh;
     width: 10vw;
@@ -180,14 +180,14 @@ input, .input_description{
     background-color: #F5F1F1;
     /* border-style: solid;
     border-width: 0vh 0vw 0.1vh 0vw  ;
-    border-color: #c5c5c5; */
+    border-color: #c5c5c5; 
     box-shadow: 0vh 0vh 0.5vh 0vh rgba(39, 39, 39, 0.25);
     animation: slide 0.6s ease ;
 }
 .menu_list li span{
     padding-left: 0.8vw;
     animation: slide 0.6s ease ;
-}
+} */
 .popup_footer{
     margin-top: 4.5vh;
     height: 12vh;
