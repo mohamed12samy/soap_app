@@ -13,6 +13,8 @@ import ProductItem from './componants/homeCard/ProductItem.js';
 import SignIn from './componants/auth/signUp.js';
 import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
 import CatButton from './componants/catButton/catButton';
+import Profile from './componants/profile/profile'
+import Rate from './componants/rate/rate'
 
 import HomePage from './screens/home/homePage'
 import cammug from './assets/images/cammug.jpg';
@@ -20,7 +22,7 @@ import lamp from './assets/images/lamp.jpg';
 import watch from './assets/images/watch1.jpg';
 import labtop from './assets/images/labtop.jpg';
 import drown from './assets/images/drown.jpg';
-import Profile from './componants/profile/profile'
+
 var recommendationData = [
   {
     title: "drown",
