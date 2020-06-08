@@ -9,8 +9,8 @@ import userimg from './assets/images/user.jpg';
 import CommentCard from './componants/commentCard/commentCard.js'
 import PostCard from './componants/postCard/postcard.js'
 import ProductItem from './componants/homeCard/ProductItem.js';
-//import SignIn from './componants/signIn/signIn.js';
-import SignIn from './componants/auth/signUp.js';
+import SignUp from './componants/auth/signUp.js';
+import SignIn from './componants/auth/signIn.js';
 import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
 import CatButton from './componants/catButton/catButton';
 import Profile from './componants/profile/profile'
@@ -22,6 +22,12 @@ import lamp from './assets/images/lamp.jpg';
 import watch from './assets/images/watch1.jpg';
 import labtop from './assets/images/labtop.jpg';
 import drown from './assets/images/drown.jpg';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Routes from './routes/routes'
 
 var recommendationData = [
   {
@@ -673,7 +679,10 @@ function App() {
 
   return (
     <>
-     <HomePage />
+<Router>
+  <Routes/>
+    </Router>
+     {/* <SignIn/> */}
     </>
 
   );
