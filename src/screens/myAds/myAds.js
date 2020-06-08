@@ -232,7 +232,11 @@ function MyAds(props) {
                     <AddButton />
                 </div>
 
-                <div className="popup" style={{ display: showPopup === false ? "none" : '' }}>
+                <div className="popup" style={{ 
+                    display: showPopup === false ? "none" : '' ,
+                    
+                    
+                    }}>
                     <AdPopUp closePopup={() => showAdPopup(!showPopup)} />
                 </div>
             </div>

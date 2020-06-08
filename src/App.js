@@ -508,6 +508,7 @@ var recommendationData = [
 
 
 function App() {
+  
   var userData = [
     {
       userInfo: {
@@ -681,20 +682,11 @@ function App() {
   console.log(userData)
 
   return (
-    <>
-<Router>
-  <Routes/>
+    
+    <Router>
+      <Routes/>
     </Router>
-     {/* <SignIn/> */}
-
-      {/* <TopRated /> */}
-      {/* <HomePage /> */}
-      {/* <PostHistory /> */}
-      {/* <MyAds /> */}
-      <PostDetails />
-
-    </>
-
+     
   );
 }
 

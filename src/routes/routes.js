@@ -1,25 +1,40 @@
-import React from "react";
-
-import SignUp from '../componants/auth/signUp.js';
-import SignIn from '../componants/auth/signIn.js';
+import React, { useState } from 'react';
+import SignUp from '../componants/auth/signUp';
+import SignIn from '../componants/auth/signIn';
 import HomePage from '../screens/home/homePage'
+import MyAdsPage from '../screens/myAds/myAds'
+import TopRatedPage from '../screens/toprRated/topRated'
+import PostsPage from '../screens/postshistory/postHistory'
+
+
 
 import PropTypes from "prop-types";
 import { Route, Redirect,  Switch  } from "react-router-dom";
 import PrivateRoute from './privateRoute'
 
-export default function Routes() {
+export default function Routes(props) {
+    const [logged, isLogged] = useState(true);
+    console.log(logged);
   return (
 
     <Switch>
-      <Route exact path="/login" >
-        <SignIn />
+      <Route path="/login" >
+        <SignIn loggedIn={() => isLogged(true)}/>
       </Route>
       <Route path="/register">
-        <SignUp />
+        <SignUp loggedIn={() => isLogged(true)}/>
       </Route>
-      <PrivateRoute path="/home">
+      <Route path="/home">
         <HomePage />
+      </Route> 
+      <PrivateRoute path="/ads" isLogged={logged}>
+        <MyAdsPage />
+      </PrivateRoute> 
+      <PrivateRoute path="/topRated" isLogged={logged}>
+        <TopRatedPage />
+      </PrivateRoute> 
+      <PrivateRoute path="/posts" isLogged={logged}>
+        <PostsPage />
       </PrivateRoute> 
       <Route><HomePage/></Route>
     </Switch>
