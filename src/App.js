@@ -678,10 +678,10 @@ function App() {
     <>
 
       {/* <TopRated /> */}
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <PostHistory /> */}
       {/* <MyAds /> */}
-      <PostDetails />
+      {/* <PostDetails /> */}
 
     </>
 
