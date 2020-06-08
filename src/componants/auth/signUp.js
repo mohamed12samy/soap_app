@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './auth.css'
 import SOAP from '../../assets/images/svg/logo/SOAP';
 import Eye from '../../assets/images/svg/eye';
-
+import {
+  BrowserRouter as Router, Switch,  Route, Link, Redirect, useHistory, useLocation} from "react-router-dom";
 
 export default class SignIn extends React.Component{
 
@@ -94,8 +95,10 @@ export default class SignIn extends React.Component{
      
 
     render(){
+      const { data } = this.props.location;
+      console.log("++++",data);
         return(
-            <div className="sign_in_container" style={{height: "80vh", width:"30vw",}}>
+            <div className="sign_in_container" style={{height: "80vh", width:"30vw", top: "10vh" }}>
               <div className="logo"><SOAP width="6vW" height="10vh"/></div>
             
                 <form onSubmit={this.validateForm} >
@@ -122,7 +125,7 @@ export default class SignIn extends React.Component{
                             />    
                             <div className="toggle_eye" 
                                 onClick={event => this.handleEyeToggle(event)}
-                                style={{bottom:  this.state.showError ? "19.5vh" :"16.8vh" }}
+                                style={{bottom:  this.state.showError ? "23.8vh" :"21.4vh" }}
                             >
                                  {/* <div style={{display:"block"}}>  */}
                                 <Eye toggle={this.state.toggle? true: false} />{/*</div>*/}
@@ -139,10 +142,10 @@ export default class SignIn extends React.Component{
                         <span className="error_message">{this.state.showError && this.state.errors.password ===''
                             ?this.state.errors.confirm_password:''}</span>   
                         
-                        <input type="submit" className="login_button" value=" Sign up" />
+                        <Link to ="/home"><input type="submit" className="login_button" value=" Sign up" onClick={this.props.loggedIn}/></Link>
                     </div>
                 </form>
-                <span className="go_to_signup">already have account? <a href="#">Log in</a></span>
+                <span className="go_to_signup">already have account? <Link to ="/login"><a href="#">Log in</a></Link></span>
         </div>
       );
     }

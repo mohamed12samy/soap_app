@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './auth.css'
 import SOAP from '../../assets/images/svg/logo/SOAP';
 import Eye from '../../assets/images/svg/eye';
-
+import {BrowserRouter as Router, Switch,  Route, Link, Redirect, useHistory, useLocation
+} from "react-router-dom";
 
 export default class SignIn extends React.Component{
 
@@ -23,7 +24,6 @@ export default class SignIn extends React.Component{
         this.handleEyeToggle = this.handleEyeToggle.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.validateForm = this.validateForm.bind(this);
-
       }
 
 
@@ -96,7 +96,7 @@ export default class SignIn extends React.Component{
                                 placeholder="password"
                             />    
                             <div className="toggle_eye" onClick={event => this.handleEyeToggle(event)}
-                                style={{bottom:  this.state.showError? "10.5vh" :'' }}
+                                style={{bottom:  this.state.showError? "13.2vh" :'' }}
                             >
                                  {/* <div style={{display:"block"}}>  */}
                                 <Eye toggle={this.state.toggle? true: false} />{/*</div>*/}
@@ -104,10 +104,15 @@ export default class SignIn extends React.Component{
                         </div>
                         <span className="error_message">{this.state.showError?this.state.errors.password:''}</span>   
 
-                        <input type="submit" className="login_button" value=" Log in" />
+                       <input type="submit" className="login_button" value=" Log in"  onClick={this.props.loggedIn}/>
                     </div>
                 </form>
-                <span className="go_to_signup">have no account yet? <a href="#">Sign up</a></span>
+                <span className="go_to_signup">have no account yet? <Link to={{
+                    pathname: "/register",
+                    data: "hi" // your data array of objects
+                  }}>
+                  
+                  <a href="#">Sign up</a></Link></span>
         </div>
       );
     }
