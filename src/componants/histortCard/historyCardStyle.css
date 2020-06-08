@@ -3,8 +3,29 @@
     /* src: local('Cairo'), url(../../assets/fonts/Cairo-Regular) format('ttf'); */
     /* } */
     
+    .PostCardAnimation{
+        animation-name: Postcard;
+        animation-duration: 2s;
+        height: 89.6vh;
+        overflow: hidden;
+        padding-bottom: 3.5vh
+
+
+    }
     
-    
+@keyframes Postcard {
+    from{
+     max-height: 0;
+ 
+    }
+    to{
+     overflow-y: hidden;
+     max-height: 87.6vh;
+     transition-property: all;
+     transition-duration: 2s;
+     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+   } 
     .historyCardContainer{
     width:65.88579795021963vw;
     height:19.2vh;  

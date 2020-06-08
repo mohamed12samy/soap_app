@@ -28,6 +28,9 @@ import {
   Route,
 } from "react-router-dom";
 import Routes from './routes/routes'
+import TopRated from './screens/toprRated/topRated';
+import PostHistory from './screens/postshistory/postHistory';
+import PostDetails from './screens/postDetails/postDetails';
 
 var recommendationData = [
   {
@@ -683,6 +686,13 @@ function App() {
   <Routes/>
     </Router>
      {/* <SignIn/> */}
+
+      {/* <TopRated /> */}
+      {/* <HomePage /> */}
+      {/* <PostHistory /> */}
+      {/* <MyAds /> */}
+      <PostDetails />
+
     </>
 
   );
