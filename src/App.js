@@ -673,7 +673,7 @@ function App() {
 
   return (
     <>
-     <HomePage />
+     <AdsPopUp />
     </>
 
   );

@@ -104,12 +104,13 @@ input, .input_description{
     cursor: pointer;
 }
 .right_menu{
+    height: 42vh;
+    margin-bottom: 0vh;
     margin-top: 2.5vh;
     margin-right: 1.5vw;
     display: block;
     float: right;
     cursor: pointer;
-
 }/* 
 .menu_header{
     height: 7vh;
