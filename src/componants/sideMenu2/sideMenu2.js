@@ -15,13 +15,13 @@ import TopRatedIcon from '../../assets/images/svg/TopRatedIcon';
 import NavigationButton from '../navigationButton/navigationButton.js';
 import Logout from '../../assets/images/svg/LogOutIcon'
 
-function SideMenu2() {
+function SideMenu2(props) {
   const [selected, setSelected] = useState("Home")
 
   return (
     <div className="slideMenu2">
       <div class="slideMenu2Logo"><Logo /></div>
-      <a onClick={() => { setSelected("Home") }}>
+      <a onClick={() => { setSelected(props.currentPage) }}>
         <NavigationButton text={"Home"} fill={selected === "Home" ? "#247189" : ""} >
           <HomeIcon fill={selected === "Home" ? "#247189" : ""} />
         </NavigationButton>
@@ -29,25 +29,25 @@ function SideMenu2() {
 
 
 
-      <a onClick={() => { setSelected("Postes") }}>
-        <NavigationButton text={"Postes"} fill={selected === "Postes" ? "#247189" : ""} >
-          <PostIcon fill={selected === "Postes" ? "#247189" : ""} />
+      <a onClick={() => { setSelected(props.currentPage) }}>
+        <NavigationButton text={"Posts"} fill={selected === "Posts" ? "#247189" : ""} >
+          <PostIcon fill={selected === "Posts" ? "#247189" : ""} />
         </NavigationButton>
       </a>
 
-      <a onClick={() => { setSelected("Ads") }}>
+      <a onClick={() => { setSelected(props.currentPage) }}>
         <NavigationButton text={"Ads"} fill={selected === "Ads" ? "#247189" : ""} >
           <AdsIcon fill={selected === "Ads" ? "#247189" : ""} />
         </NavigationButton>
       </a>
 
-      <a onClick={() => { setSelected("Rate") }}>
+      <a onClick={() => { setSelected(props.currentPage) }}>
         <NavigationButton text={"Rate"} fill={selected === "Rate" ? "#247189" : ""} >
           <RateIcon fill={selected === "Rate" ? "#247189" : ""} />
         </NavigationButton>
       </a>
 
-      <a onClick={() => { setSelected("TopRated") }}>
+      <a onClick={() => { setSelected(props.currentPage) }}>
         <NavigationButton text={"TopRated"} fill={selected === "TopRated" ? "#247189" : ""} >
           <TopRatedIcon fill={selected === "TopRated" ? "#247189" : ""} />
         </NavigationButton>

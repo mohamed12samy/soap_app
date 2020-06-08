@@ -17,32 +17,18 @@
 
 .postCardContainer{
     width: 65.88579795021963vw;
-    height: fit-content;  
     height: 87.6vh;
+    height: fit-content;  
     background: #FFFFFF;
+    border: 0.5px solid #bcbcbc;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 2.4vh 2.4vh;
+    border-radius: 2.4vh;
     margin-top: 0.8vh;
-    animation-name: Postcard;
     overflow: hidden;
-    animation-duration: 2s;
     padding-bottom: 1vh;
 
 }
 
-@keyframes Postcard {
-   from{
-    max-height: 0;
-    /* overflow-y: hidden; */
-   }
-   to{
-    overflow-y: hidden;
-    max-height: 87.6vh;
-	transition-property: all;
-	transition-duration: 2s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-   }
-  }
 
 a{
     cursor: pointer;
@@ -85,9 +71,23 @@ a{
     font-size: 1.3177159590043923vw;
     align-content: flex-end;
     text-align: left;
-   
-
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+.postFullDescripstion::-webkit-scrollbar{
+    width: 7px;               /* width of vertical scrollbar */
+    border-radius: 10px;
+}
+.postFullDescripstion::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+.postFullDescripstion::-webkit-scrollbar-thumb {
+    background: #247189; 
+    border-radius: 10px;
+  }
 
 .postLikesContainer{
     width: 12.51683748169839vw;
