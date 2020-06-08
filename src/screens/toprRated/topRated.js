@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './homePageStyle.css';
+import '../home/homePageStyle.css';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
 import Appbar from '../../componants/Appbar/Appbar.js';
@@ -214,7 +214,7 @@ var recommendationData = [
 ];
 
 
-function HomePage() {
+function TopRated() {
     var userData = [
         {
             userInfo: {
@@ -385,7 +385,6 @@ function HomePage() {
 
     ]
 
-    console.log(userData)
 
     return (
         <>
@@ -394,7 +393,7 @@ function HomePage() {
                     width: '21.5vw',
                     height: '100%'
                 }}>
-                    <SideMenu currentPage={"Home"}  />
+                    <SideMenu currentPage="TopRated"/>
                 </div>
                 <div style={{
                     width: '78.5vw',
@@ -403,14 +402,6 @@ function HomePage() {
                     flexDirection: 'column'
                 }}>
                     <Appbar />
-
-
-                    <div class="RecommdationSection">
-
-                        <h2 className="recTitle">Recommendation</h2>
-                        <RecItems />
-
-                    </div>
 
                     <Categories />
                 </div>
@@ -423,21 +414,6 @@ function HomePage() {
 }
 
 
-function RecItems() {
-    const cards = recommendationData.map((item, index) =>
-        <li> <ProductItem
-            category={false}
-            description={item.description}
-            title={item.title}
-            likes={item.likes}
-            dislikes={item.dislikes}
-            image={item.image}
-        />
-        </li>
-    )
-    return <ul className="recommendationListContainer">{cards}</ul>;
-
-}
 
 
 
@@ -445,7 +421,4 @@ function RecItems() {
 
 
 
-
-
-
-export default HomePage;
+export default TopRated;

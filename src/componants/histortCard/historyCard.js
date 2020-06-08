@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './historyCardStyle.css';
 import PropTypes from 'prop-types';
 import DeleteIcon from "../../assets/images/svg/delete";
-import AddButton from "../../assets/images/svg/addButton";
+
 import PostCard from '../postCard/postcard';
 import lamp from '../../assets/images/lamp.jpg';
-import AdPopUp from '../adsPop_up/adsPopUp';
+
 
 
 HistoryCard.propTypes = {
@@ -15,9 +15,10 @@ HistoryCard.propTypes = {
     title: PropTypes.string,
     rate: PropTypes.string,
     logo: PropTypes.number,
-    image: PropTypes.string,
+    userimage: PropTypes.string,
     likes: PropTypes.number,
-    dislikes: PropTypes.number
+    dislikes: PropTypes.number,
+    postImage:PropTypes.string
 
 };
 
@@ -25,22 +26,21 @@ HistoryCard.propTypes = {
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
     const [deleted, setDelet] = useState(false);
-    const [showPopup, showAdPopup] = useState(false);
+    //
 
     return (
         <>
             {deleted === false &&
                 <div style={{ marginBottom: '3.2vh' }}>
-                    <div className="historyCardContainer"
-                        style={!toggle ? { transition: 'all 0.5s' } :
-                            {
-                                borderBottomRightRadius: '0px',
-                                borderBottomLeftRadius: '0px',
-                                transition: 'all 0.5s'
-                            }}>
+                    <div className="historyCardContainer">
+                       
                         <div className="historyUserInfoContainer">
-                            <div className="historyUserImage">
-                                <img src={props.image} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+                            <div className="historyUserImage" 
+                            style={{backgroundImage:`url(${props.userimage})`,
+                            backgroundSize:'100% 100%',
+                            
+                            }}>
+                               
                             </div>
                             <div className="historyUserInfo" >
                                 <div className="historyUserName">{props.name}</div>
@@ -73,23 +73,21 @@ function HistoryCard(props) {
 
 
                     </div >
-                    <div>{toggle === true && <PostCard
-                        style={{ marginBottom: "8vh" }}
+                    <div>{toggle === true &&<div className="PostCardAnimation"> <PostCard
+                        
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={props.image ? props.image : lamp}
+                        image={props.postImage ? props.postImage : lamp}
                         fullDescription={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"}
 
-                    />}</div>
+                    /></div>}
+                    
+                    </div>
                 </div>}
 
                 
-                <div className="add_button"
-                    onClick={!showPopup? () => showAdPopup(!showPopup): ''}
-                ><AddButton  /></div>
-
-                 <div className="popup" style={{ display: showPopup === false ? "none": '' }}> <AdPopUp closePopup={() => showAdPopup(!showPopup)} /></div>
+                {/* */}
         </>
     );
 

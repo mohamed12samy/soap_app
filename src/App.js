@@ -22,6 +22,9 @@ import lamp from './assets/images/lamp.jpg';
 import watch from './assets/images/watch1.jpg';
 import labtop from './assets/images/labtop.jpg';
 import drown from './assets/images/drown.jpg';
+import TopRated from './screens/toprRated/topRated';
+import PostHistory from './screens/postshistory/postHistory';
+import PostDetails from './screens/postDetails/postDetails';
 
 var recommendationData = [
   {
@@ -673,7 +676,13 @@ function App() {
 
   return (
     <>
-     <HomePage />
+
+      {/* <TopRated /> */}
+      {/* <HomePage /> */}
+      {/* <PostHistory /> */}
+      {/* <MyAds /> */}
+      <PostDetails />
+
     </>
 
   );
