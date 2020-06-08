@@ -162,7 +162,7 @@ a.nostyle:visited {
 .add_button{
     width: fit-content;
     height: fit-content;
-    position: absolute;
+    position: fixed;
     bottom: 6vh;
     right: 6vw;
     cursor: pointer;
@@ -173,7 +173,7 @@ a.nostyle:visited {
     left: 30%;
     top: 0%;
     animation-name: popupAnimation;
-    animation-duration: 2s;  
+    animation-duration: 1.5s;  
 }
 
 @keyframes popupAnimation {
