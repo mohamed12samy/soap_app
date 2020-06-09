@@ -88,15 +88,13 @@ export default class SignIn extends React.Component{
         event.preventDefault();
           this.setState(
             {
-            showError: this.state.errors ? true : false
+              showError: this.state.errors.password!=='' || this.state.errors.name!=='' ? true : false,
         }
         );
       }
      
 
     render(){
-      const { data } = this.props.location;
-      console.log("++++",data);
         return(
             <div className="sign_in_container" style={{height: "80vh", width:"30vw", top: "10vh" }}>
               <div className="logo"><SOAP width="6vW" height="10vh"/></div>

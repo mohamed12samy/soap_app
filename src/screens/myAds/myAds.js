@@ -211,6 +211,7 @@ function MyAds(props) {
     )
     const [showPopup, showAdPopup] = useState(false);
 
+    console.log("5825",props);
     return (
         <>
             <div className="App">

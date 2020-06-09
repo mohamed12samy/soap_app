@@ -19,7 +19,8 @@ export default class SignIn extends React.Component{
                 username: 'required',
                 password: 'required',
             },
-            showError: false
+            showError: false,
+            redirectToHome: false,
         };
         this.handleEyeToggle = this.handleEyeToggle.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -40,6 +41,7 @@ export default class SignIn extends React.Component{
         const { name, value } = event.target;
         let errors = this.state.errors;
         var passw=  RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/);
+
         switch (name) {
           case 'username': 
             errors.username = 
@@ -69,13 +71,18 @@ export default class SignIn extends React.Component{
         event.preventDefault();
           this.setState(
             {
-            showError: this.state.errors ? true : false
-        }
+              redirectToHome: this.state.errors.password === '' && this.state.errors.username === '' ? true :false, 
+              showError: this.state.errors.password!=='' || this.state.errors.username!=='' ? true : false,
+        } 
         );
+        
+        //this.props.history.push('/home');        console.log(this.props);
       }
      
 
     render(){
+
+        
         return(
             <div className="sign_in_container">
               <div className="logo"><SOAP width="6vW" height="10vh"/></div>
@@ -96,7 +103,7 @@ export default class SignIn extends React.Component{
                                 placeholder="password"
                             />    
                             <div className="toggle_eye" onClick={event => this.handleEyeToggle(event)}
-                                style={{bottom:  this.state.showError? "13.2vh" :'' }}
+                                style={{bottom:  this.state.showError && this.state.errors.password!==''? "13.2vh" :'' }}
                             >
                                  {/* <div style={{display:"block"}}>  */}
                                 <Eye toggle={this.state.toggle? true: false} />{/*</div>*/}
@@ -113,6 +120,8 @@ export default class SignIn extends React.Component{
                   }}>
                   
                   <a href="#">Sign up</a></Link></span>
+
+                  <> {  this.state.redirectToHome ?  <Redirect to="/home" />:''} </>
         </div>
       );
     }

@@ -15,11 +15,13 @@ import TopRatedIcon from '../../assets/images/svg/TopRatedIcon';
 import NavigationButton from '../navigationButton/navigationButton.js';
 import Logout from '../../assets/images/svg/LogOutIcon'
 import {
-  Link
+  Link, Redirect
 } from "react-router-dom";
 
 function SideMenu2(props) {
-  //const [selected, setSelected] = useState("Home");
+  const [logOut, loggedOut] = useState(false);
+  
+
   const selected = props.currentPage;
   return (
     <div className="slideMenu2">
@@ -45,7 +47,7 @@ function SideMenu2(props) {
         </NavigationButton>
       </a></Link>
 
-      <Link to="/topRated"><a /* onClick={() => { setSelected("Rate") }} */>
+      <Link to="/rate"><a /* onClick={() => { setSelected("Rate") }} */>
         <NavigationButton text={"Rate"} fill={selected === "Rate" ? "#247189" : ""} >
           <RateIcon fill={selected === "Rate" ? "#247189" : ""} />
         </NavigationButton>
@@ -57,17 +59,21 @@ function SideMenu2(props) {
         </NavigationButton>
       </a></Link>
 
-      <Link to="/login"><a style={
+      <a style={
         {
           position: 'absolute',
           top: '85vh',
           left: '5vw',
           cursor: 'pointer'
         }
-      }>
+      }
+      onClick={ props.isLogged}
+      >
         <Logout />
 
-      </a></Link>
+      </a>
+
+      {logOut === true?  <Redirect to="/login" />:''}
     </div>
   );
 }

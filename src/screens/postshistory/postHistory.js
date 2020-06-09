@@ -16,6 +16,7 @@ import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
 
 function PostHistory(props) {
+    console.log(props)
     var userData = [
         {
             userInfo: {
