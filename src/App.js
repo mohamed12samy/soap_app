@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
 import Logo from './assets/images/svg/logo';
 import './App.css';
-import SideMenu from './componants/sideMenu2/sideMenu2';
-import Appbar from './componants/Appbar/Appbar.js';
-
-import HistoryCard from './componants/histortCard/historyCard.js'
 import userimg from './assets/images/user.jpg';
-import CommentCard from './componants/commentCard/commentCard.js'
-import PostCard from './componants/postCard/postcard.js'
-import ProductItem from './componants/homeCard/ProductItem.js';
-import SignUp from './componants/auth/signUp.js';
-import SignIn from './componants/auth/signIn.js';
-import AdsPopUp from './componants/adsPop_up/adsPopUp.js';
-import CatButton from './componants/catButton/catButton';
-import Profile from './componants/profile/profile'
-import Rate from './componants/rate/rate'
 
 import HomePage from './screens/home/homePage'
 import cammug from './assets/images/cammug.jpg';

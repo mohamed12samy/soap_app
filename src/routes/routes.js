@@ -11,6 +11,7 @@ import PostsPage from '../screens/postshistory/postHistory'
 import PropTypes from "prop-types";
 import { Route, Redirect,  Switch  } from "react-router-dom";
 import PrivateRoute from './privateRoute'
+import PostDetails from '../screens/postDetails/postDetails';
 
 export default function Routes(props) {
     const [logged, isLogged] = useState(true);
@@ -36,7 +37,7 @@ export default function Routes(props) {
       <PrivateRoute path="/posts" isLogged={logged}>
         <PostsPage />
       </PrivateRoute> 
-      <Route><HomePage/></Route>
+      <Route><PostDetails/></Route>
     </Switch>
 
 
