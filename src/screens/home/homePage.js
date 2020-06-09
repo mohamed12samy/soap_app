@@ -214,7 +214,7 @@ var recommendationData = [
 ];
 
 
-function HomePage() {
+function HomePage(props) {
     var userData = [
         {
             userInfo: {
@@ -387,6 +387,8 @@ function HomePage() {
 
     console.log(userData)
 
+    console.log(props);
+    //props.history.push("/ads");
     return (
         <>
             <div className="App">
@@ -394,7 +396,7 @@ function HomePage() {
                     width: '21.5vw',
                     height: '100%'
                 }}>
-                    <SideMenu currentPage={"Home"}  />
+                    <SideMenu currentPage={"Home"}  isLogged={props.logOut}/>
                 </div>
                 <div style={{
                     width: '78.5vw',
