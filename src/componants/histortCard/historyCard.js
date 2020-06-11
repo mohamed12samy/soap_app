@@ -14,11 +14,12 @@ HistoryCard.propTypes = {
     date: PropTypes.string, //instanceOf(Date),
     title: PropTypes.string,
     rate: PropTypes.string,
-    logo: PropTypes.number,
     userimage: PropTypes.string,
     likes: PropTypes.number,
     dislikes: PropTypes.number,
-    postImage:PropTypes.string
+    postImage:PropTypes.string,
+    category:PropTypes.string,
+    platform:PropTypes.string
 
 };
 
@@ -74,7 +75,8 @@ function HistoryCard(props) {
 
                     </div >
                     <div>{toggle === true &&<div className="PostCardAnimation"> <PostCard
-                        
+                        category={props.category}
+                        platform={props.platform}
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}

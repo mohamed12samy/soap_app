@@ -10,6 +10,7 @@ import ProfilePage from '../screens/profile/profile'
 
 import { Route, Redirect,  Switch  } from "react-router-dom";
 import PrivateRoute from './privateRoute'
+import PostDetails from '../screens/postDetails/postDetails';
 import TopRated from '../screens/toprRated/topRated';
 
 export default function Routes(props) {
@@ -44,6 +45,10 @@ export default function Routes(props) {
 
       <PrivateRoute path="/profile" isLogged={logged}  >
         <ProfilePage/>
+      </PrivateRoute>
+
+      <PrivateRoute path="/postDetails" isLogged={logged}  >
+        <PostDetails/>
       </PrivateRoute>
 
       <Route><HomePage logOut={()=> isLogged(false)}/></Route>

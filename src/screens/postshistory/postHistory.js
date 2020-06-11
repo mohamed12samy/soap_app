@@ -30,8 +30,9 @@ function PostHistory(props) {
                     rate: 3.5,
                     likes: 31,
                     dislikes: 12,
-                    platformLogo: "facebook",
+                    platformLogo: "twitter",
                     date: "22 sep 2019 10:45pm",
+                    category:"Games",
                     image: watch,
                     comments: [
                         {
@@ -71,6 +72,7 @@ function PostHistory(props) {
                     dislikes: 12,
                     platformLogo: "facebook",
                     date: "22 sep 2019 10:45pm",
+                    category:"Products",
                     image: labtop,
                     comments: [
                         {
@@ -135,8 +137,9 @@ function PostHistory(props) {
                     rate: 3.5,
                     likes: 1,
                     dislikes: 32,
-                    platformLogo: "facebook",
+                    platformLogo: "linkedin",
                     date: "22 sep 2019 10:45pm",
+                    category:"Others",
                     image: cammug,
                 },
                 {
@@ -175,6 +178,7 @@ function PostHistory(props) {
                     dislikes: 2,
                     platformLogo: "facebook",
                     date: "22 sep 2019 10:45pm",
+                    category:"Movies",
                     image: userimg,
                 },
 
@@ -198,6 +202,8 @@ function PostHistory(props) {
             likes={item.likes}
             dislikes={item.dislikes}
             postImage={item.image}
+            category={item.category}
+            platform={item.platformLogo}
 
         />
             {/* 

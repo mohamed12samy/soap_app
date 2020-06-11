@@ -8,6 +8,7 @@ import angels from '../../assets/images/user.jpg';
 
 
 import PostCard from '../../componants/postCard/postcard';
+import CommentCard from '../../componants/commentCard/commentCard';
 
 function PostDetails(props) {
     var posts = {
@@ -20,6 +21,7 @@ function PostDetails(props) {
         platformLogo: "facebook",
         date: "22 sep 2019 10:45pm",
         image: angels,
+        category:"others",
         totalComments: 311,
         fakeComments: 21,
         realComments: 289,
@@ -51,6 +53,8 @@ function PostDetails(props) {
             }]
     };
 
+    console.log(posts.comments)
+
     return (
         <>
             <div className="App">
@@ -73,16 +77,16 @@ function PostDetails(props) {
                             width: '90%',
                             alignItems: 'center',
                             margin: 'auto',
-                            marginTop:'2vh'
+                            marginTop: '2vh'
                         }}
                     >
                         <div
-                         style={{
-                            width: '93.5%',
-                            // alignItems: 'center',
-                            margin: 'auto',
-                           
-                        }}
+                            style={{
+                                width: '93.5%',
+                                // alignItems: 'center',
+                                margin: 'auto',
+
+                            }}
                         >
                             <PostCard
                                 dislikes={posts.dislikes}
@@ -91,6 +95,9 @@ function PostDetails(props) {
                                 fullDescription={posts.fullDescription}
                                 rate={posts.rate}
                                 title={posts.title}
+                                category={posts.category}
+                                platform = {posts.platformLogo}
+
                             />
                         </div>
                         <div
@@ -98,10 +105,10 @@ function PostDetails(props) {
                                 width: '92%',
                                 height: '8vh',
                                 display: 'flex',
-                                margin:'auto',
+                                margin: 'auto',
                                 flexDirection: 'row',
                                 justifyContent: "space-between",
-                               
+
                             }}
                         >
                             <span className="commentsText">
@@ -110,13 +117,24 @@ function PostDetails(props) {
                             </span>
 
                             <span className="commentsText">
-                            Real&nbsp;Comments:&nbsp;{posts.realComments}
+                                Real&nbsp;Comments:&nbsp;{posts.realComments}
                             </span>
 
                             <span className="commentsText">
-                            Fake&nbsp;Comments:&nbsp;{posts.fakeComments}
+                                Fake&nbsp;Comments:&nbsp;{posts.fakeComments}
                             </span>
 
+                        </div>
+
+                        <div style={{
+
+                            height: 'fit-content',
+                            width: '100%',
+                            
+                           
+                        }} >
+
+                            <CommentsRateCard data={posts} />
                         </div>
 
                     </div>
@@ -132,6 +150,36 @@ function PostDetails(props) {
 
 
 
+function CommentsRateCard(props) {
+    const cards = props.data.comments.map((item, index) =>
+        <li style={{listStyle: 'none',
+            flexBasis: '50%',marginTop:'2vh'}}> 
+            <CommentCard 
+                classRate={item.classRate}
+                comment={item.commentMessege}
+                totalRate={item.numberOfRater}
+            
+            />
+
+
+        
+        </li>
+    )
+    return <ul style={{
+        width: '100%',
+        // margin: 'auto',
+        listStyleType: 'none',
+        display: 'flex',
+        flexWrap: 'wrap',
+        paddingLeft: '0px',
+        paddingLeft: '1.4641288433382138vw',
+        alignItems: 'center',
+        margin:'0px',
+        marginLeft: '1.4vw',
+
+    }}>{cards}</ul>
+
+}
 
 
 
