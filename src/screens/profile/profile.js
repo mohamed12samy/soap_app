@@ -16,7 +16,7 @@ function ProfilePage(props) {
                     width: '21.5vw',
                     height: '100%'
                 }}>
-                    <SideMenu currentPage={"Rate"}  isLogged={props.logOut}/>
+                    <SideMenu currentPage={"Home"}  isLogged={props.logOut}/>
                 </div>
                 <div style={{
                     width: '78.5vw',

@@ -16,7 +16,7 @@ export default function Appbar(props) {
                 <img 
                     src={image}
                 />
-                <p className="user_name">Name</p>
+                <p className="user_name">{props.username ?? "name"}</p>
             </div></a></Link>
             <div className="searchbar" style={{display: props.flag === "hide"  ? "none":"flex" }}>
                 <div className="search_icon" ><Search /></div>

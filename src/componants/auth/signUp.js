@@ -91,9 +91,45 @@ export default class SignIn extends React.Component{
               showError: this.state.errors.password!=='' || this.state.errors.name!=='' ? true : false,
         }
         );
+        this.signUp();
       }
      
-
+      signUp() {
+        var name = this.state.name;
+    
+        fetch(`/API/userCreate/`, {
+          "method": "POST",
+          "body": JSON.stringify({
+            userName: this.state.name,
+            password: this.state.name,
+            //userType: this.state.usertype,
+            userEmail: this.state.email,
+            userFirstName: name.split(" ")[0],
+            userLastName: name.split(" ")[1] ?? name.split(" ")[0],
+            //userLastVistedCategoryID: 1
+          })
+        },
+        )
+          .then(function (response) {
+            console.log(response.status, "*-*-*")
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong ...');
+            }
+          }
+          )
+    
+          .then(response => {
+            console.log(response, "response");
+            this.setState({
+              redirectToHome: this.state.errors.password === '' && this.state.errors.username === '' ? true : false,
+            });
+          })
+          .catch(err => {
+            console.log(err, "ERROR");
+          });
+      }
     render(){
         return(
             <div className="sign_in_container" style={{height: "80vh", width:"30vw", top: "10vh" }}>

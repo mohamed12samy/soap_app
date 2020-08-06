@@ -14,8 +14,6 @@ ProductItem.propTypes = {
     description: PropTypes.string,
     rate: PropTypes.number,
     category: PropTypes.bool
-
-
 };
 
 
