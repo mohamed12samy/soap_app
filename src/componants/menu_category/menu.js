@@ -39,10 +39,11 @@ function Menu(props){
             onClick={()=>handleMenuAppearance(!displayMenu)}
         >
             <span className="menu_select">{nName}</span>               {/* selectedIndex === -1 ? "category": items[selectedIndex].name */ }
-            <div className="arrow"
+            <div className="arrow" 
                 style={{
                     transform: displayMenu? "rotate(180deg)":"rotate(0deg)",
                     right: props.right,
+                    
                 }}
             ><Arrow/></div>
         </div>
