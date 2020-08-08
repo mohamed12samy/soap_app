@@ -12,6 +12,7 @@ import { Route, Redirect,  Switch  } from "react-router-dom";
 import PrivateRoute from './privateRoute'
 import PostDetails from '../screens/postDetails/postDetails';
 import TopRated from '../screens/toprRated/topRated';
+import SearchResult from '../screens/searchResult/searchReslut';
 
 export default function Routes(props) {
     const [logged, isLogged] = useState(false);
@@ -47,8 +48,8 @@ export default function Routes(props) {
         <ProfilePage/>
       </PrivateRoute>
 
-      <PrivateRoute path="/postDetails" isLogged={logged}  >
-        <PostDetails/>
+      <PrivateRoute path="/SearchResult" isLogged={logged}  >
+        <SearchResult />
       </PrivateRoute>
 
       <Route><HomePage logOut={()=> isLogged(false)}/></Route>
