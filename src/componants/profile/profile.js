@@ -48,31 +48,39 @@ export default class Profile extends React.Component{
             <div className="profile_image">
                 <img src={image}/>
             </div>
-            <span className="username">Name Name</span>
+            <span className="username">Mohamed Samy</span>
           </div>
 
           <div className="card_content">
             
             <form  className="form_edit">
                 <div className="input_line">
-                      <label>email</label>
+                      <label>First Name</label>
                     <input className="edit_input" name = "email" type="text" 
                     disabled= {this.state.editEmail ?  "": "disabled"}
-                      value="jjb"
+                      value="Mohamed"
                     />
-                  <div className="edit" id="email" onClick={event => this.handleEdit(event,"email")} style={{marginLeft: "21.5vw"}}> <Edit/></div>
+                  <div className="edit" id="email" onClick={event => this.handleEdit(event,"email")} style={{marginLeft: "21.5vw"}}> </div>
                 </div>
+
                 <div className="input_line">
-                      <label>password</label>
-                    <input className="edit_input"   disabled= {this.state.editPassword ?  "": "disabled"}                      
-                                          name="password"
-                                          type= "password"
-                                          value="password"
-                                    />  
-                                    
-                  <div className="edit" id_i='1' onClick={event => this.handleEdit(event, "password")}> <Edit/></div>
+                      <label>Last Name</label>
+                    <input className="edit_input" name = "email" type="text" 
+                    disabled= {this.state.editEmail ?  "": "disabled"}
+                      value="Samy"
+                    />
+                  <div className="edit" id="email" onClick={event => this.handleEdit(event,"email")} style={{marginLeft: "21.5vw"}}> </div>
                 </div>
-                <input type="submit" className="input_submit" value="Submit" disabled />
+
+                <div className="input_line">
+                      <label>email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input className="edit_input" name = "email" type="text" 
+                    disabled= {this.state.editEmail ?  "": "disabled"}
+                      value="mosamy@saop.com"
+                    />
+                  <div className="edit" id="email" onClick={event => this.handleEdit(event,"email")} style={{marginLeft: "21.5vw"}}> </div>
+                </div>
+              
               </form>
           </div>
 

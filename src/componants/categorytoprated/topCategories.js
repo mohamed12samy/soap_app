@@ -27,7 +27,7 @@ const categoriesData = [
 
 
 function CatItems({data}) {
-  console.log(data, "asasas");
+  console.log(data, "Top rated");
   if (data !== null) {
     const cards = data.map((item, index) =>
       <li> <div style={{ marginTop: '25px' }}>
@@ -47,22 +47,22 @@ function CatItems({data}) {
   
 }
 
-function getCatPosts(activeLink , setData){
-  fetch(`/API/showPostsByCatID/${activeLink}/`, {
+function getCatTopPosts(activeLink , setData){
+  fetch(`/API/showTopPostsbyCID/${activeLink}/`, {
     "method": "GET",
   })
     .then(function (response) {
-      console.log(response.status, "*-*-*")
+      console.log(response.status, ">>>>>>>>>>")
       if (response.ok) {
         return response.json();
       } else {
-        console.log("no posts");
-        throw new Error('Something went wrong ...');
+        console.log("no posts in top ");
+        throw new Error('Something went wrong in top ...');
       }
     }
     )
     .then(response => {
-      console.log(response, "cat res" , activeLink);
+      console.log(response, "cat res top" , activeLink);
       setData(response);
     })
     .catch(err => {
@@ -70,38 +70,19 @@ function getCatPosts(activeLink , setData){
     });
 }
 
-export default function Categories() {
+export default function TopCategories() {
   const [activeLink, setacive] = useState(1);
   const [categories_posts, setData] = useState(
-   [
-      {
-        "id": 1,
-        "userID": 1,
-        "categoryID": 1,
-        "url": "https://www.google.com/?hl=ar",
-        "postTitle": "This is Google people!.",
-        "postContent": "red.",
-        "photoUrl": "URL"
-      },
-      {
-        "id": 2,
-        "userID": 1,
-        "categoryID": 1,
-        "url": "https://www.google.com/?hl=ar",
-        "postTitle": "This is Google people!.",
-        "postContent": "red.",
-        "photoUrl": "URL"
-      },
-    ]
+   []
   );
 
   useEffect(() => {
-    getCatPosts(activeLink, setData);
+    getCatTopPosts(activeLink, setData);
   },[]);
 
   const listItems = categoriesData.map((item, index) =>
     <li >
-      <a onClick={() => { setacive(item.id); getCatPosts(item.id, setData) }}>
+      <a onClick={() => { setacive(item.id); getCatTopPosts(item.id, setData) }}>
         <CatButton text={item.name} selected={item.id === activeLink ? item.id : null} />
 
       </a>
