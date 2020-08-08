@@ -7,6 +7,8 @@ import DisLike from "../../assets/images/svg/dislike.js";
 import Twitter from '../../assets/images/svg/twitter';
 import Facebook from '../../assets/images/svg/fb';
 import Linkedin from '../../assets/images/svg/linkedin';
+// import Youtube from '../../assets/images/youtube.png';
+// import Insta from '../../assets/images/instagram.jpg';
 
 PostCard.propTypes = {
     fullDescription: PropTypes.string,
@@ -17,10 +19,53 @@ PostCard.propTypes = {
     cardStyle: PropTypes.object,
     category: PropTypes.string,
     platform: PropTypes.string,
-
-
-
 };
+
+function like_post(id){
+    fetch(`/API/likePostUpdate/${id}/`, {
+        "method": "PUT",
+      })
+        .then(function (response) {
+          console.log(response.status, "*-*-*")
+          if (response.ok) {
+            return response.json();
+          } else {
+            
+            throw new Error('Something went wrong ...');
+          }
+        }
+        )
+  
+        .then(response => {
+          console.log(response, "response");
+        })
+        .catch(err => {
+          console.log(err, "ERROR");
+        });
+}
+
+function dislike_post(id){
+    fetch(`/API/dislikePostUpdate/${id}/`, {
+        "method": "PUT",
+      })
+        .then(function (response) {
+          console.log(response.status, "*-*-*")
+          if (response.ok) {
+            return response.json();
+          } else {
+            
+            throw new Error('Something went wrong ...');
+          }
+        }
+        )
+  
+        .then(response => {
+          console.log(response, "response");
+        })
+        .catch(err => {
+          console.log(err, "ERROR");
+        });
+}
 
 
 function PostCard(props) {
@@ -71,7 +116,8 @@ function PostCard(props) {
                         <div style={{ marginTop: '3px', marginLeft: '5px' }}>
                             {props.platform === "facebook" ? <Facebook /> :
                                 props.platform === "twitter" ? <Twitter /> :
-                                    props.platform === "linkedin" ? <Linkedin /> : <></>
+                                    props.platform === "linkedin" ? <Linkedin /> : 
+                                       <></>
                             }
                         </div>
                     </div>
@@ -108,14 +154,14 @@ function PostCard(props) {
                 {props.fullDescription}
             </div>
             <div className="postLikesContainer">
-                <div className="postlike" onClick={() => { setlike(!like, setdislike(0)) }}>
+                <div className="postlike" onClick={() => { setlike(!like, setdislike(0)); like_post(props.post_id) }}>
 
                     <Like fill={like ? "#247189" : 'gray'} />
                     <p className="postLikesNumber">{like && !dislike ? props.likes + 1 : props.likes}</p>
 
 
                 </div>
-                <div className="postlike" onClick={() => { setdislike(!dislike, setlike(0)) }}>
+                <div className="postlike" onClick={() => { setdislike(!dislike, setlike(0)); dislike_post(props.post_id) }}>
                     <div style={{ marginTop: '1.6vh' }}> <DisLike fill={dislike ? "red" : 'gray'} /></div>
                     <p className="postLikesNumber">{dislike && !like ? props.dislikes + 1 : props.dislikes}</p>
 

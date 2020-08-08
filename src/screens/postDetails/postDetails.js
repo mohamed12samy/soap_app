@@ -9,51 +9,63 @@ import angels from '../../assets/images/user.jpg';
 
 import PostCard from '../../componants/postCard/postcard';
 import CommentCard from '../../componants/commentCard/commentCard';
+import {
+    BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation
+  } from "react-router-dom";
 
+function get_category(id) {
+    switch (id) {
+        case 1:
+            return "Movies";
+            break;
+        case 2:
+            return "Products";
+            break;
+        case 3:
+            return "Games";
+            break;
+        case 4:
+            return "Others";
+            break;
+
+    }
+}
+function get_logo(url) {
+    var logo = "";
+    logo = url.includes("youtube") ? "youtube" :
+        url.includes("facebook") ? "facebook" :
+            url.includes("instagram") ? "instagram" :
+                url.includes("twitter") ? "twitter" : "linkedin";
+
+    return logo;
+}
 function PostDetails(props) {
-    var posts = {
-        title: "Rolex Watch",
-        description: "Lorem Ipsum is simply dummy text of the printing ",
-        fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-        rate: 3.5,
-        likes: 31,
-        dislikes: 12,
-        platformLogo: "facebook",
-        date: "22 sep 2019 10:45pm",
-        image: angels,
-        category:"others",
-        totalComments: 311,
-        fakeComments: 21,
-        realComments: 289,
-        comments: [
-            {
-                commentMessege: "this is amazing , wow",
-                numberOfRater: 12,
-                classRate: 5
-            },
-            {
-                commentMessege: "this is poor , yuki",
-                numberOfRater: 32,
-                classRate: 2
-            },
-            {
-                commentMessege: "this is bullshit , don't buy it",
-                numberOfRater: 5,
-                classRate: 1
-            },
-            {
-                commentMessege: "this is very good product",
-                numberOfRater: 12,
-                classRate: 4
-            },
-            {
-                commentMessege: "it's normal item , there is more amazing product is other stocks.",
-                numberOfRater: 12,
-                classRate: 3
-            }]
+    var post = {
+        "id": 23,
+        "url": "https://www.youtube.com/watch?v=s29fcv5E52Y",
+        "postTitle": "youtydgkubj",
+        "postContent": "SAINT MOTEL - A Good Song Never Dies (Official Audio)",
+        "photoUrl": null,
+        "rate": "3.34",
+        "numberOfComments": 100,
+        "numberOfRealComments": 94,
+        "numberOf_5_StarsComments": 38,
+        "numberOf_4_StarsComments": 12,
+        "numberOf_3_StarsComments": 14,
+        "numberOf_2_StarsComments": 4,
+        "numberOf_1_StarsComments": 26,
+        "Comment_5_StarsSample": "holy shit beautiful",
+        "Comment_4_StarsSample": "song seems combined different melodies vibes multiple eras music yet still seem original af somewhat punk halloween party phenomenal",
+        "Comment_3_StarsSample": "kind catchy song play movies cheesy action scenes",
+        "Comment_2_StarsSample": "fit vibes playlist not care",
+        "Comment_1_StarsSample": " total disrespect right",
+        "NumberOfLikes":3,
+        "NumberOfDislikes": 1,
+        "userID": 1,
+        "categoryID": 1
     };
-
-    console.log(posts.comments)
+    //post = props.location.state.postData;
+    //console.log(posts.comments)
 
     return (
         <>
@@ -89,14 +101,16 @@ function PostDetails(props) {
                             }}
                         >
                             <PostCard
-                                dislikes={posts.dislikes}
-                                likes={posts.likes}
-                                image={posts.image}
-                                fullDescription={posts.fullDescription}
-                                rate={posts.rate}
-                                title={posts.title}
-                                category={posts.category}
-                                platform = {posts.platformLogo}
+                                dislikes={post.NumberOfDislikes}
+                                likes={post.NumberOfLikes}
+                                image={post.photoUrl}
+                                fullDescription={post.postContent}
+                                rate={post.rate}
+                                title={post.postTitle}
+                                category={get_category(post.categoryID)}
+                                platform={get_logo(post.url)}
+
+                                post_id = {post.id}
 
                             />
                         </div>
@@ -112,16 +126,16 @@ function PostDetails(props) {
                             }}
                         >
                             <span className="commentsText">
-                                Total&nbsp;Comments:&nbsp;{posts.totalComments}
+                                Total&nbsp;Comments:&nbsp;{post.numberOfComments}
 
                             </span>
 
                             <span className="commentsText">
-                                Real&nbsp;Comments:&nbsp;{posts.realComments}
+                                Real&nbsp;Comments:&nbsp;{post.numberOfRealComments}
                             </span>
 
                             <span className="commentsText">
-                                Fake&nbsp;Comments:&nbsp;{posts.fakeComments}
+                                Fake&nbsp;Comments:&nbsp;{post.numberOfComments - post.numberOfRealComments}
                             </span>
 
                         </div>
@@ -130,56 +144,83 @@ function PostDetails(props) {
 
                             height: 'fit-content',
                             width: '100%',
-                            
-                           
+
+
                         }} >
 
-                            <CommentsRateCard data={posts} />
+                            <ul style={{
+                                width: '100%',
+                                // margin: 'auto',
+                                listStyleType: 'none',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                paddingLeft: '0px',
+                                paddingLeft: '1.4641288433382138vw',
+                                alignItems: 'center',
+                                margin: '0px',
+                                marginLeft: '1.4vw',
+
+                            }}>
+                                <li style={{
+                                    listStyle: 'none',
+                                    flexBasis: '50%', marginTop: '2vh'
+                                }}>
+                                    <CommentCard
+                                        classRate={5}
+                                        comment={post.Comment_5_StarsSample}
+                                        totalRate={post.numberOf_5_StarsComments}
+                                    />
+                                </li>
+                                <li style={{
+                                    listStyle: 'none',
+                                    flexBasis: '50%', marginTop: '2vh'
+                                }}>
+                                    <CommentCard
+                                        classRate={4}
+                                        comment={post.Comment_4_StarsSample}
+                                        totalRate={post.numberOf_4_StarsComments}
+                                    />
+                                </li>
+                                <li style={{
+                                    listStyle: 'none',
+                                    flexBasis: '50%', marginTop: '2vh'
+                                }}>
+                                    <CommentCard
+                                        classRate={3}
+                                        comment={post.Comment_3_StarsSample}
+                                        totalRate={post.numberOf_3_StarsComments}
+                                    />
+                                </li>
+                                <li style={{
+                                    listStyle: 'none',
+                                    flexBasis: '50%', marginTop: '2vh'
+                                }}>
+                                    <CommentCard
+                                        classRate={2}
+                                        comment={post.Comment_2_StarsSample}
+                                        totalRate={post.numberOf_2_StarsComments}
+                                    />
+                                </li>
+                                <li style={{
+                                    listStyle: 'none',
+                                    flexBasis: '50%', marginTop: '2vh'
+                                }}>
+                                    <CommentCard
+                                        classRate={1}
+                                        comment={post.Comment_1_StarsSample}
+                                        totalRate={post.numberOf_1_StarsComments}
+                                    />
+                                </li>
+                            </ul>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
-
         </>
 
     );
 }
 
-
-
-function CommentsRateCard(props) {
-    const cards = props.data.comments.map((item, index) =>
-        <li style={{listStyle: 'none',
-            flexBasis: '50%',marginTop:'2vh'}}> 
-            <CommentCard 
-                classRate={item.classRate}
-                comment={item.commentMessege}
-                totalRate={item.numberOfRater}
-            
-            />
-
-
-        
-        </li>
-    )
-    return <ul style={{
-        width: '100%',
-        // margin: 'auto',
-        listStyleType: 'none',
-        display: 'flex',
-        flexWrap: 'wrap',
-        paddingLeft: '0px',
-        paddingLeft: '1.4641288433382138vw',
-        alignItems: 'center',
-        margin:'0px',
-        marginLeft: '1.4vw',
-
-    }}>{cards}</ul>
-
-}
 
 
 
