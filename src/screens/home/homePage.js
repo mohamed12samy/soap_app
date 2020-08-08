@@ -75,9 +75,9 @@ function HomePage(props) {
     ]);
 
 
-    /*if(props.location !== undefined || props.location.state !== undefined ||  props.location.state.userData !== undefined){
+    if(props.location !== undefined || props.location.state !== undefined ){
         userDataa = props.location.state.userData;  
-    }*/
+    }
 
     useEffect(() =>  {
         
