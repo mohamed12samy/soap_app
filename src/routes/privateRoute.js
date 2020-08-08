@@ -9,15 +9,15 @@ export default function PrivateRoute({children,...props}) {
       <Route
         {...props}
         render={({ location }) =>
-        props.isLogged ? 
+        //props.isLogged ? 
           children
-            : 
+            /*: 
             <Redirect
               to={{
                 pathname: "/login",
                 state: { from: location  }
               }}
-            />
+            />*/
           
         }
       />
