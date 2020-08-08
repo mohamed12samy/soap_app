@@ -15,6 +15,30 @@ import HistoryCard from '../../componants/histortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
 var x = {}
+function delete_ad(id){
+    fetch(`/API/advRemove/${id}/`, {
+        "method": "DELETE",
+       
+      },
+      )
+        .then(function (response) {
+          console.log(response.status, "-*-")
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong ...');
+          }
+        }
+        )
+        .then(response => {
+          console.log(response, "response");
+          
+        })
+        .catch(err => {
+          console.log(err, "ERROR");
+        });
+}
+
 function showUserAds(id, setAdDAta){
     
     fetch(`/API/showAdvsByUserID/${id}/`, {
@@ -63,6 +87,7 @@ function MyAds(props) {
             postImage={item.photoName}
             //platform ={item.platformLogo}
             //category={item.category}
+            onPreesed={()=>{delete_ad(item.id)}}
 
         />
     

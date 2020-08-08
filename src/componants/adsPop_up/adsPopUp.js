@@ -115,7 +115,7 @@ export default class AdsPopUp extends React.Component{
                 </div>
                 <div className="popup_footer">
                         <div className="footer_content">
-                            <button className="submit_button" onClick={this.createAdd, this.props.closePopup}>submit</button>
+                            <button className="submit_button" onClick={this.createAdd}>submit</button>
                             <button className="cancel_button"  onClick={this.props.closePopup}>cancel</button>
                         </div>
                 </div>
