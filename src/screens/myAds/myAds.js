@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
@@ -14,204 +14,61 @@ import drown from '../../assets/images/drown.jpg';
 import HistoryCard from '../../componants/histortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
+var x = {}
+function showUserAds(id, setAdDAta){
+    
+    fetch(`/API/showAdvsByUserID/${id}/`, {
+        "method": "GET",
+        "headers": {'Content-Type': 'application/json',   },
+      },
+      )
+        .then(function (response) {
+          console.log(response.status, "-*-")
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong ...');
+          }
+        }
+        )
+        .then(response => {
+            setAdDAta(response);
+          console.log(response, "response");
+          
+        })
+        .catch(err => {
+          console.log(err, "ERROR");
+        });
+}
 
 function MyAds(props) {
-    var userData = [
-        {
-            userInfo: {
-                userName: "mohamed samy",
-                userImage: userimg,
-                email: "",
-                posts: [{
-                    title: "Rolex Watch",
-                    description: "Lorem Ipsum is simply dummy text of the printing ",
-                    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-                    rate: 3.5,
-                    likes: 31,
-                    dislikes: 12,
-                    platformLogo: "twitter",
-                    date: "22 sep 2019 10:45pm",
-                    category:"Games",
-                    image: watch,
-                    comments: [
-                        {
-                            commentMessege: "this is amazing , wow",
-                            numberOfRater: 12,
-                            classRate: 5
-                        },
-                        {
-                            commentMessege: "this is poor , yuki",
-                            numberOfRater: 32,
-                            classRate: 2
-                        },
-                        {
-                            commentMessege: "this is bullshit , don't buy it",
-                            numberOfRater: 5,
-                            classRate: 1
-                        },
-                        {
-                            commentMessege: "this is very good product",
-                            numberOfRater: 12,
-                            classRate: 4
-                        },
-                        {
-                            commentMessege: "it's normal item , there is more amazing product is other stocks.",
-                            numberOfRater: 12,
-                            classRate: 3
-                        }
-                    ],
 
-                },
-                {
-                    title: "Labtop",
-                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-                    rate: 3.5,
-                    likes: 31,
-                    dislikes: 12,
-                    platformLogo: "facebook",
-                    date: "22 sep 2019 10:45pm",
-                    category:"Products",
-                    image: labtop,
-                    comments: [
-                        {
-                            commentMessege: "this is amazing , wow",
-                            numberOfRater: 12,
-                            classRate: 5
-                        },
-                        {
-                            commentMessege: "this is poor , yuki",
-                            numberOfRater: 32,
-                            classRate: 2
-                        },
-                        {
-                            commentMessege: "this is bullshit , don't buy it",
-                            numberOfRater: 5,
-                            classRate: 1
-                        },
-                        {
-                            commentMessege: "this is very good product",
-                            numberOfRater: 12,
-                            classRate: 4
-                        },
-                        {
-                            commentMessege: "it's normal item , there is more amazing product is other stocks.",
-                            numberOfRater: 12,
-                            classRate: 3
-                        }
-                    ],
+    const [showPopup, showAdPopup] = useState(false);
+    const [addData, setAdDAta] = useState([]);
 
-                },
-                {
-                    comments: [
-                        {
-                            commentMessege: "this is amazing , wow",
-                            numberOfRater: 12,
-                            classRate: 5
-                        },
-                        {
-                            commentMessege: "this is poor , yuki",
-                            numberOfRater: 32,
-                            classRate: 2
-                        },
-                        {
-                            commentMessege: "this is bullshit , don't buy it",
-                            numberOfRater: 5,
-                            classRate: 1
-                        },
-                        {
-                            commentMessege: "this is very good product",
-                            numberOfRater: 12,
-                            classRate: 4
-                        },
-                        {
-                            commentMessege: "it's normal item , there is more amazing product is other stocks.",
-                            numberOfRater: 12,
-                            classRate: 3
-                        }
-                    ],
-                    title: "mug",
-                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-                    rate: 3.5,
-                    likes: 1,
-                    dislikes: 32,
-                    platformLogo: "linkedin",
-                    date: "22 sep 2019 10:45pm",
-                    category:"Others",
-                    image: cammug,
-                },
-                {
-                    comments: [
-                        {
-                            commentMessege: "this is amazing , wow",
-                            numberOfRater: 12,
-                            classRate: 5
-                        },
-                        {
-                            commentMessege: "this is poor , yuki",
-                            numberOfRater: 32,
-                            classRate: 2
-                        },
-                        {
-                            commentMessege: "this is bullshit , don't buy it",
-                            numberOfRater: 5,
-                            classRate: 1
-                        },
-                        {
-                            commentMessege: "this is very good product",
-                            numberOfRater: 12,
-                            classRate: 4
-                        },
-                        {
-                            commentMessege: "it's normal item , there is more amazing product is other stocks.",
-                            numberOfRater: 12,
-                            classRate: 3
-                        }
-                    ],
-                    title: "angels",
-                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                    fullDescription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen bookLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-                    rate: 4.89,
-                    likes: 98,
-                    dislikes: 2,
-                    platformLogo: "facebook",
-                    date: "22 sep 2019 10:45pm",
-                    category:"Movies",
-                    image: userimg,
-                },
+    useEffect(()=>{
+        showUserAds(1, setAdDAta);
+    },[]);
 
-
-
-                ]
-
-            }
-        }
-
-    ]
-    console.log(userData[0].userInfo.posts)
-    const cards = userData[0].userInfo.posts.map((item, index) =>
+    console.log(x+"9999999999999")
+    const cards = addData.map((item, index) =>
         <li>  <HistoryCard
-            date={item.date}
-            rate={item.rate}
-            name={userData[0].userInfo.userName}
-            userimage={userData[0].userInfo.userImage}
-            fullDescription={item.fullDescription}
-            title={item.title}
-            likes={item.likes}
-            dislikes={item.dislikes}
-            postImage={item.image}
-            platform ={item.platformLogo}
-            category={item.category}
+            date={item.startDate}
+            name={"user"}
+            //userimage={userData[0].userInfo.userImage}
+            fullDescription={item.advContent}
+            title={item.advTitle}
+            //likes={item.likes}
+            //dislikes={item.dislikes}
+            postImage={item.photoName}
+            //platform ={item.platformLogo}
+            //category={item.category}
 
         />
-            {/* 
-        /> */}
+    
         </li>
     )
-    const [showPopup, showAdPopup] = useState(false);
 
-    console.log("5825",props);
     return (
         <>
             <div className="App">
