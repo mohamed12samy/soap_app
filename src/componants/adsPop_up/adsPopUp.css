@@ -58,6 +58,10 @@ input, .input_description{
     height: 4.5vh;
     width: 14vw;
 }
+.input_other{
+    height: 4.5vh;
+    width: 10vw;
+}
 .input_description{
     height: 14vh;
     width: 16vw;
@@ -104,7 +108,7 @@ input, .input_description{
     cursor: pointer;
 }
 .right_menu{
-    height: 42vh;
+    height: auto;
     margin-bottom: 0vh;
     margin-top: 2.5vh;
     margin-right: 1.5vw;

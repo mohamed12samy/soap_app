@@ -7,21 +7,25 @@ import Discard from '../../assets/images/svg/discard'
 import Menu from '../menu_category/menu'
 
 
-
 export default class AdsPopUp extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
+            title: null,
+            desc: null,
+            priceMounth: 0,
+            durationDay:0,
+            startDate:null,
+
            displayMenu: false,
            selectedIndex: -1,
            selectedImage: null,
       }
       this.fileChangedHandler = this.fileChangedHandler.bind(this);
       this.discardImage = this.discardImage.bind(this);
-    }
+      }
     
-   
 
     fileChangedHandler=(event)=>{
         const file = URL.createObjectURL(event.target.files[0]);
@@ -38,6 +42,40 @@ export default class AdsPopUp extends React.Component{
         }
         this.setState({files: fileList})
       }
+
+    createAdd(){
+        fetch(`/API/advCreate/`, {
+            "method": "POST",
+            "headers": { 'Content-Type': 'application/json', },
+            "body": JSON.stringify({ 
+                advTitle: document.getElementById("title").value,
+                advContent: document.getElementById("desc").value,
+                pricePerMonth: document.getElementById("priceMounth").value,
+                startDate: document.getElementById("startDate").value,
+                durationPerDay: document.getElementById("durationDay").value,
+                userID: 1,
+            })
+
+        })
+            .then(function (response) {
+                console.log(response.status, "*-*-*")
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong ...');
+                }
+            }
+            )
+
+            .then(response => {
+                console.log(response, "*****************************adv DAta ");
+                
+            })
+            .catch(err => {
+                console.log(err, "ERROR");
+            });
+    }
+
     render(){
       
         return(
@@ -50,9 +88,9 @@ export default class AdsPopUp extends React.Component{
                 <div className="popup_content">
                     <div className="left_content">
                         <input className="input_title" type="text" placeholder="title"
-                                    name="title" />
+                                    id="title" />
                         <textarea className="input_description" type="text" placeholder="description..."
-                                    name="description" />
+                                    id="desc" />
                         <div className="image_area">
                             
                             <label className="upload_icon" for="image_pick">
@@ -65,12 +103,19 @@ export default class AdsPopUp extends React.Component{
                         </div>
                     </div>
                     <div className="right_menu">
-                        <Menu/>
+                        {/*<Menu/>*/}
+                        <input className="input_other" type="number" placeholder="price/mounth"
+                                    id="priceMounth" />
+                        <input className="input_other" type="number" placeholder="duration/day"
+                                    id="durationDay" />  
+                        <input className="input_other" type="date" placeholder="start date"
+                                    id="startDate" />
+                                  
                     </div>
                 </div>
                 <div className="popup_footer">
                         <div className="footer_content">
-                            <button className="submit_button">submit</button>
+                            <button className="submit_button" onClick={this.createAdd, this.props.closePopup}>submit</button>
                             <button className="cancel_button"  onClick={this.props.closePopup}>cancel</button>
                         </div>
                 </div>
