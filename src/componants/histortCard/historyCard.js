@@ -19,10 +19,14 @@ HistoryCard.propTypes = {
     dislikes: PropTypes.number,
     postImage:PropTypes.string,
     category:PropTypes.string,
-    platform:PropTypes.string
+    platform:PropTypes.string,
+    onPreesed:PropTypes.func,
 
 };
 
+function delete_item(props){
+    props.onPreesed()
+}
 
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
@@ -67,7 +71,7 @@ function HistoryCard(props) {
                             </div>
                         </a>
                         <div className="historyDeleteIcon">
-                            <a onClick={() => setDelet(1)}>
+                            <a onClick={() => {setDelet(1);delete_item(props)}}>
                                 <DeleteIcon />
                             </a>
                         </div>
