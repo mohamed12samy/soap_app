@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, Redirect} from "react-router-dom";
 
 
 import CatButton from '../catButton/catButton'
@@ -30,17 +31,19 @@ function CatItems({data}) {
   console.log(data, "asasas");
   if (data !== null) {
     const cards = data.map((item, index) =>
-      <li> <div style={{ marginTop: '25px' }}>
+    <Link to={{pathname:"/postDetails",
+    state: { postData: item },
+}}><li> <div style={{ marginTop: '25px' }}>
         <ProductItem
-          category={true}
-          description={item.postContent}
-          title={item.postTitle}
-          likes={item.NumberOfLikes}
-          dislikes={item.NumberOfDislikes}
-          image={item.photoUrl}
+         category={true}
+         description={item.postContent}
+         title={item.postTitle}
+         likes={item.NumberOfLikes}
+         dislikes={item.NumberOfDislikes}
+         image={item.photoUrl}
         />
       </div>
-      </li>
+      </li></Link>
     )
     return <ul className="categoryListContainer">{cards}</ul>
   }

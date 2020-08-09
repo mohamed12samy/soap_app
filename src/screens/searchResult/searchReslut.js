@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 import Appbar from '../../componants/Appbar/Appbar.js';
 import Categories from '../../componants/categoryButtons/categoryButtons.js'
@@ -10,6 +11,10 @@ import ProductItem from '../../componants/homeCard/ProductItem';
 
 
 function SearchResult(props) {
+
+    var post = [];
+    post = props.location.state.postData ?? post; 
+    const con = useContext(UserContext);
     return (
         <>
             <div className="App">
@@ -17,7 +22,7 @@ function SearchResult(props) {
                     width: '21.5vw',
                     height: '100%'
                 }}>
-                    <SideMenu currentPage={"Home"} isLogged={props.logOut} />
+                    <SideMenu currentPage={''} isLogged={props.logOut} />
                 </div>
                 <div style={{
                     width: '78.5vw',
@@ -25,12 +30,12 @@ function SearchResult(props) {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username={"name"} />
+                    <Appbar username={con.user.userName} />
 
 
 
 
-                    <CatItems data = {[{},{},{}]} />
+                    <CatItems data = {post} />
 
 
                 </div>
@@ -52,7 +57,9 @@ function CatItems({ data }) {
     console.log(data, "Top rated");
     if (data !== null) {
         const cards = data.map((item, index) =>
-            <li> <div style={{ marginTop: '25px' }}>
+        <Link to={{pathname:"/postDetails",
+        state: { postData: item },
+    }}><li> <div style={{ marginTop: '25px' }}>
                 <ProductItem
                     category={true}
                     description={item.postContent}
@@ -62,7 +69,7 @@ function CatItems({ data }) {
                     image={item.photoUrl}
                 />
             </div>
-            </li>
+            </li></Link>
         )
         return <ul className="categoryListContainer">{cards}</ul>
     }

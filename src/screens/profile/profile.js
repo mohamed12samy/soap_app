@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import '../home/homePageStyle.css';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 import Appbar from '../../componants/Appbar/Appbar.js';
 import Profile from '../../componants/profile/profile'
+import {UserContext} from '../../user_context';
 
 
 
 function ProfilePage(props) {
  
+
+    const {user, setUser} = useContext(UserContext);
+    console.log(
+        JSON.stringify(
+        user)+"0000000" + user.userName);
+
+
     return (
         <>
             <div className="App">
@@ -16,7 +24,7 @@ function ProfilePage(props) {
                     width: '21.5vw',
                     height: '100%'
                 }}>
-                    <SideMenu currentPage={"Home"}  isLogged={props.logOut}/>
+                    <SideMenu currentPage={''}  isLogged={props.logOut}/>
                 </div>
                 <div style={{
                     width: '78.5vw',
@@ -24,12 +32,12 @@ function ProfilePage(props) {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Appbar flag="hide"/>
+                    <Appbar username = {user.userName} flag="hide"/>
 
 
                     <div class="RecommdationSection">
 
-                        <Profile />
+                        <Profile user = { user}/>
 
                     </div>
                 </div>

@@ -20,7 +20,8 @@
     
 }
 .productItemTitle{
-  
+    height: 1vh;
+    overflow: hidden;
     font-family: Cairo-Bold;
     line-height: 4.32vh;
     font-size: 4.48vh;
@@ -55,12 +56,13 @@
     color: #636262;
     margin-top: 2.4vh;
     margin-left: 1.0980966325036603vw;
+    overflow: hidden;
     /* background-size: contain; */
 }
 
 .productDescription{
     margin-top: .8vh;
- 
+    overflow: hidden;
     margin-right: 0.7320644216691069vw;
     font-family: Cairo-simebold;
     line-height: 3.52vh;

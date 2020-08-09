@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 import '../home/homePageStyle.css';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
@@ -11,7 +11,7 @@ import TopCategories from '../../componants/categorytoprated/topCategories.js';
 
 
 function TopRated() {
-   
+    const con = useContext(UserContext);
 
     return (
         <>
@@ -28,7 +28,7 @@ function TopRated() {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Appbar />
+                    <Appbar username = {con.user.userName}/>
 
                     <TopCategories />
                 </div>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 import './homePageStyle.css';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
@@ -12,7 +12,7 @@ import watch from '../../assets/images/watch1.jpg';
 import labtop from '../../assets/images/labtop.jpg';
 import drown from '../../assets/images/drown.jpg';
 import Categories from '../../componants/categoryButtons/categoryButtons.js'
-import { Link} from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 
 
 
@@ -74,12 +74,18 @@ function HomePage(props) {
             },
     ]);
 
+    
+    if(props.location.state !== undefined ){
+        userDataa = props.location.state.userData;  
+    }
 
-    // if(props.location !== undefined || props.location.state !== undefined ){
-    //     userDataa = props.location.state.userData;  
-    // }
-
+    const con = useContext(UserContext);
     useEffect(() =>  {
+        
+
+        //console.log(con.user+"++++++++");
+        con.setUser(userDataa);
+        //console.log(con.user+"..........");
         
         fetch(`/API/showTopPosts/`, {
             "method": "GET",
@@ -103,10 +109,11 @@ function HomePage(props) {
             .catch(err => {
               console.log(err, "ERROR");
             });
-      },[]);
+      },[con]);
     
     return (
         <>
+    
             <div className="App">
                 <div style={{
                     width: '21.5vw',
@@ -144,7 +151,9 @@ function HomePage(props) {
 function RecItems({recData}) {
    console.log(recData[0] , "10000000000");
     const cards = recData.map((item, index) =>
-        <Link to="/postDetails"><li> <ProductItem
+        <Link to={{pathname:"/postDetails",
+        state: { postData: item },
+    }}><li> <ProductItem
             category={false}
             description={item.postContent}
             title={item.postTitle}

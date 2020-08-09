@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
 import Logo from '../../assets/images/svg/logo/SOAP';
 import './sideMenuStyle.css';
-
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 
 import HomeIcon from '../../assets/images/svg/HomeIcon';
 import RateIcon from '../../assets/images/svg/RateIcon';
@@ -20,7 +20,8 @@ import {
 
 function SideMenu2(props) {
   const [logOut, loggedOut] = useState(false);
-  
+  const con = useContext(UserContext);
+
 
   const selected = props.currentPage;
   return (
@@ -32,8 +33,6 @@ function SideMenu2(props) {
           <HomeIcon fill={selected === "Home" ? "#247189" : ""} />
         </NavigationButton>
       </a></Link>
-
-
 
       <Link to="/posts"><a /* onClick={() => { setSelected("Posts") }} */>
         <NavigationButton text={"Posts"} fill={selected === "Posts" ? "#247189" : ""} >
@@ -67,7 +66,11 @@ function SideMenu2(props) {
           cursor: 'pointer'
         }
       }
-      onClick={ props.isLogged}
+      onClick={ ()=>{
+        con.setUser(null);
+        console.log(con.user.userName + "0000222222");
+        loggedOut(true);
+      } }
       >
         <Logout />
 
