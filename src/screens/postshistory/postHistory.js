@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
@@ -94,10 +94,12 @@ function get_logo(url) {
 
 
 function PostHistory(props) {
+
     const [addData, setAdDAta] = useState([]);
+    const con = useContext(UserContext);
 
     useEffect(()=>{
-        showUserPosts(2, setAdDAta);
+        showUserPosts(con.user.id, setAdDAta);
     },[]);
     const cards = addData.map((item, index) =>
     <li>  <HistoryCard
@@ -135,7 +137,7 @@ function PostHistory(props) {
                     // alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar />
+                    <Appbar username = {con.user.userName}/>
                     <div style={{ marginTop: '30px' }}>
                         <ul style={{ listStyle: 'none' }}>{cards}</ul>
                     </div>

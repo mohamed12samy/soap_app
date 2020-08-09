@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './Appbar.css'
 import image from '../../assets/images/Capture.PNG';
@@ -8,8 +8,9 @@ import {
 } from "react-router-dom";
 
 
-function searchPostTitle(postTitle) {
+function searchPostTitle(postTitle, setRedirect, setPosts) {
     console.log(postTitle)
+   
 
     fetch(`API/searchPostbyTitle/?postTitle=${postTitle}`, {
         "method": "GET",
@@ -28,6 +29,8 @@ function searchPostTitle(postTitle) {
         .then(response => {
            
             console.log(response, "response");
+            setPosts(response);
+            setRedirect(true);
 
         })
         .catch(err => {
@@ -37,6 +40,9 @@ function searchPostTitle(postTitle) {
 
 
 export default function Appbar(props) {
+
+    const [redirect, setRedirect] = useState(false);
+    const [searchResult, setPosts] = useState([]);
     console.log("flag ", props.flag);
     return (
 
@@ -48,7 +54,8 @@ export default function Appbar(props) {
                 <p className="user_name">{props.username ?? "name"}</p>
             </div></a></Link>
             <div className="searchbar" style={{ display: props.flag === "hide" ? "none" : "flex" }}>
-                <div onClick={()=>{searchPostTitle(document.getElementById("searchValue").value)}} className="search_icon" ><Search /></div>
+                <div onClick={()=>{searchPostTitle(document.getElementById("searchValue").value,
+            setRedirect, setPosts)}} className="search_icon" ><Search /></div>
                 <input
                     className="searchbar_input"
                     type="text"
@@ -56,6 +63,16 @@ export default function Appbar(props) {
                     placeholder="Search..."
                 />
             </div>
+            <> {
+        
+        redirect ? <Redirect to={{
+             pathname: '/searchResult',
+             state: { postData: searchResult }
+           }} />
+         :''
+       
+     
+     } </>
         </div>
     );
 }

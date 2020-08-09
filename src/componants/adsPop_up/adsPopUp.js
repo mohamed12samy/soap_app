@@ -5,9 +5,11 @@ import './adsPopUp.css'
 import Upload from '../../assets/images/svg/upload'
 import Discard from '../../assets/images/svg/discard'
 import Menu from '../menu_category/menu'
-
+import {UserContext} from '../../user_context';
 
 export default class AdsPopUp extends React.Component{
+
+    static contextType = UserContext
 
     constructor(props) {
         super(props);
@@ -18,6 +20,8 @@ export default class AdsPopUp extends React.Component{
             durationDay:0,
             startDate:null,
 
+            userID: null,
+
            displayMenu: false,
            selectedIndex: -1,
            selectedImage: null,
@@ -25,7 +29,13 @@ export default class AdsPopUp extends React.Component{
       this.fileChangedHandler = this.fileChangedHandler.bind(this);
       this.discardImage = this.discardImage.bind(this);
       }
+      componentDidMount() {
     
+        const {user, setUser} = this.context
+          this.setState({
+            userID : user.id
+          });
+         }
 
     fileChangedHandler=(event)=>{
         const file = URL.createObjectURL(event.target.files[0]);
@@ -43,7 +53,7 @@ export default class AdsPopUp extends React.Component{
         this.setState({files: fileList})
       }
 
-    createAdd(){
+    createAdd(id){
         fetch(`/API/advCreate/`, {
             "method": "POST",
             "headers": { 'Content-Type': 'application/json', },
@@ -53,7 +63,7 @@ export default class AdsPopUp extends React.Component{
                 pricePerMonth: document.getElementById("priceMounth").value,
                 startDate: document.getElementById("startDate").value,
                 durationPerDay: document.getElementById("durationDay").value,
-                userID: 1,
+                userID: id,
             })
 
         })
@@ -77,7 +87,7 @@ export default class AdsPopUp extends React.Component{
     }
 
     render(){
-      
+        console.log(this.state.userID+"///////") // { name: 'Tania', loggedIn: true }
         return(
             <div className="popup_container">
                 <div className="popup_header">
@@ -115,7 +125,7 @@ export default class AdsPopUp extends React.Component{
                 </div>
                 <div className="popup_footer">
                         <div className="footer_content">
-                            <button className="submit_button" onClick={this.createAdd}>submit</button>
+                            <button className="submit_button" onClick = {()=> this.createAdd(this.state.userID)}>submit</button>
                             <button className="cancel_button"  onClick={this.props.closePopup}>cancel</button>
                         </div>
                 </div>

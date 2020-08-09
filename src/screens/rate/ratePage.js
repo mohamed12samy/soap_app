@@ -7,24 +7,37 @@ import Rate from '../../componants/rate/rate.js'
 import {
     BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation
   } from "react-router-dom";
+import {UserContext} from '../../user_context';
 
 
-var postDataJson = { url: null, postTitle: null, userID: 1, categoryID: null, }
+var postDataJson = { url: null, postTitle: null, userID: null, categoryID: null, }
 
 class RatePage extends React.Component {
 
+    static contextType = UserContext
 
     constructor(props) {
         super(props);
         this.state = {
             post_data: {},
-            redirect: false
+            redirect: false,
+            user: {},
         };
     }
+
+    componentDidMount() {
+    
+        const {user, setUser} = this.context
+          this.setState({
+            user : user
+          });
+         }
+
     postCreate(post_data) {
         postDataJson.url = post_data[0];
         postDataJson.postTitle = post_data[1];
         postDataJson.categoryID = post_data[2];
+        postDataJson.userID = this.state.user.id;
 
         fetch(`/API/postCreate/`, {
             "method": "POST",
@@ -78,7 +91,7 @@ class RatePage extends React.Component {
                         display: 'flex',
                         flexDirection: 'column'
                     }}>
-                        <Appbar flag="hide" />
+                        <Appbar flag="hide" username = {this.state.user.userName}/>
 
 
                         <div class="RecommdationSection">

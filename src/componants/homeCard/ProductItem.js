@@ -23,7 +23,7 @@ function ProductItem(props) {
         <>
 
             <div className={"ProductItemContainer"}  >
-                <a onClick={() => { }}>
+                <a onClick={() => {}}>
                     <div className="productImageContainer" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}>
 
 
@@ -35,7 +35,7 @@ function ProductItem(props) {
                     </div>
 
                 {!props.category && <div className="postLikesContainer">
-                    <div className="postlike" onClick={() => { }}>
+                    <div className="postlike" onClick={() => { }} style = {{alignItems:"bottom"}}>
 
                         <Like fill={"#247189"} />
                         <p className="postLikesNumber">{props.likes}</p>

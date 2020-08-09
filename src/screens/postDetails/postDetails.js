@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react';
+import {UserContext} from '../../user_context';
 
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
@@ -40,6 +40,7 @@ function get_logo(url) {
     return logo;
 }
 function PostDetails(props) {
+
     var post = {
         "id": 23,
         "url": "https://www.youtube.com/watch?v=s29fcv5E52Y",
@@ -64,8 +65,13 @@ function PostDetails(props) {
         "userID": 1,
         "categoryID": 1
     };
+
+    console.log(JSON.stringify(props)+" propsssssssssssssssssss")
+;    post = props.location.state.postData ?? post; 
+    
     //post = props.location.state.postData;
     //console.log(posts.comments)
+    const user = useContext(UserContext);
 
     return (
         <>
@@ -83,7 +89,7 @@ function PostDetails(props) {
                     alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar />
+                    <Appbar username={user.user.userName}/>
                     <div
                         style={{
                             width: '90%',

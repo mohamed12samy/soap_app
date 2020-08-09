@@ -7,12 +7,16 @@ import {
   BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation
 } from "react-router-dom";
 
+import {UserContext} from '../../user_context';
+
+//const {user, setUser} ;
 export default class SignIn extends React.Component {
 
-
+  
   constructor(props) {
     super(props);
     this.state = {
+      user:{user:null},
       toggle: false,
       email: null,
       name: null,
@@ -35,6 +39,18 @@ export default class SignIn extends React.Component {
 
   }
 
+
+  static contextType = UserContext
+
+  componentDidMount() {
+    
+   //const {user, setUser} = this.context
+   //setUser(151);
+    // this.setState({
+    //   user : this.context
+    // });
+    //console.log(user+"///////") // { name: 'Tania', loggedIn: true }
+  }
 
   handleEyeToggle = (event) => {
     this.setState({
@@ -99,7 +115,8 @@ export default class SignIn extends React.Component {
 
   signUp() {
     var name = this.state.name;
-
+    // const { user, setUser } = this.context;
+    
     fetch(`/API/userCreate/`, {
       "method": "POST",
       "headers": {'Content-Type': 'application/json',   },
@@ -125,17 +142,28 @@ export default class SignIn extends React.Component {
       )
 
       .then(response => {
+
+        
+        //this.state.user.setUser(response.id);
         console.log(response, "response");
+        
+        //console.log(this.state.user.user+"-----------------");
         this.setState({
           userObject: response,
           redirectToHome: this.state.errors.password === '' && this.state.errors.name === '' && this.state.errors.email === '' ? true : false,
         });
+       
       })
       .catch(err => {
         console.log(err, "ERROR");
       });
   }
   render() {
+    
+     //const { user, setUser } = this.context;
+    // setUser(20);
+    // console.log(user+"/******/");
+
     return (
       <div className="sign_in_container" style={{ height: "80vh", width: "30vw", top: "10vh" }}>
         <div className="logo"><SOAP width="6vW" height="10vh" /></div>
@@ -181,14 +209,21 @@ export default class SignIn extends React.Component {
             <span className="error_message">{this.state.showError && this.state.errors.password === ''
               ? this.state.errors.confirm_password : ''}</span>
 
-            <input type="submit" className="login_button" value=" Sign up" onClick={this.props.loggedIn} />
+            <input type="submit" className="login_button" value=" Sign up" />
           </div>
         </form>
-        <span className="go_to_signup">already have account? <Link to="/login"><a href="#">Log in</a></Link></span>
-        <> {this.state.redirectToHome ? <Redirect to={{
-          pathname: '/home',
-          state: { userData: this.state.userObject }
-        }} /> : ''} </>
+       
+    <span className="go_to_signup">already have account  <Link to="/login"><a href="#">Log in</a></Link></span>
+        <> {
+        
+           this.state.redirectToHome ? <Redirect to={{
+                pathname: '/home',
+                state: { userData: this.state.userObject }
+              }} />
+            :''
+          
+        
+        } </>
       </div>
     );
   }
