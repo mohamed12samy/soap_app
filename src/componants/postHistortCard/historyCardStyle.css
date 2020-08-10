@@ -1,0 +1,185 @@
+/* @font-face {
+    font-family: 'Cairo';
+    /* src: local('Cairo'), url(../../assets/fonts/Cairo-Regular) format('ttf'); */
+    /* } */
+    
+    .PostCardAnimation{
+        animation-name: Postcard;
+        animation-duration: 2s;
+        height: 89.6vh;
+        overflow: hidden;
+        padding-bottom: 3.5vh
+
+
+    }
+    
+@keyframes Postcard {
+    from{
+     max-height: 0;
+ 
+    }
+    to{
+     overflow-y: hidden;
+     max-height: 87.6vh;
+     transition-property: all;
+     transition-duration: 2s;
+     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+   } 
+    .historyCardContainer{
+    width:65.88579795021963vw;
+    height:19.2vh;  
+    background-color: white;
+    border-radius: 1.0980966325036603vw;
+    border: 0.5px solid #bcbcbc;
+    display: flex;
+    flex-direction: row;    
+}
+
+.historyUserInfoContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.historyUserImage{
+    width:11.2vh;
+    height:11.2vh;
+    border-radius: 5.6vh;
+    margin-left:1.0980966325036603vw;
+    margin-top: 4vh;
+}
+.historyUserInfo{
+    height: 10.72vh;
+    width:18.08199121522694vw;
+    margin-left: 1.0980966325036603vw;
+    margin-top: 4.8vh;
+
+
+}
+
+.historyUserName{
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.52vh;
+    margin-bottom:.8vh ;
+    display: flex;
+    align-items: center;
+    color: black;
+
+}
+
+.historyPostInfo{
+    width: 20.5vw;
+    height: 12.32vh;
+    margin-left: 2.2vw;
+    margin-top: 4.8vh;
+}
+
+.historyPostDate{
+    font-family: Cairo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.52vh;
+   line-height: 0.8vh;
+    display: flex;
+    align-items: center;
+    
+    color: #636262;
+    
+}
+.historyPostDetails{
+    font-family: Cairo;
+    font-style: normal;
+    font-size: 3.64vh;
+    line-height: 4.8vh;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+}
+
+.historyViewButton{
+    width: 10.99vw;
+    height: 8vh;
+    background: #FFFFFF;
+    border: 0.5px solid #636262;
+    box-sizing: border-box;
+    border-radius: 0.8vh;
+    margin-top: 4.8vh;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    color:black;
+}
+.viewMore{
+    font-family: Cairo-simebold;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    font-size: 3.84vh;
+    margin: 0;
+    padding: 0;
+}
+.historyViewButtonActive{
+    width: 10.99vw;
+    height: 8vh;
+    box-sizing: border-box;
+    border-radius: 0.8vh;
+    margin-top: 4.8vh;
+    align-items: center;
+    justify-content: center;
+    
+    transition: all 1s;
+    background: #247189;
+    border: 1px solid #636262;
+    color:white;
+}
+.historyDeleteIcon{
+    margin-left: 2.2vw;
+    margin-top: 6.4vh;
+    /* align-items: center; */
+    /* width: 75px; */
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+a {
+    text-decoration: none; /* no underline */
+  }
+
+a.nostyle:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+
+}
+
+a.nostyle:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+}
+
+.add_button{
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 6vh;
+    right: 6vw;
+    cursor: pointer;
+}
+.popup{
+    position: absolute;
+    right: 25%;
+    left: 30%;
+    top: 0%;
+    animation-name: popupAnimation;
+    animation-duration: 1.5s;  
+}
+
+@keyframes popupAnimation {
+    from {top: -150vh; opacity: 1}
+    to {top: 0; opacity: 1}
+  }

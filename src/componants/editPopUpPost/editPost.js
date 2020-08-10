@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SOAP from '../../assets/images/svg/logo/SOAP';
-import './edit.css'
+import './editPost.css'
 import Upload from '../../assets/images/svg/upload'
 import Discard from '../../assets/images/svg/discard'
 import Menu from '../menu_category/menu'
@@ -80,26 +80,26 @@ export default class EditPopup extends React.Component{
     }
 
     render(){
+        
         return(
             <div className="popup_containerr">
                 <div className="popup_header">
                     <div className="soap"><SOAP width="5.5vW" height="9.5vh"/></div>
-                    <span className="popup_title">update your advertise</span>
+                    <span className="popup_title">update post</span>
                 </div>
 
                 <div className="popup_content">
                     <div className="left_content">
                         <input className="input_title" type="text" placeholder="title" 
-                                    id="title" defaultValue={this.props.advData.advTitle} />
-                        <textarea className="input_description" type="text" placeholder="description..."
-                                    id="desc" defaultValue={this.props.advData.advContent}/>
+                                    id="title" defaultValue={this.props.postData.postTitle} />
+                       
                         <input className="input_title" type="text" placeholder="image url"
-                                    id="image_url" defaultValue={this.props.advData.photoName }/>
+                                    id="image_url" defaultValue={this.props.postData.photoUrl }/>
                     </div>
                 </div>
                 <div className="popup_footer">
                         <div className="footer_content">
-                            <button className="submit_button" onClick = {()=> this.updateAdv(this.props.advData) }>submit</button>
+                            <button className="submit_button" onClick = {()=> this.updatePost(this.props.postData) }>submit</button>
         <button className="cancel_button"  onClick={this.props.closePopup}>{this.state.updated ? "Done":"Cancel"}</button>
                         </div>
                 </div>
