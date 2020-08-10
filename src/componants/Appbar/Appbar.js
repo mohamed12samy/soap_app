@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './Appbar.css'
-import image from '../../assets/images/Capture.PNG';
+import image from '../../assets/images/Capture.jpg';
 import Search from '../../assets/images/svg/searchIcon';
 import {
     Link, Redirect

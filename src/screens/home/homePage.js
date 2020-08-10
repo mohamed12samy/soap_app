@@ -7,10 +7,6 @@ import Appbar from '../../componants/Appbar/Appbar.js';
 import userimg from '../../assets/images/user.jpg';
 import ProductItem from '../../componants/homeCard/ProductItem.js';
 
-import cammug from '../../assets/images/cammug.jpg';
-import watch from '../../assets/images/watch1.jpg';
-import labtop from '../../assets/images/labtop.jpg';
-import drown from '../../assets/images/drown.jpg';
 import Categories from '../../componants/categoryButtons/categoryButtons.js'
 import { Link, Redirect} from "react-router-dom";
 

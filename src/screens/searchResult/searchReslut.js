@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import {UserContext} from '../../user_context';
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 import Appbar from '../../componants/Appbar/Appbar.js';
-import Categories from '../../componants/categoryButtons/categoryButtons.js'
 import { Link } from "react-router-dom";
 import ProductItem from '../../componants/homeCard/ProductItem';
 
@@ -33,9 +32,9 @@ function SearchResult(props) {
                     <Appbar username={con.user.userName} />
 
 
+                    {(post.length !== 0)?<CatItems data = {post} />:<center><h2>No data match you want</h2></center>}
 
-
-                    <CatItems data = {post} />
+                    
 
 
                 </div>

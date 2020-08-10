@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './ProductItemStyle.css';
 import PropTypes from 'prop-types';
-import drown from "../../assets/images/drown.jpg";
-import watch from "../../assets/images/watch.jpg";
+import unavailable from "../../assets/images/unavailable.jpg";
 import Like from '../../assets/images/svg/like';
 import DisLike from '../../assets/images/svg/dislike';
 import Showmore from '../../assets/images/svg/showmore';
@@ -18,24 +17,50 @@ ProductItem.propTypes = {
 
 
 function ProductItem(props) {
+    console.log(props.image !== null, "image is not null")
+    console.log(props.image == null, "image is  null")
 
     return (
         <>
 
             <div className={"ProductItemContainer"}  >
-                <a onClick={() => {}}>
-                    <div className="productImageContainer" style={{ backgroundImage: `url(${props.image})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%' }}>
+                <a onClick={() => { }}>
+                    {
+                        props.image !== null ? props.image.match(/\.(jpeg|jpg|gif|png)$/) ?
+
+                            <div className="productImageContainer" style={{
+                                backgroundImage: `url(${props.image})`,
+                                backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%'
+                            }}>
 
 
-                    </div>
+                            </div> :
+
+
+                            <div className="productImageContainer" style={{
+                                backgroundImage: `url(${unavailable})`,
+                                backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%'
+                            }}>
+
+
+                            </div> :
+                            <div className="productImageContainer" style={{
+                                backgroundImage: `url(${unavailable})`,
+                                backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%'
+                            }}>
+
+
+                            </div>
+
+                    }
                 </a>
-                    <div className="productItemdescriptionContainer">
-                        <div className="productItemTitle">{props.title}</div>
-                        <span className="productDescription"> {props.description} </span>
-                    </div>
+                <div className="productItemdescriptionContainer">
+                    <div className="productItemTitle">{props.title}</div>
+                    <span className="productDescription"> {props.description} </span>
+                </div>
 
                 {!props.category && <div className="postLikesContainer">
-                    <div className="postlike" onClick={() => { }} style = {{alignItems:"bottom"}}>
+                    <div className="postlike" onClick={() => { }} style={{ alignItems: "bottom" }}>
 
                         <Like fill={"#247189"} />
                         <p className="postLikesNumber">{props.likes}</p>
