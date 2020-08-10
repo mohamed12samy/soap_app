@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import DeleteIcon from "../../assets/images/svg/delete";
 
 import PostCard from '../postCard/postcard';
-import lamp from '../../assets/images/user.jpg';
-
-
+import Kilua from '../../assets/images/Capture.jpg';
+import Edit from "../../assets/images/svg/edit";
+import EditPopup from '../editPopUp/edit'
+import UnAvailable from '../../assets/images/unavailable.jpg'
 
 HistoryCard.propTypes = {
 
@@ -31,6 +32,7 @@ function delete_item(props){
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
     const [deleted, setDelet] = useState(false);
+    const [showPopup, setShow] = useState(false);
     //
 
     return (
@@ -41,7 +43,7 @@ function HistoryCard(props) {
                        
                         <div className="historyUserInfoContainer">
                             <div className="historyUserImage" 
-                            style={{backgroundImage:`url(${props.userimage})`,
+                            style={{backgroundImage:`url(${Kilua})`,
                             backgroundSize:'100% 100%',
                             
                             }}>
@@ -71,8 +73,11 @@ function HistoryCard(props) {
                             </div>
                         </a>
                         <div className="historyDeleteIcon">
-                            <a onClick={() => {setDelet(1);delete_item(props)}}>
+                        <a onClick={() => {setDelet(1);}} style={{marginRight:"1vw"}}>
                                 <DeleteIcon />
+                            </a>
+                            <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>
+                                <Edit />
                             </a>
                         </div>
 
@@ -84,11 +89,15 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={(props.postImage.match(/\.(jpeg|jpg|gif|png)$/) != null)? props.postImage : lamp}
+                        image={(props.postImage.match(/\.(jpeg|jpg|gif|png)$/) != null)? props.postImage : UnAvailable}
                         fullDescription={props.fullDescription}
 
                     /></div>}
                     
+                    </div>
+                    <div className="popup" style={{ 
+                        display: showPopup === false ? "none" : '' }}>
+                        <EditPopup advData = {props.adv} closePopup={() => setShow(!showPopup)}/>
                     </div>
                 </div>}
 

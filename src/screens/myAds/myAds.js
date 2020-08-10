@@ -85,7 +85,7 @@ function MyAds(props) {
             //platform ={item.platformLogo}
             //category={item.category}
             onPreesed={()=>{delete_ad(item.id)}}
-
+            adv = {item}
         />
     
         </li>
