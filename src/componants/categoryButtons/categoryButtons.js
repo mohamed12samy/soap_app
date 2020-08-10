@@ -7,24 +7,6 @@ import CatButton from '../catButton/catButton'
 
 import ProductItem from '../../componants/homeCard/ProductItem.js';
 
-const categoriesData = [
-  {
-    id: 1,
-    name: "Games",
-  },
-  {
-    id: 2,
-    name: "Movies",
-  },
-  {
-    id: 3,
-    name: "Products",
-  },
-  {
-    id: 4,
-    name: "Others",
-  }
-];
 
 
 function CatItems({data}) {
@@ -73,39 +55,49 @@ function getCatPosts(activeLink , setData){
     });
 }
 
+function getCategories(setCat){
+  fetch(`/API/catList/`, {
+    "method": "GET",
+  })
+    .then(function (response) {
+      console.log(response.status, "*-*-*")
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("no posts");
+        throw new Error('Something went wrong ...');
+      }
+    }
+    )
+    .then(response => {
+      
+      setCat(response);
+    })
+    .catch(err => {
+      console.log(err, "ERROR");
+    });
+}
+
 export default function Categories() {
   const [activeLink, setacive] = useState(1);
+  const [categories, setCat] = useState([]);
   const [categories_posts, setData] = useState(
    [
-      {
-        "id": 1,
-        "userID": 1,
-        "categoryID": 1,
-        "url": "https://www.google.com/?hl=ar",
-        "postTitle": "This is Google people!.",
-        "postContent": "red.",
-        "photoUrl": "URL"
-      },
-      {
-        "id": 2,
-        "userID": 1,
-        "categoryID": 1,
-        "url": "https://www.google.com/?hl=ar",
-        "postTitle": "This is Google people!.",
-        "postContent": "red.",
-        "photoUrl": "URL"
-      },
+      
     ]
   );
 
   useEffect(() => {
-    getCatPosts(activeLink, setData);
+    getCategories(setCat);
+    
+      getCatPosts(activeLink, setData);
+       
   },[]);
 
-  const listItems = categoriesData.map((item, index) =>
+  const listItems = categories.map((item, index) =>
     <li >
       <a onClick={() => { setacive(item.id); getCatPosts(item.id, setData) }}>
-        <CatButton text={item.name} selected={item.id === activeLink ? item.id : null} />
+        <CatButton text={item.categoryName} selected={item.id === activeLink ? item.id : null} />
 
       </a>
 

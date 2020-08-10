@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './menu.css';
 import Arrow from '../../assets/images/svg/arrow'
 
 
-function Menu(props) {
 
+function getCategories(setCat){
+  fetch(`/API/catList/`, {
+    "method": "GET",
+  })
+    .then(function (response) {
+      console.log(response.status, "*-*-*")
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("no posts");
+        throw new Error('Something went wrong ...');
+      }
+    }
+    )
+    .then(response => {
+      
+      setCat(response);
+    })
+    .catch(err => {
+      console.log(err, "ERROR");
+    });
+}
+function Menu(props) {
+    const [categories, setCat] = useState([]);
     const [nName, selecteMenu] = useState("category");
     const [displayMenu, handleMenuAppearance] = useState(false);
-
-    const items = [
-        {
-            name: 'movies'
-        },
-        {
-            name: 'products'
-        },
-        {
-            name: 'games'
-        },
-        {
-            name: 'Others'
-        }
-    ];
-    /* selecteMenu=(event,index)=>{
-        this.setState({selectedIndex: index,
-            displayMenu: false
-        });
-    } */
-
+    useEffect(() => {
+        getCategories(setCat);           
+      },[]);
 
     return (
 
@@ -46,14 +51,14 @@ function Menu(props) {
             </div>
             <div className="menu_items" style={{ display: displayMenu ? "block" : "none" }}>
                 <ul className="menu_list">
-                    {items.map((item, index) => (
+                    {categories.map((item, index) => (
                         <li key={index}
                             onClick={() => {
-                                selecteMenu(item.name);
+                                selecteMenu(item.categoryName);
                                 handleMenuAppearance(!displayMenu);
-                                props.menuSelection(index+1);
+                                props.menuSelection(item.id);
                             }}>
-                            <span>{item.name}</span>
+                            <span>{item.categoryName}</span>
                         </li>
                     ))}
                 </ul>

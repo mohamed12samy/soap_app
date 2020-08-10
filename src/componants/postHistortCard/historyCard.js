@@ -90,15 +90,17 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={(props.postImage.match(/\.(jpeg|jpg|gif|png)$/) != null)? props.postImage : UnAvailable}
+                        image={props.postImage !== null ? props.postImage.match(/\.(jpeg|jpg|gif|png)$/) ? props.postImage : UnAvailable : UnAvailable}
                         fullDescription={props.fullDescription}
+                        
 
                     /></div>}
                     
                     </div>
                     <div className="popup" style={{ 
                         display: showPopup === false ? "none" : '' }}>
-                        <EditPopup postData = {props.postData} closePopup={() => setShow(!showPopup)}/>
+                        {//<EditPopup postData = {props.postData} closePopup={() => setShow(!showPopup)}/>
+                        }
                     </div>
                 </div>}
 
