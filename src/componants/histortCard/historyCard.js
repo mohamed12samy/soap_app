@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DeleteIcon from "../../assets/images/svg/delete";
 
 import PostCard from '../postCard/postcard';
-import lamp from '../../assets/images/lamp.jpg';
+import lamp from '../../assets/images/user.jpg';
 
 
 
@@ -84,7 +84,7 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={props.postImage ? props.postImage : lamp}
+                        image={(props.postImage.match(/\.(jpeg|jpg|gif|png)$/) != null)? props.postImage : lamp}
                         fullDescription={props.fullDescription}
 
                     /></div>}

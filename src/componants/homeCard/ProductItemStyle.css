@@ -47,6 +47,8 @@
 }
 
 .productItemdescriptionContainer{
+    height:12vh;
+    /* background-color: #00CF3A; */
     font-family: Cairo;
     font-style: normal;
     font-weight: normal;
@@ -56,9 +58,27 @@
     color: #636262;
     margin-top: 2.4vh;
     margin-left: 1.0980966325036603vw;
-    overflow: hidden;
-    /* background-size: contain; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    
+
+
 }
+
+ .productItemdescriptionContainer::-webkit-scrollbar {
+                 /* height of horizontal scrollbar ← You're missing this */
+    width: 5px;               /* width of vertical scrollbar */
+    border-radius: 10px;
+  }
+  /* Track */
+  
+   
+  /* Handle */
+  .productItemdescriptionContainer::-webkit-scrollbar-thumb {
+    background: #247189; 
+    border-radius: 10px;
+  } 
 
 .productDescription{
     margin-top: .8vh;

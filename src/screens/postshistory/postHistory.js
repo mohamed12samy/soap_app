@@ -7,10 +7,7 @@ import Appbar from '../../componants/Appbar/Appbar.js';
 import userimg from '../../assets/images/user.jpg';
 import ProductItem from '../../componants/homeCard/ProductItem.js';
 
-import cammug from '../../assets/images/cammug.jpg';
-import watch from '../../assets/images/watch1.jpg';
-import labtop from '../../assets/images/labtop.jpg';
-import drown from '../../assets/images/drown.jpg';
+
 import HistoryCard from '../../componants/histortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
