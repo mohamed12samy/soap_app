@@ -6,7 +6,7 @@ import DeleteIcon from "../../assets/images/svg/delete";
 import PostCard from '../postCard/postcard';
 import Kilua from '../../assets/images/Capture.jpg';
 import Edit from "../../assets/images/svg/edit";
-import EditPopup from '../editPopUp/edit'
+import EditPopup from '../editPopUpPost/editPost'
 import UnAvailable from '../../assets/images/unavailable.jpg'
 
 HistoryCard.propTypes = {
@@ -34,8 +34,9 @@ function HistoryCard(props) {
     const [deleted, setDelet] = useState(false);
     const [showPopup, setShow] = useState(false);
     //
-
+    console.log(props.postData.id+"     552525")
     return (
+        
         <>
             {deleted === false &&
                 <div style={{ marginBottom: '3.2vh' }}>
@@ -61,7 +62,10 @@ function HistoryCard(props) {
                                 <span style={{ fontFamily: 'Cairo-simebold' }}>Title: &nbsp; </span>
                                 {props.title}
                             </div>
-                           
+                            <div className="historyPostDetails">
+                                <span style={{ fontFamily: 'Cairo-simebold' }}>Rate: &nbsp; </span>
+                                {props.rate}
+                            </div>
                         </div>
 
                         <a onClick={() => show(!toggle)}>
@@ -88,13 +92,15 @@ function HistoryCard(props) {
                         rate={props.rate}
                         image={props.postImage !== null ? props.postImage.match(/\.(jpeg|jpg|gif|png)$/) ? props.postImage : UnAvailable : UnAvailable}
                         fullDescription={props.fullDescription}
+                        
 
                     /></div>}
                     
                     </div>
                     <div className="popup" style={{ 
                         display: showPopup === false ? "none" : '' }}>
-                        <EditPopup advData = {props.adv} closePopup={() => setShow(!showPopup)}/>
+                        {//<EditPopup postData = {props.postData} closePopup={() => setShow(!showPopup)}/>
+                        }
                     </div>
                 </div>}
 

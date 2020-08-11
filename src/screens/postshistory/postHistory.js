@@ -8,7 +8,7 @@ import userimg from '../../assets/images/user.jpg';
 import ProductItem from '../../componants/homeCard/ProductItem.js';
 
 
-import HistoryCard from '../../componants/histortCard/historyCard';
+import HistoryCard from '../../componants/postHistortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
 function delete_post(id){
@@ -111,6 +111,8 @@ function PostHistory(props) {
     platform ={item.platformLogo}
     category={get_category(item.categoryID)}
     onPreesed={()=>{delete_post(item.id)}}
+
+    postData = {item}
 
 />
 

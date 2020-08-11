@@ -72,21 +72,44 @@ function getCatTopPosts(activeLink , setData){
       console.log(err, "ERROR");
     });
 }
-
+function getCategories(setCat){
+  fetch(`/API/catList/`, {
+    "method": "GET",
+  })
+    .then(function (response) {
+      console.log(response.status, "*-*-*")
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("no posts");
+        throw new Error('Something went wrong ...');
+      }
+    }
+    )
+    .then(response => {
+      
+      setCat(response);
+    })
+    .catch(err => {
+      console.log(err, "ERROR");
+    });
+}
 export default function TopCategories() {
   const [activeLink, setacive] = useState(1);
+  const [categories, setCat] = useState([]);
   const [categories_posts, setData] = useState(
    []
   );
 
   useEffect(() => {
+    getCategories(setCat);
     getCatTopPosts(activeLink, setData);
   },[]);
 
-  const listItems = categoriesData.map((item, index) =>
+  const listItems = categories.map((item, index) =>
     <li >
       <a onClick={() => { setacive(item.id); getCatTopPosts(item.id, setData) }}>
-        <CatButton text={item.name} selected={item.id === activeLink ? item.id : null} />
+        <CatButton text={item.categoryName} selected={item.id === activeLink ? item.id : null} />
 
       </a>
 
