@@ -94,7 +94,7 @@ export default class AdsPopUp extends React.Component{
 
             .then(response => {
                 console.log(response, "*****************************adv DAta ");
-                
+                window.location.reload(false);
             })
             .catch(err => {
                 console.log(err, "ERROR");

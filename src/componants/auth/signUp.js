@@ -113,14 +113,28 @@ export default class SignIn extends React.Component {
     );
     this.signUp();
   }
-
+  getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie =cookies[i];
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
   signUp() {
     var name = this.state.name;
     // const { user, setUser } = this.context;
     
     fetch(`/API/userCreate/`, {
       "method": "POST",
-      "headers": {'Content-Type': 'application/json',   },
+      "headers": {'Content-Type': 'application/json',   "X-CSRFToken": this.getCookie("csrftoken"),},
       "body": JSON.stringify({
         userName: this.state.name,
         password: this.state.password,

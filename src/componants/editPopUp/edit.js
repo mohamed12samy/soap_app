@@ -37,12 +37,26 @@ export default class EditPopup extends React.Component{
           });
          }
 
-
+         getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie =cookies[i];
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
     updateAdv(adv){
         console.log(document.getElementById("title").value +"\n"+document.getElementById("desc").value+"\n"+document.getElementById("image_url").value+"----------85");
         fetch(`/API/advUpdate/${adv.id}/`, {
             "method": "PUT",
-            "headers": { 'Content-Type': 'application/json', },
+            "headers": { 'Content-Type': 'application/json', "X-CSRFToken": this.getCookie("csrftoken"),},
             "body": JSON.stringify({ 
                 advTitle: document.getElementById("title").value == '' ? document.getElementById("title").defaultValue:
                 document.getElementById("title").value ,
@@ -72,6 +86,7 @@ export default class EditPopup extends React.Component{
                 this.setState({
                     updated:true
                 })
+                window.location.reload(false);
                 
             })
             .catch(err => {

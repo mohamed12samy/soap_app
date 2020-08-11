@@ -39,11 +39,25 @@ export default class Profile extends React.Component {
     }
     );
   }
-
+  getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie =cookies[i];
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
   updateUser(id) {
     fetch(`/API/userUpdate/${id}/`, {
       "method": "PUT",
-      "headers": { 'Content-Type': 'application/json', },
+      "headers": { 'Content-Type': 'application/json',  "X-CSRFToken": this.getCookie("csrftoken")},
       "body": JSON.stringify({
         userName: document.getElementById("profileusername").value == '' ? document.getElementById("profileusername").defaultValue :
           document.getElementById("profileusername").value,
@@ -84,6 +98,8 @@ export default class Profile extends React.Component {
 
       .then(response => {
         console.log(response, "response");
+        localStorage.setItem('user', JSON.stringify(response));
+        window.location.reload(false);
       })
       .catch(err => {
         console.log(err, "ERROR");
