@@ -97,7 +97,7 @@ export default function Routes(props) {
         <SearchResult />
       </PrivateRoute> */}
 
-        <Route render={props => (<HomePage {...props} logOut={() => isLogged(false)} />
+        <Route render={props => (<SignIn {...props} logOut={() => isLogged(false)} />
         )} />
 
       </Switch>
