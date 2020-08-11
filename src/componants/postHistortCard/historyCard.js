@@ -80,10 +80,10 @@ function HistoryCard(props) {
                         <a onClick={() => {setDelet(1);}} style={{marginRight:"1vw"}}>
                                 <DeleteIcon />
                             </a>
-                            <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>
+                            {/* <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>
                                 <Edit />
-                                {/*<div style={{ position:"absolute" ,display: showPopup ? "" : "none" }}><Menu menuSelection = {menuCallback}/></div>
-                            */}</a>
+                               <div style={{ position:"absolute" ,display: showPopup ? "" : "none" }}><Menu menuSelection = {menuCallback}/></div>
+                            </a>*/}
                         </div>
 
 
