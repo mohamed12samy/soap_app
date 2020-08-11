@@ -86,6 +86,12 @@ export default class EditPopup extends React.Component{
                 this.setState({
                     updated:true
                 })
+                document.getElementById("title").value = null;
+                document.getElementById("desc").value = null;
+                document.getElementById("priceMounth").value = null;
+                document.getElementById("startDate").value = null;
+                document.getElementById("image_url").value = null;
+                document.getElementById("durationDay").value = null;
                 window.location.reload(false);
                 
             })

@@ -11,10 +11,27 @@ import ProductItem from '../../componants/homeCard/ProductItem.js';
 import HistoryCard from '../../componants/postHistortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
+
+
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie =cookies[i];
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
 function delete_post(id){
     fetch(`/API/postRemove/${id}/`, {
         "method": "DELETE",
-       
+        "headers": { 'Content-Type': 'application/json', "X-CSRFToken": getCookie("csrftoken"),},
       },
       )
         .then(function (response) {
@@ -75,6 +92,7 @@ function get_category(id,categories) {
 function getCategories(setCat){
   fetch(`/API/catList/`, {
     "method": "GET",
+
   })
     .then(function (response) {
       console.log(response.status, "*-*-*")

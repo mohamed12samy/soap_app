@@ -11,11 +11,26 @@ import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
 var x = {}
 
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie =cookies[i];
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
 
 function delete_ad(id){
     fetch(`/API/advRemove/${id}/`, {
         "method": "DELETE",
-       
+        "headers": { 'Content-Type': 'application/json', "X-CSRFToken": getCookie("csrftoken"),},
       },
       )
         .then(function (response) {

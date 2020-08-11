@@ -77,7 +77,7 @@ function HistoryCard(props) {
                             </div>
                         </a>
                         <div className="historyDeleteIcon">
-                        <a onClick={() => {setDelet(1);}} style={{marginRight:"1vw"}}>
+                        <a onClick={() => {setDelet(1);  props.onPreesed()}} style={{marginRight:"1vw"}}>
                                 <DeleteIcon />
                             </a>
                             {/* <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>

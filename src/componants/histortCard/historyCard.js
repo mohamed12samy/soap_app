@@ -70,7 +70,7 @@ function HistoryCard(props) {
                             </div>
                         </a>
                         <div className="historyDeleteIcon">
-                        <a onClick={() => {setDelet(1);}} style={{marginRight:"1vw"}}>
+                        <a onClick={() => {setDelet(1); props.onPreesed()}} style={{marginRight:"1vw"}}>
                                 <DeleteIcon />
                             </a>
                             <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>
@@ -86,7 +86,7 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={props.postImage !== null ?  props.postImage : UnAvailable }
+                        image={props.postImage !== null || props.postImage !== "" ?  props.postImage : UnAvailable }
                         fullDescription={props.fullDescription}
 
                         flag = "adv"

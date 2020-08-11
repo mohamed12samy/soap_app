@@ -72,12 +72,12 @@ export default class AdsPopUp extends React.Component{
             "method": "POST",
             "headers": { 'Content-Type': 'application/json', "X-CSRFToken": this.getCookie("csrftoken"),},
             "body": JSON.stringify({ 
-                advTitle: document.getElementById("title").value,
-                advContent: document.getElementById("desc").value,
+                advTitle: document.getElementById("titlee").value,
+                advContent: document.getElementById("descc").value,
                 pricePerMonth: document.getElementById("priceMounth").value,
                 startDate: document.getElementById("startDate").value,
                 durationPerDay: document.getElementById("durationDay").value,
-                photoName: document.getElementById("image_url").value,
+                photoName: document.getElementById("image_urll").value,
                 userID: this.state.userID,
             })
 
@@ -94,6 +94,12 @@ export default class AdsPopUp extends React.Component{
 
             .then(response => {
                 console.log(response, "*****************************adv DAta ");
+                document.getElementById("titlee").value = null;
+                document.getElementById("descc").value = null;
+                document.getElementById("priceMounth").value = null;
+                document.getElementById("startDate").value = null;
+                document.getElementById("image_urll").value = null;
+                document.getElementById("durationDay").value = null;
                 window.location.reload(false);
             })
             .catch(err => {
@@ -113,12 +119,12 @@ export default class AdsPopUp extends React.Component{
                 <div className="popup_content">
                     <div className="left_content">
                         <input className="input_title" type="text" placeholder="title"
-                                    id="title" />
+                                    id="titlee" />
                         <textarea className="input_description" type="text" placeholder="description..."
-                                    id="desc" />
+                                    id="descc" />
                         {/*<div className="image_area">*/}
                             <input className="input_title" type="text" placeholder="image url"
-                                    id="image_url" />
+                                    id="image_urll" />
                         {/*<div>*/}
                     </div>
                     <div className="right_menu">

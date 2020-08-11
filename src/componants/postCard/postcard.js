@@ -9,6 +9,7 @@ import Facebook from '../../assets/images/svg/fb';
 import Linkedin from '../../assets/images/svg/linkedin';
 import Youtube from '../../assets/images/svg/youtube';
 import Insta from '../../assets/images/svg/instagram';
+import UnAvailable from '../../assets/images/unavailable.jpg'
 
 PostCard.propTypes = {
   fullDescription: PropTypes.string,
@@ -106,7 +107,7 @@ function PostCard(props) {
         <div style={{}}
 
           style={{
-            width: '100%', height: '100%', backgroundImage: `url(${props.image})`,
+            width: '100%', height: '100%', backgroundImage: `url(${props.image !== null || props.image !== "" ?  props.image : UnAvailable})`,
             backgroundSize: '100% 100%'
 
           }}>
