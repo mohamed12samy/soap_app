@@ -26,7 +26,7 @@ function ProductItem(props) {
             <div className={"ProductItemContainer"}  >
                 <a onClick={() => { }}>
                     {
-                        props.image !== null ? props.image.match(/\.(jpeg|jpg|gif|png)$/) ?
+                        props.image !== null ?
 
                             <div className="productImageContainer" style={{
                                 backgroundImage: `url(${props.image})`,
@@ -43,15 +43,7 @@ function ProductItem(props) {
                             }}>
 
 
-                            </div> :
-                            <div className="productImageContainer" style={{
-                                backgroundImage: `url(${unavailable})`,
-                                backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%'
-                            }}>
-
-
-                            </div>
-
+                            </div> 
                     }
                 </a>
                 <div className="productItemdescriptionContainer">

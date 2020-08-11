@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {UserContext} from '../../user_context';
+import { UserContext } from '../../user_context';
 
 import SideMenu from '../../componants/sideMenu2/sideMenu2';
 
@@ -11,24 +11,42 @@ import PostCard from '../../componants/postCard/postcard';
 import CommentCard from '../../componants/commentCard/commentCard';
 import {
     BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation
-  } from "react-router-dom";
+} from "react-router-dom";
+import UnAvailable from '../../assets/images/unavailable.jpg'
 
-function get_category(id) {
-    switch (id) {
-        case 1:
-            return "Movies";
-            break;
-        case 2:
-            return "Products";
-            break;
-        case 3:
-            return "Games";
-            break;
-        case 4:
-            return "Others";
-            break;
+function get_category(id, categories) {
+    console.log(id + JSON.stringify(categories) + "daaaaaaaataaaaaaa");
+    var i;
+    for (i = 0; i < categories.length; i++) {
 
+        if (id == categories[i].id) {
+            return categories[i].categoryName;
+        }
     }
+}
+
+function getCategories(setCat) {
+    fetch(`/API/catList/`, {
+        "method": "GET",
+    })
+        .then(function (response) {
+            console.log(response.status, "*-*-*")
+            if (response.ok) {
+                return response.json();
+            } else {
+                console.log("no posts");
+                throw new Error('Something went wrong ...');
+            }
+        }
+        )
+        .then(response => {
+
+            setCat(response);
+            console.log(JSON.stringify(response) + "*-*-+-+-");
+        })
+        .catch(err => {
+            console.log(err, "ERROR");
+        });
 }
 function get_logo(url) {
     var logo = "";
@@ -42,7 +60,7 @@ function get_logo(url) {
 function PostDetails(props) {
 
     var post = {
-        "id": 23,
+        /*"id": 23,
         "url": "https://www.youtube.com/watch?v=s29fcv5E52Y",
         "postTitle": "youtydgkubj",
         "postContent": "SAINT MOTEL - A Good Song Never Dies (Official Audio)",
@@ -63,15 +81,25 @@ function PostDetails(props) {
         "NumberOfLikes":3,
         "NumberOfDislikes": 1,
         "userID": 1,
-        "categoryID": 1
+        "categoryID": 1*/
     };
 
-    console.log(JSON.stringify(props)+" propsssssssssssssssssss")
-;    post = props.location.state.postData ?? post; 
-    
+    //console.log(JSON.stringify(props)+" propsssssssssssssssssss")
+    post = props.location.state.postData ?? post;
+
+
+
     //post = props.location.state.postData;
     //console.log(posts.comments)
     const user = useContext(UserContext);
+    const [categories, setCat] = useState([]);
+
+
+
+    useEffect(() => {
+        getCategories(setCat);
+        console.log(categories + "2000000000000")
+    }, [])
 
     return (
         <>
@@ -89,7 +117,7 @@ function PostDetails(props) {
                     alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username={user.user.userName}/>
+                    <Appbar username={user.user.userName} />
                     <div
                         style={{
                             width: '90%',
@@ -109,14 +137,16 @@ function PostDetails(props) {
                             <PostCard
                                 dislikes={post.NumberOfDislikes}
                                 likes={post.NumberOfLikes}
-                                image={post.photoUrl}
+                                image={post.photoUrl !== null ? post.photoUrl : UnAvailable}
                                 fullDescription={post.postContent}
                                 rate={post.rate}
                                 title={post.postTitle}
-                                category={get_category(post.categoryID)}
+                                category={get_category(post.categoryID, categories)}
                                 platform={get_logo(post.url)}
 
-                                post_id = {post.id}
+                                post_id={post.id}
+
+                                flag = "post"
 
                             />
                         </div>

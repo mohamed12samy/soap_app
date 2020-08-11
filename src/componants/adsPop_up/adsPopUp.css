@@ -1,5 +1,5 @@
 .popup_container{
-    height: 80vh;
+    height: 65vh;
     width: 33vw;
     background-color: #fff;
     box-shadow: 0px 0.3vh 0.5vh 0.3vh rgba(192, 192, 192, 0.25);
@@ -195,7 +195,7 @@ input, .input_description{
 } */
 .popup_footer{
     margin-top: 4.5vh;
-    height: 12vh;
+    height: 6vh;
     border-top: 0.4vh solid rgba(151, 151, 151, 0.25);
     display: block;
 

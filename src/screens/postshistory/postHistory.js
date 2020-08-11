@@ -61,24 +61,41 @@ function showUserPosts(id,setAdDAta){
         });
 }
 
+function get_category(id,categories) {
+  console.log(id+JSON.stringify(categories) + "daaaaaaaataaaaaaa");
+  var i;
+  for( i=0;  i<categories.length; i++){
 
-function get_category(id) {
-    switch (id) {
-        case 1:
-            return "Movies";
-            break;
-        case 2:
-            return "Products";
-            break;
-        case 3:
-            return "Games";
-            break;
-        case 4:
-            return "Others";
-            break;
-
-    }
+      if (id == categories[i].id){
+          return categories[i].categoryName;
+      }
+  }
 }
+
+function getCategories(setCat){
+  fetch(`/API/catList/`, {
+    "method": "GET",
+  })
+    .then(function (response) {
+      console.log(response.status, "*-*-*")
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("no posts");
+        throw new Error('Something went wrong ...');
+      }
+    }
+    )
+    .then(response => {
+      
+      setCat(response);
+      console.log(JSON.stringify(response)+"*-*-+-+-");
+    })
+    .catch(err => {
+      console.log(err, "ERROR");
+    });
+}
+
 function get_logo(url) {
     var logo = "";
     logo = url.includes("youtube") ? "youtube" :
@@ -93,23 +110,25 @@ function get_logo(url) {
 function PostHistory(props) {
 
     const [addData, setAdDAta] = useState([]);
+    const [categories, setCat] = useState([]);
     const con = useContext(UserContext);
 
     useEffect(()=>{
         showUserPosts(con.user.id, setAdDAta);
+        getCategories(setCat);
     },[]);
     const cards = addData.map((item, index) =>
     <li>  <HistoryCard
     date={item.startDate}
-    name={"user"}
+    name={con.user.userName}
     fullDescription={item.postContent}
     title={item.postTitle}
     rate={item.rate}
     likes={item.NumberOfLikes}
     dislikes={item.NumberOfDislikes}
     postImage={item.photoUrl}
-    platform ={item.platformLogo}
-    category={get_category(item.categoryID)}
+    platform ={get_logo(item.url)}
+    category={get_category(item.categoryID, categories)}
     onPreesed={()=>{delete_post(item.id)}}
 
     postData = {item}
