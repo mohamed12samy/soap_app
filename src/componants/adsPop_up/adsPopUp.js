@@ -52,18 +52,33 @@ export default class AdsPopUp extends React.Component{
         }
         this.setState({files: fileList})
       }
-
+      getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie =cookies[i];
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
     createAdd(id){
         fetch(`/API/advCreate/`, {
             "method": "POST",
-            "headers": { 'Content-Type': 'application/json', },
+            "headers": { 'Content-Type': 'application/json', "X-CSRFToken": this.getCookie("csrftoken"),},
             "body": JSON.stringify({ 
                 advTitle: document.getElementById("title").value,
                 advContent: document.getElementById("desc").value,
                 pricePerMonth: document.getElementById("priceMounth").value,
                 startDate: document.getElementById("startDate").value,
                 durationPerDay: document.getElementById("durationDay").value,
-                userID: id,
+                photoName: document.getElementById("image_url").value,
+                userID: this.state.userID,
             })
 
         })
@@ -101,16 +116,10 @@ export default class AdsPopUp extends React.Component{
                                     id="title" />
                         <textarea className="input_description" type="text" placeholder="description..."
                                     id="desc" />
-                        <div className="image_area">
-                            
-                            <label className="upload_icon" for="image_pick">
-                                <Upload/> <input type="file" accept="image/*" className="filetype" id="image_pick" onChange={this.fileChangedHandler}/></label>
-                            <span>drag and drop image</span>
-                            <div className="image_view" style={{display: this.state.selectedImage === null? "none":'' }}>
-                                <img src ={this.state.selectedImage}/>
-                                <div className="discard_icon" onClick={this.discardImage}><Discard/></div>
-                            </div>
-                        </div>
+                        {/*<div className="image_area">*/}
+                            <input className="input_title" type="text" placeholder="image url"
+                                    id="image_url" />
+                        {/*<div>*/}
                     </div>
                     <div className="right_menu">
                         {/*<Menu/>*/}

@@ -86,8 +86,10 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={props.postImage !== null ? props.postImage.match(/\.(jpeg|jpg|gif|png)$/) ? props.postImage : UnAvailable : UnAvailable}
+                        image={props.postImage !== null ?  props.postImage : UnAvailable }
                         fullDescription={props.fullDescription}
+
+                        flag = "adv"
 
                     /></div>}
                     

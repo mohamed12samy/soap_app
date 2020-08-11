@@ -6,8 +6,8 @@ import Appbar from '../../componants/Appbar/Appbar.js';
 import Rate from '../../componants/rate/rate.js'
 import {
     BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory, useLocation
-  } from "react-router-dom";
-import {UserContext} from '../../user_context';
+} from "react-router-dom";
+import { UserContext } from '../../user_context';
 
 
 var postDataJson = { url: null, postTitle: null, userID: null, categoryID: null, }
@@ -26,23 +26,40 @@ class RatePage extends React.Component {
     }
 
     componentDidMount() {
-    
-        const {user, setUser} = this.context
-          this.setState({
-            user : user
-          });
-         }
 
+        const { user, setUser } = this.context
+        this.setState({
+            user: user
+        });
+    }
+    getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie =cookies[i];
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
     postCreate(post_data) {
         postDataJson.url = post_data[0];
         postDataJson.postTitle = post_data[1];
         postDataJson.categoryID = post_data[2];
         postDataJson.userID = this.state.user.id;
 
+        console.log(JSON.stringify(postDataJson) + "dataaaaaaaaaa");
         fetch(`/API/postCreate/`, {
             "method": "POST",
-            "headers": { 'Content-Type': 'application/json', },
-            "body": JSON.stringify(postDataJson)
+            "headers": { 'Content-Type': 'application/json', "X-CSRFToken": this.getCookie("csrftoken"), },
+            "mode": 'cors',
+            "body": JSON.stringify(postDataJson),
+            "scopes": ["READ", "WRITE"]
 
         })
             .then(function (response) {
@@ -91,7 +108,7 @@ class RatePage extends React.Component {
                         display: 'flex',
                         flexDirection: 'column'
                     }}>
-                        <Appbar flag="hide" username = {this.state.user.userName}/>
+                        <Appbar flag="hide" username={this.state.user.userName} />
 
 
                         <div class="RecommdationSection">
@@ -101,10 +118,10 @@ class RatePage extends React.Component {
                         </div>
                     </div>
                     <> {
-                        console.log(this.state.post_data.postTitle+"---****-"),
+                        console.log(this.state.post_data.postTitle + "---****-"),
                         this.state.redirect ? <Redirect to={{
                             pathname: '/postDetails',
-                            state: { postData: this.state.post_data}
+                            state: { postData: this.state.post_data }
                         }} /> : ''} </>
                 </div>
 

@@ -8,6 +8,7 @@ import Kilua from '../../assets/images/Capture.jpg';
 import Edit from "../../assets/images/svg/edit";
 import EditPopup from '../editPopUpPost/editPost'
 import UnAvailable from '../../assets/images/unavailable.jpg'
+import Menu from '../menu_category/menu'
 
 HistoryCard.propTypes = {
 
@@ -29,11 +30,13 @@ function delete_item(props){
     props.onPreesed()
 }
 
+
 function HistoryCard(props) {
     const [toggle, show] = useState(0);
     const [deleted, setDelet] = useState(false);
     const [showPopup, setShow] = useState(false);
     //
+
     console.log(props.postData.id+"     552525")
     return (
         
@@ -79,7 +82,8 @@ function HistoryCard(props) {
                             </a>
                             <a onClick= {!showPopup ? () => setShow(!showPopup) : ''}>
                                 <Edit />
-                            </a>
+                                {/*<div style={{ position:"absolute" ,display: showPopup ? "" : "none" }}><Menu menuSelection = {menuCallback}/></div>
+                            */}</a>
                         </div>
 
 
@@ -90,9 +94,10 @@ function HistoryCard(props) {
                         likes={props.likes}
                         dislikes={props.dislikes}
                         rate={props.rate}
-                        image={props.postImage !== null ? props.postImage.match(/\.(jpeg|jpg|gif|png)$/) ? props.postImage : UnAvailable : UnAvailable}
+                        image={props.postImage !== null  ? props.postImage : UnAvailable}
                         fullDescription={props.fullDescription}
-                        
+                        post_id = {props.postData.id}
+                        flag = "post"
 
                     /></div>}
                     

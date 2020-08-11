@@ -19,7 +19,7 @@ function getCategories(setCat){
     }
     )
     .then(response => {
-      
+      console.log(JSON.stringify(response)+"*-*-+-+-");
       setCat(response);
     })
     .catch(err => {

@@ -26,7 +26,7 @@ export default class Profile extends React.Component {
   componentDidMount() {
 
     const { user, setUser } = this.context
-    console.log(JSON.stringify(this.props.user) + "2222111");
+    console.log(JSON.stringify(this.user) + "2222111");
     //setUser(151);
     this.setState({
       user: user

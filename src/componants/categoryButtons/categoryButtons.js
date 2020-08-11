@@ -17,13 +17,14 @@ function CatItems({data}) {
     state: { postData: item },
 }}><li> <div style={{ marginTop: '25px' }}>
         <ProductItem
-         category={true}
-         description={item.postContent}
-         title={item.postTitle}
-         likes={item.NumberOfLikes}
-         dislikes={item.NumberOfDislikes}
-         image={item.photoUrl}
+          category={true}
+          description={item.postContent}
+          title={item.postTitle}
+          likes={item.NumberOfLikes}
+          dislikes={item.NumberOfDislikes}
+          image={item.photoUrl}
         />
+        
       </div>
       </li></Link>
     )
@@ -82,9 +83,7 @@ export default function Categories() {
   const [activeLink, setacive] = useState(1);
   const [categories, setCat] = useState([]);
   const [categories_posts, setData] = useState(
-   [
-      
-    ]
+   []
   );
 
   useEffect(() => {
