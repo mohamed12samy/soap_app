@@ -111,16 +111,17 @@ function PostHistory(props) {
 
     const [addData, setAdDAta] = useState([]);
     const [categories, setCat] = useState([]);
-    const con = useContext(UserContext);
+    //const con = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(()=>{
-        showUserPosts(con.user.id, setAdDAta);
+        showUserPosts(user.id, setAdDAta);
         getCategories(setCat);
     },[]);
     const cards = addData.map((item, index) =>
     <li>  <HistoryCard
     date={item.startDate}
-    name={con.user.userName}
+    name={user.userName}
     fullDescription={item.postContent}
     title={item.postTitle}
     rate={item.rate}
@@ -155,7 +156,7 @@ function PostHistory(props) {
                     // alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username = {con.user.userName}/>
+                    <Appbar username = {user.userName}/>
                     <div style={{ marginTop: '30px' }}>
                         <ul style={{ listStyle: 'none' }}>{cards}</ul>
                     </div>

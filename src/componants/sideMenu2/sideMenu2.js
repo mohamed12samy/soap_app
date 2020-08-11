@@ -67,8 +67,10 @@ function SideMenu2(props) {
         }
       }
       onClick={ ()=>{
-        con.setUser(null);
-        console.log(con.user.userName + "0000222222");
+        //con.setUser(null);
+        //console.log(con.user.userName + "0000222222");
+        localStorage.setItem('isLogged',null);
+        localStorage.setItem('user',null);
         loggedOut(true);
       } }
       >

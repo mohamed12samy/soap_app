@@ -11,7 +11,9 @@ import {UserContext} from '../../user_context';
 function ProfilePage(props) {
  
 
-    const {user, setUser} = useContext(UserContext);
+    //const {user, setUser} = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
+    
     console.log(
         JSON.stringify(
         user)+"0000000" + user.userName);

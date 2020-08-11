@@ -100,6 +100,8 @@ export default class SignIn extends React.Component {
       .then(response => {
         console.log(response, "response");
         
+        localStorage.setItem('isLogged', true);
+        localStorage.setItem('user', JSON.stringify(response));
         this.setState({
           userObject: response,
           redirectToHome: this.state.errors.password === '' && this.state.errors.username === '' ? true : false,

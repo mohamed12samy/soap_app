@@ -33,7 +33,7 @@ export default class AdsPopUp extends React.Component{
     
         const {user, setUser} = this.context
           this.setState({
-            userID : user.id
+            userID : JSON.parse(localStorage.getItem('user')).id
           });
          }
 

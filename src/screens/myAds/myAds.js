@@ -10,6 +10,8 @@ import HistoryCard from '../../componants/histortCard/historyCard';
 import AddButton from "../../assets/images/svg/addButton";
 import AdPopUp from '../../componants/adsPop_up/adsPopUp';
 var x = {}
+
+
 function delete_ad(id){
     fetch(`/API/advRemove/${id}/`, {
         "method": "DELETE",
@@ -64,18 +66,19 @@ function MyAds(props) {
 
     const [showPopup, showAdPopup] = useState(false);
     const [addData, setAdDAta] = useState([]);
-    const con = useContext(UserContext);
-
+    //const con = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(()=>{
-        showUserAds(con.user.id, setAdDAta);
+       
+        showUserAds(user.id, setAdDAta);
     },[]);
 
     console.log(x+"9999999999999")
     const cards = addData.map((item, index) =>
         <li>  <HistoryCard
             date={item.startDate}
-            name={con.user.userName}
+            name={user.userName}
             //userimage={userData[0].userInfo.userImage}
             fullDescription={item.advContent}
             title={item.advTitle}
@@ -107,7 +110,7 @@ function MyAds(props) {
                     // alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username = {con.user.userName}/>
+                    <Appbar username = {user.userName}/>
                     <div style={{ marginTop: '30px' }}>
                         <ul style={{ listStyle: 'none' }}>{cards}</ul>
                     </div>

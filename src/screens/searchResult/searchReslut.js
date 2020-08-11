@@ -13,7 +13,8 @@ function SearchResult(props) {
 
     var post = [];
     post = props.location.state.postData ?? post; 
-    const con = useContext(UserContext);
+    //const con = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
     return (
         <>
             <div className="App">
@@ -29,7 +30,7 @@ function SearchResult(props) {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username={con.user.userName} />
+                    <Appbar username={user.userName} />
 
 
                     {(post.length !== 0)?<CatItems data = {post} />:<center><h2>No data match you want</h2></center>}

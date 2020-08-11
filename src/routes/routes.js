@@ -29,43 +29,44 @@ export default function Routes(props) {
       <Switch>
 
 
-        <Route path="/login" render={props => (<SignIn {...props} loggedIn={() => isLogged(true)} />
+        <Route path="/login" render={props => (<SignIn {...props}  />
         )} />
 
-        <Route path="/register" render={props => (<SignUp {...props} loggedIn={() => isLogged(true)} />
+        <Route path="/register" render={props => (<SignUp {...props}  />
         )} />
 
-        <Route path="/home" render={props => (<HomePage {...props} logOut={() => isLogged(false)} />
+        <Route path="/home" render={props => (<HomePage {...props}  />
         )} />
 
-        <Route path="/postDetails" render={props => (user !== null ? <PostDetails {...props} logOut={() => isLogged(false)} />
+
+        <Route path="/postDetails" render={props => (localStorage.getItem('isLogged') !== null ? <PostDetails {...props}  />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
 
-        <Route path="/ads" render={props => (user !== null ? <MyAdsPage {...props} logOut={() => isLogged(false)} />
+        <Route path="/ads" render={props => (localStorage.getItem('isLogged') !== null  ? <MyAdsPage {...props}  />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
 
-        <Route path="/topRated" render={props => (user !== null ? <TopRated {...props} logOut={() => isLogged(false)} />
+        <Route path="/topRated" render={props => (localStorage.getItem('isLogged') !== null? <TopRated {...props} />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
-        <Route path="/posts" render={props => (user !== null ? <PostsPage {...props} logOut={() => isLogged(false)} />
+        <Route path="/posts" render={props => (localStorage.getItem('isLogged') !== null? <PostsPage {...props} />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
 
-        <Route path="/rate" render={props => (user !== null ? <RatePage {...props} logOut={() => isLogged(false)} />
+        <Route path="/rate" render={props => (localStorage.getItem('isLogged') !== null? <RatePage {...props}  />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
-        <Route path="/profile" render={props => (user !== null ? <ProfilePage {...props} logOut={() => isLogged(false)} />
+        <Route path="/profile" render={props => (localStorage.getItem('isLogged')  !== null? <ProfilePage {...props}  />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />
-        <Route path="/searchResult" render={props => (user !== null ? <SearchResult {...props} logOut={() => isLogged(false)} />
+        <Route path="/searchResult" render={props => (localStorage.getItem('isLogged') !== null? <SearchResult {...props}  />
           :
           <Redirect to={{ pathname: "/login", }} />)
         } />

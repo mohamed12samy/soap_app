@@ -91,7 +91,7 @@ function PostDetails(props) {
 
     //post = props.location.state.postData;
     //console.log(posts.comments)
-    const user = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
     const [categories, setCat] = useState([]);
 
 
@@ -117,7 +117,7 @@ function PostDetails(props) {
                     alignItems: 'center',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username={user.user.userName} />
+                    <Appbar username={user.userName} />
                     <div
                         style={{
                             width: '90%',

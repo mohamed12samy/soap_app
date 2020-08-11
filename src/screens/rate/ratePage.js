@@ -27,7 +27,8 @@ class RatePage extends React.Component {
 
     componentDidMount() {
 
-        const { user, setUser } = this.context
+        //const { user, setUser } = this.context
+        const user = JSON.parse(localStorage.getItem('user'));
         this.setState({
             user: user
         });

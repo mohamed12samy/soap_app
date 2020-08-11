@@ -147,7 +147,8 @@ export default class SignIn extends React.Component {
         
         //this.state.user.setUser(response.id);
         console.log(response, "response");
-        
+        localStorage.setItem('isLogged', true);
+        localStorage.setItem('user', JSON.stringify(response));
         //console.log(this.state.user.user+"-----------------");
         this.setState({
           userObject: response,

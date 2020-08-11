@@ -11,7 +11,8 @@ import TopCategories from '../../componants/categorytoprated/topCategories.js';
 
 
 function TopRated() {
-    const con = useContext(UserContext);
+    //const con = useContext(UserContext);
+    const user = JSON.parse(localStorage.getItem('user'));
 
     return (
         <>
@@ -28,7 +29,7 @@ function TopRated() {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Appbar username = {con.user.userName}/>
+                    <Appbar username = {user.userName}/>
 
                     <TopCategories />
                 </div>
