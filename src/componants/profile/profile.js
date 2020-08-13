@@ -25,7 +25,8 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
 
-    const { user, setUser } = this.context
+    //const { user, setUser } = this.context
+    const user  = JSON.parse(localStorage.getItem('user'));
     console.log(JSON.stringify(this.user) + "2222111");
     //setUser(151);
     this.setState({
@@ -157,7 +158,7 @@ export default class Profile extends React.Component {
                   </div>
 
               <div type="submit" style={{ display: this.state.edit ? "" : "none", width: "5vw", height: "4vh", marginLeft: "17vw", backgroundColor: "#3A7F95", marginTop: "1vh", marginRight: "2vw" }}
-                onClick={()=> this.updateUser(25)}>
+                onClick={()=> this.updateUser(this.state.user.id)}>
                 Submit
                   </div>
 
